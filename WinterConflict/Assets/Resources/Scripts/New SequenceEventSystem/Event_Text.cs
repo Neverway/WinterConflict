@@ -25,29 +25,30 @@ public class Event_Text : Event
         {
             textboxManager = GameInstance.Get<GI_TextboxManager>();
         }
+        
+        textboxManager.TryStartTextEvent(textEvent, overrideExistingEvents);
 
-        var result = textboxManager.TryStartTextEvent(textEvent, overrideExistingEvents);
-        if (result is false)
-        {
-            OnCallFailed.Invoke();
-        }
+        var eventConcluded = false;
 
         if (eventConcludesWhen == EventConcludesWhen.textboxOpened)
         {
-            Debug.Log("Hey dumdum, you need to make this actually wait!");
-            yield break;
+            textboxManager.OnTextboxStarted += (() => {eventConcluded = true;});
         }
 
-        if (eventConcludesWhen == EventConcludesWhen.frameIsDonePrinting)
+        else if (eventConcludesWhen == EventConcludesWhen.frameIsDonePrinting)
         {
-            Debug.Log("Hey dumdum, you need to make this actually wait!");
-            yield break;
+            textboxManager.OnPrintFrameCompleted += (() => {eventConcluded = true;});
         }
 
-        if (eventConcludesWhen == EventConcludesWhen.textboxClosed)
+        else if (eventConcludesWhen == EventConcludesWhen.textboxClosed)
         {
-            Debug.Log("Hey dumdum, you need to make this actually wait!");
-            yield break;
+            textboxManager.OnTextboxEnded += (() => {eventConcluded = true;});
         }
+
+        while (eventConcluded == false)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+        yield break;
     }
 }

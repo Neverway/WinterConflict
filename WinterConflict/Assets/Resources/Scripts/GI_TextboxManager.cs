@@ -25,6 +25,11 @@ public class GI_TextboxManager : MonoBehaviour
     /*-----[ External Variables ]-------------------------------------------------------------------------------------*/
     [Box] public TextEvent currentTextEvent;
     public bool HasActiveTextEvent => textEventActive;
+    
+    // Subscription actions for new Sequence Event System
+    public Action OnTextboxStarted;
+    public Action OnPrintFrameCompleted;
+    public Action OnTextboxEnded;
 
     /*-----[ Internal Variables ]-------------------------------------------------------------------------------------*/
     public bool _textEventActive;
@@ -115,6 +120,7 @@ public class GI_TextboxManager : MonoBehaviour
         
         // Display the first frame
         currentFrame = -1;
+        OnTextboxStarted?.Invoke();
         PrintNextFrame();
         
         // Enable inputs to move next
@@ -186,6 +192,7 @@ public class GI_TextboxManager : MonoBehaviour
         currentlyPrinting = false;
 
         _onFrameCompleted.Invoke();
+        OnPrintFrameCompleted?.Invoke();
         
         if (currentTextEvent.frames[currentFrame].autoProgressOnComplete) PrintNextFrame();
     }
@@ -355,6 +362,7 @@ public class GI_TextboxManager : MonoBehaviour
         textEventActive = false;
         Destroy(textbox.gameObject);
         currentTextEvent.OnFinish?.Invoke();
+        OnTextboxEnded?.Invoke();
         Clear();
         return false;
     }
