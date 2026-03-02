@@ -81,6 +81,8 @@ public class GameInstance : MonoBehaviour
     public static T Get<T>() where T : MonoBehaviour => Instance.GetComponent<T>();
 
     public static Coroutine SendCoroutine(IEnumerator coroutine) => Instance.StartCoroutine(coroutine);
+    
+    public static void StopCoroutine(Coroutine coroutine) => ((MonoBehaviour)Instance).StopCoroutine(coroutine);
 
     #endregion
 }

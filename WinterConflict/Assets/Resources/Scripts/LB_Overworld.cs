@@ -4,17 +4,11 @@ using UnityEngine;
 
 public class LB_Overworld : MonoBehaviour
 {
-    public Func_TextEvent startingTextEvent;
+    public EventSequence startingEvent;
     
     // Start is called before the first frame update
     void Start()
     {
-        startingTextEvent.textEvent.TryDisplay();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        startingEvent.Begin();
     }
 }

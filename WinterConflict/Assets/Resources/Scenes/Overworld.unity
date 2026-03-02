@@ -458,6 +458,193 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1613876657}
   m_LocalEulerAnglesHint: {x: 0, y: -60, z: 0}
+--- !u!1 &89755191
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 89755193}
+  - component: {fileID: 89755192}
+  m_Layer: 0
+  m_Name: ToCabin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &89755192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89755191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea94c4108f7a6a448894b53b5d8c87ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  events:
+  - rid: 5489666996663484429
+  - rid: 5489666996663484430
+  - rid: 5489666996663484431
+  OnStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  OnInterrupted:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 5489666996663484429
+      type: {class: Event_ViewCamera, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: To cabin
+        OnCallSucceed:
+          m_PersistentCalls:
+            m_Calls: []
+        OnCallFailed:
+          m_PersistentCalls:
+            m_Calls: []
+        viewCamera: {fileID: 1605330063}
+        doNotPlayTransition: 0
+    - rid: 5489666996663484430
+      type: {class: Event_Text, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: Listen
+        OnCallSucceed:
+          m_PersistentCalls:
+            m_Calls: []
+        OnCallFailed:
+          m_PersistentCalls:
+            m_Calls: []
+        eventConcludesWhen: 2
+        overrideExistingEvents: 0
+        textEvent:
+          frames:
+          - name: 
+            chatContent: '*You walked up to the cabin.'
+            portrait: {fileID: 0}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 0
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: 
+            chatContent: '*You can hear muffled voices inside.'
+            portrait: {fileID: 0}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 0
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: ???
+            chatContent: '*"-No, I wont..." (unintelligable)'
+            portrait: {fileID: 0}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 0
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: ???
+            chatContent: '*"Well it''s not like we have much of a choice!"'
+            portrait: {fileID: 0}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 0
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: 
+            chatContent: '*The rest is a bit too hard to understand.'
+            portrait: {fileID: 0}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 0
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          OnFinish:
+            m_PersistentCalls:
+              m_Calls: []
+    - rid: 5489666996663484431
+      type: {class: Event_Choice, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: What now
+        OnCallSucceed:
+          m_PersistentCalls:
+            m_Calls: []
+        OnCallFailed:
+          m_PersistentCalls:
+            m_Calls: []
+        dialogText: 
+        allowQuittingMenu: 0
+        onQuitMenu:
+          m_PersistentCalls:
+            m_Calls: []
+        choices:
+        - choiceName: Knock
+          OnChoiceSelected:
+            m_PersistentCalls:
+              m_Calls: []
+        - choiceName: Open door
+          OnChoiceSelected:
+            m_PersistentCalls:
+              m_Calls: []
+        - choiceName: Look through window
+          OnChoiceSelected:
+            m_PersistentCalls:
+              m_Calls: []
+--- !u!4 &89755193
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89755191}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2048294998}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &165154359
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,6 +1015,228 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1613876657}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &345107125
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 345107127}
+  - component: {fileID: 345107126}
+  m_Layer: 0
+  m_Name: EVENT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &345107126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345107125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea94c4108f7a6a448894b53b5d8c87ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  events: []
+  OnStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  OnInterrupted:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 2
+    RefIds: []
+--- !u!4 &345107127
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345107125}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2048294998}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &484071378
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 484071379}
+  - component: {fileID: 484071380}
+  m_Layer: 0
+  m_Name: LookAround
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &484071379
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484071378}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2048294998}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &484071380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484071378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea94c4108f7a6a448894b53b5d8c87ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  events:
+  - rid: 5489666996663484426
+  - rid: 5489666996663484427
+  - rid: 5489666996663484428
+  OnStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  OnInterrupted:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 5489666996663484426
+      type: {class: Event_ViewCamera, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: Turn around
+        OnCallSucceed:
+          m_PersistentCalls:
+            m_Calls: []
+        OnCallFailed:
+          m_PersistentCalls:
+            m_Calls: []
+        viewCamera: {fileID: 963194227}
+        doNotPlayTransition: 0
+    - rid: 5489666996663484427
+      type: {class: Event_Text, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: Nothing much
+        OnCallSucceed:
+          m_PersistentCalls:
+            m_Calls: []
+        OnCallFailed:
+          m_PersistentCalls:
+            m_Calls: []
+        eventConcludesWhen: 2
+        overrideExistingEvents: 0
+        textEvent:
+          frames:
+          - name: 
+            chatContent: '*There''s not much out here.'
+            portrait: {fileID: 0}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 0
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: 
+            chatContent: '*If you don''t get inside soon, you may freeze.'
+            portrait: {fileID: 0}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 0
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          OnFinish:
+            m_PersistentCalls:
+              m_Calls: []
+    - rid: 5489666996663484428
+      type: {class: Event_Choice, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: What now
+        OnCallSucceed:
+          m_PersistentCalls:
+            m_Calls: []
+        OnCallFailed:
+          m_PersistentCalls:
+            m_Calls: []
+        dialogText: 
+        allowQuittingMenu: 0
+        onQuitMenu:
+          m_PersistentCalls:
+            m_Calls: []
+        choices:
+        - choiceName: Go to cabin
+          OnChoiceSelected:
+            m_PersistentCalls:
+              m_Calls:
+              - m_Target: {fileID: 89755192}
+                m_TargetAssemblyTypeName: EventSequence, Assembly-CSharp
+                m_MethodName: Begin
+                m_Mode: 1
+                m_Arguments:
+                  m_ObjectArgument: {fileID: 0}
+                  m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                  m_IntArgument: 0
+                  m_FloatArgument: 0
+                  m_StringArgument: 
+                  m_BoolArgument: 0
+                m_CallState: 2
+        - choiceName: Keep Looking
+          OnChoiceSelected:
+            m_PersistentCalls:
+              m_Calls:
+              - m_Target: {fileID: 484071380}
+                m_TargetAssemblyTypeName: EventSequence, Assembly-CSharp
+                m_MethodName: Begin
+                m_Mode: 1
+                m_Arguments:
+                  m_ObjectArgument: {fileID: 0}
+                  m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                  m_IntArgument: 0
+                  m_FloatArgument: 0
+                  m_StringArgument: 
+                  m_BoolArgument: 0
+                m_CallState: 2
 --- !u!1 &530956507
 GameObject:
   m_ObjectHideFlags: 0
@@ -7204,6 +7613,231 @@ MonoBehaviour:
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
   m_ScrollDeltaPerTick: 6
+--- !u!1 &1334749768
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1334749770}
+  - component: {fileID: 1334749769}
+  m_Layer: 0
+  m_Name: Intro
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1334749769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334749768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea94c4108f7a6a448894b53b5d8c87ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  events:
+  - rid: 5489666996663484418
+  - rid: 5489666996663484420
+  - rid: 5489666996663484425
+  - rid: 5489666996663484421
+  - rid: 5489666996663484422
+  - rid: 5489666996663484423
+  - rid: 5489666996663484424
+  OnStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  OnInterrupted:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 5489666996663484418
+      type: {class: Event_ViewCamera, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: Enable starting camera
+        OnCallSucceed:
+          m_PersistentCalls:
+            m_Calls: []
+        OnCallFailed:
+          m_PersistentCalls:
+            m_Calls: []
+        viewCamera: {fileID: 963194227}
+        doNotPlayTransition: 1
+    - rid: 5489666996663484420
+      type: {class: Event_Text, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: You are cold
+        OnCallSucceed:
+          m_PersistentCalls:
+            m_Calls: []
+        OnCallFailed:
+          m_PersistentCalls:
+            m_Calls: []
+        eventConcludesWhen: 2
+        overrideExistingEvents: 0
+        textEvent:
+          frames:
+          - name: 
+            chatContent: '*You find yourself lost and cold in a heavy snow storm.'
+            portrait: {fileID: 0}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 0
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          OnFinish:
+            m_PersistentCalls:
+              m_Calls: []
+    - rid: 5489666996663484421
+      type: {class: Event_Audio, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: Music
+        OnCallSucceed:
+          m_PersistentCalls:
+            m_Calls: []
+        OnCallFailed:
+          m_PersistentCalls:
+            m_Calls: []
+        audioClip: {fileID: 8300000, guid: 3468cbb75eed01581b9774bc9a73cd18, type: 3}
+        soundChannel: 3
+        transition: 2
+    - rid: 5489666996663484422
+      type: {class: Event_Transition, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: Fade in screen
+        OnCallSucceed:
+          m_PersistentCalls:
+            m_Calls: []
+        OnCallFailed:
+          m_PersistentCalls:
+            m_Calls: []
+        eventConcludesWhen: 0
+        type: 0
+        duration: 0
+    - rid: 5489666996663484423
+      type: {class: Event_Text, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: Describe cabin
+        OnCallSucceed:
+          m_PersistentCalls:
+            m_Calls: []
+        OnCallFailed:
+          m_PersistentCalls:
+            m_Calls: []
+        eventConcludesWhen: 2
+        overrideExistingEvents: 0
+        textEvent:
+          frames:
+          - name: 
+            chatContent: '*There is a cabin with a light on up ahead.'
+            portrait: {fileID: 0}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 0
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          OnFinish:
+            m_PersistentCalls:
+              m_Calls: []
+    - rid: 5489666996663484424
+      type: {class: Event_Choice, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: Choice
+        OnCallSucceed:
+          m_PersistentCalls:
+            m_Calls: []
+        OnCallFailed:
+          m_PersistentCalls:
+            m_Calls: []
+        dialogText: 
+        allowQuittingMenu: 0
+        onQuitMenu:
+          m_PersistentCalls:
+            m_Calls: []
+        choices:
+        - choiceName: Go to cabin
+          OnChoiceSelected:
+            m_PersistentCalls:
+              m_Calls:
+              - m_Target: {fileID: 89755192}
+                m_TargetAssemblyTypeName: EventSequence, Assembly-CSharp
+                m_MethodName: Begin
+                m_Mode: 1
+                m_Arguments:
+                  m_ObjectArgument: {fileID: 0}
+                  m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                  m_IntArgument: 0
+                  m_FloatArgument: 0
+                  m_StringArgument: 
+                  m_BoolArgument: 0
+                m_CallState: 2
+        - choiceName: Look around
+          OnChoiceSelected:
+            m_PersistentCalls:
+              m_Calls:
+              - m_Target: {fileID: 484071380}
+                m_TargetAssemblyTypeName: EventSequence, Assembly-CSharp
+                m_MethodName: Begin
+                m_Mode: 1
+                m_Arguments:
+                  m_ObjectArgument: {fileID: 0}
+                  m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                  m_IntArgument: 0
+                  m_FloatArgument: 0
+                  m_StringArgument: 
+                  m_BoolArgument: 0
+                m_CallState: 2
+    - rid: 5489666996663484425
+      type: {class: Event_Audio, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: Ambience
+        OnCallSucceed:
+          m_PersistentCalls:
+            m_Calls: []
+        OnCallFailed:
+          m_PersistentCalls:
+            m_Calls: []
+        audioClip: {fileID: 8300000, guid: 798fb338e4cc42aeba97cc2f82f4b180, type: 3}
+        soundChannel: 0
+        transition: 2
+--- !u!4 &1334749770
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334749768}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2048294998}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1341668283
 GameObject:
   m_ObjectHideFlags: 0
@@ -7601,7 +8235,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 291999355680595183, guid: 558612f3a66b575998f8e8287c253578, type: 3}
       propertyPath: m_Name
-      value: View
+      value: Cabin Door
       objectReference: {fileID: 0}
     - target: {fileID: 4562678047283168558, guid: 558612f3a66b575998f8e8287c253578, type: 3}
       propertyPath: m_IsActive
@@ -7779,7 +8413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d3da18a48706fed0b9b5e3456f0fd42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingTextEvent: {fileID: 1781257539}
+  startingEvent: {fileID: 1334749769}
 --- !u!1001 &1707639954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7882,253 +8516,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4120627537271842407, guid: 541b3a50f93dd04f9b659c47e8318297, type: 3}
   m_PrefabInstance: {fileID: 1707639954}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1781257538
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1781257540}
-  - component: {fileID: 1781257539}
-  - component: {fileID: 1781257542}
-  - component: {fileID: 1781257541}
-  - component: {fileID: 1781257543}
-  - component: {fileID: 1781257544}
-  - component: {fileID: 1781257545}
-  m_Layer: 0
-  m_Name: Intro
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1781257539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1781257538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fdcdaaf8da5a1891ba5d7c844bf7a71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  overrideExistingEvents: 0
-  textEvent:
-    frames:
-    - name: 
-      chatContent: '*You find yourself lost and cold in a heavy snow storm.'
-      portrait: {fileID: 0}
-      chatterVoice: {fileID: 0}
-      OnFrameStarted:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 1781257544}
-            m_TargetAssemblyTypeName: Func_SwitchView, Assembly-CSharp
-            m_MethodName: CallEvent
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-      OnFrameCompleted:
-        m_PersistentCalls:
-          m_Calls: []
-      displayMode: 0
-      preventTextSkipping: 0
-      preventTextContinuing: 0
-      autoProgressOnComplete: 0
-    - name: 
-      chatContent: '*There is a cabin with a light on up ahead.'
-      portrait: {fileID: 0}
-      chatterVoice: {fileID: 0}
-      OnFrameStarted:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 1781257541}
-            m_TargetAssemblyTypeName: Func_TransitionEvent, Assembly-CSharp
-            m_MethodName: CallEvent
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-          - m_Target: {fileID: 1781257542}
-            m_TargetAssemblyTypeName: Func_AudioEvent, Assembly-CSharp
-            m_MethodName: CallEvent
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-      OnFrameCompleted:
-        m_PersistentCalls:
-          m_Calls: []
-      displayMode: 0
-      preventTextSkipping: 0
-      preventTextContinuing: 0
-      autoProgressOnComplete: 0
-    OnFinish:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1781257543}
-          m_TargetAssemblyTypeName: Func_TextChoice, Assembly-CSharp
-          m_MethodName: StartChoices
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  OnCallFailed:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!4 &1781257540
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1781257538}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2048294998}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1781257541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1781257538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 835cf7d62eaafca7592f3178e26d4647, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  duration: 2
-  OnCallFailed:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1781257542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1781257538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37d92b7f134b6256eac8d957b54ed940, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 798fb338e4cc42aeba97cc2f82f4b180, type: 3}
-  soundChannel: 0
-  transition: 1
---- !u!114 &1781257543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1781257538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25315a3f6e12e1b46b110c7e7392065e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogText: 
-  allowQuittingMenu: 0
-  onQuitMenu:
-    m_PersistentCalls:
-      m_Calls: []
-  choices:
-  - choiceName: Go to cabin
-    OnChoiceSelected:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2107775992}
-          m_TargetAssemblyTypeName: Func_TextEvent, Assembly-CSharp
-          m_MethodName: CallEvent
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - choiceName: Look around
-    OnChoiceSelected:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2086867308}
-          m_TargetAssemblyTypeName: Func_TextEvent, Assembly-CSharp
-          m_MethodName: CallEvent
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &1781257544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1781257538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80b0fd3b24892df48887fdd4975085f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  viewCamera: {fileID: 963194227}
-  doNotPlayTransition: 1
---- !u!114 &1781257545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1781257538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 835cf7d62eaafca7592f3178e26d4647, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 1
-  duration: 0.2
-  OnCallFailed:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1835955956
 GameObject:
   m_ObjectHideFlags: 0
@@ -9104,336 +9491,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1781257540}
-  - {fileID: 2086867304}
-  - {fileID: 2107775988}
+  - {fileID: 1334749770}
+  - {fileID: 484071379}
+  - {fileID: 89755193}
+  - {fileID: 345107127}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2086867303
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2086867304}
-  - component: {fileID: 2086867308}
-  - component: {fileID: 2086867305}
-  m_Layer: 0
-  m_Name: LookAround
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2086867304
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2086867303}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2048294998}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2086867305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2086867303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25315a3f6e12e1b46b110c7e7392065e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogText: 
-  allowQuittingMenu: 0
-  onQuitMenu:
-    m_PersistentCalls:
-      m_Calls: []
-  choices:
-  - choiceName: Go to cabin
-    OnChoiceSelected:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2107775992}
-          m_TargetAssemblyTypeName: Func_TextEvent, Assembly-CSharp
-          m_MethodName: CallEvent
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - choiceName: Keep Looking
-    OnChoiceSelected:
-      m_PersistentCalls:
-        m_Calls: []
---- !u!114 &2086867308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2086867303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fdcdaaf8da5a1891ba5d7c844bf7a71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  overrideExistingEvents: 0
-  textEvent:
-    frames:
-    - name: 
-      chatContent: '*There''s not much out here.'
-      portrait: {fileID: 0}
-      chatterVoice: {fileID: 0}
-      OnFrameStarted:
-        m_PersistentCalls:
-          m_Calls: []
-      OnFrameCompleted:
-        m_PersistentCalls:
-          m_Calls: []
-      displayMode: 0
-      preventTextSkipping: 0
-      preventTextContinuing: 0
-      autoProgressOnComplete: 0
-    - name: 
-      chatContent: '*If you don''t get inside soon, you may freeze.'
-      portrait: {fileID: 0}
-      chatterVoice: {fileID: 0}
-      OnFrameStarted:
-        m_PersistentCalls:
-          m_Calls: []
-      OnFrameCompleted:
-        m_PersistentCalls:
-          m_Calls: []
-      displayMode: 0
-      preventTextSkipping: 0
-      preventTextContinuing: 0
-      autoProgressOnComplete: 0
-    OnFinish:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2086867305}
-          m_TargetAssemblyTypeName: Func_TextChoice, Assembly-CSharp
-          m_MethodName: StartChoices
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  OnCallFailed:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!1 &2107775987
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2107775988}
-  - component: {fileID: 2107775992}
-  - component: {fileID: 2107775989}
-  - component: {fileID: 2107775993}
-  m_Layer: 0
-  m_Name: ToCabin
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2107775988
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2107775987}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2048294998}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2107775989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2107775987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25315a3f6e12e1b46b110c7e7392065e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogText: 
-  allowQuittingMenu: 0
-  onQuitMenu:
-    m_PersistentCalls:
-      m_Calls: []
-  choices:
-  - choiceName: Knock
-    OnChoiceSelected:
-      m_PersistentCalls:
-        m_Calls: []
-  - choiceName: Open door
-    OnChoiceSelected:
-      m_PersistentCalls:
-        m_Calls: []
-  - choiceName: Look through window
-    OnChoiceSelected:
-      m_PersistentCalls:
-        m_Calls: []
---- !u!114 &2107775992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2107775987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fdcdaaf8da5a1891ba5d7c844bf7a71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  overrideExistingEvents: 0
-  textEvent:
-    frames:
-    - name: 
-      chatContent: '*You walked up to the cabin.'
-      portrait: {fileID: 0}
-      chatterVoice: {fileID: 0}
-      OnFrameStarted:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 2107775993}
-            m_TargetAssemblyTypeName: Func_SwitchView, Assembly-CSharp
-            m_MethodName: CallEvent
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-      OnFrameCompleted:
-        m_PersistentCalls:
-          m_Calls: []
-      displayMode: 0
-      preventTextSkipping: 0
-      preventTextContinuing: 0
-      autoProgressOnComplete: 0
-    - name: 
-      chatContent: '*You can hear muffled voices inside.'
-      portrait: {fileID: 0}
-      chatterVoice: {fileID: 0}
-      OnFrameStarted:
-        m_PersistentCalls:
-          m_Calls: []
-      OnFrameCompleted:
-        m_PersistentCalls:
-          m_Calls: []
-      displayMode: 0
-      preventTextSkipping: 0
-      preventTextContinuing: 0
-      autoProgressOnComplete: 0
-    - name: ???
-      chatContent: '*"-No, I wont..." (unintelligable)'
-      portrait: {fileID: 0}
-      chatterVoice: {fileID: 0}
-      OnFrameStarted:
-        m_PersistentCalls:
-          m_Calls: []
-      OnFrameCompleted:
-        m_PersistentCalls:
-          m_Calls: []
-      displayMode: 0
-      preventTextSkipping: 0
-      preventTextContinuing: 0
-      autoProgressOnComplete: 0
-    - name: ???
-      chatContent: '*"Well it''s not like we have much of a choice!"'
-      portrait: {fileID: 0}
-      chatterVoice: {fileID: 0}
-      OnFrameStarted:
-        m_PersistentCalls:
-          m_Calls: []
-      OnFrameCompleted:
-        m_PersistentCalls:
-          m_Calls: []
-      displayMode: 0
-      preventTextSkipping: 0
-      preventTextContinuing: 0
-      autoProgressOnComplete: 0
-    - name: 
-      chatContent: '*The rest is a bit too hard to understand.'
-      portrait: {fileID: 0}
-      chatterVoice: {fileID: 0}
-      OnFrameStarted:
-        m_PersistentCalls:
-          m_Calls: []
-      OnFrameCompleted:
-        m_PersistentCalls:
-          m_Calls: []
-      displayMode: 0
-      preventTextSkipping: 0
-      preventTextContinuing: 0
-      autoProgressOnComplete: 0
-    OnFinish:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2107775989}
-          m_TargetAssemblyTypeName: Func_TextChoice, Assembly-CSharp
-          m_MethodName: StartChoices
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  OnCallFailed:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &2107775993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2107775987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80b0fd3b24892df48887fdd4975085f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  viewCamera: {fileID: 1605330063}
-  doNotPlayTransition: 0
 --- !u!1 &2135001352
 GameObject:
   m_ObjectHideFlags: 0
@@ -9609,7 +9672,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 291999355680595183, guid: 558612f3a66b575998f8e8287c253578, type: 3}
       propertyPath: m_Name
-      value: View
+      value: Forest
       objectReference: {fileID: 0}
     - target: {fileID: 5264883332662109434, guid: 558612f3a66b575998f8e8287c253578, type: 3}
       propertyPath: m_LocalPosition.x
