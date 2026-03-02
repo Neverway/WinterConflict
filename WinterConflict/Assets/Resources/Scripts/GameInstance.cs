@@ -55,13 +55,13 @@ public class GameInstance : MonoBehaviour
     }
     private void OnEnable()
     {
-        //Inputs = new InputActions().TopDown;
-        //Inputs.Enable();
+        Inputs = new InputActions().TopDown;
+        Inputs.Enable();
     }
     private void OnDisable()
     {
-        //if (this == _instance)
-            //Inputs.Disable();
+        if (this == _instance)
+            Inputs.Disable();
     }
 
     private void OnGameInstanceStart()

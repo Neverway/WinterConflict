@@ -1,0 +1,49 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
+
+public class Func_TransitionEvent : MonoBehaviour
+{
+    [Tooltip("What kind of screen transition to play when the event is called")]
+    public TransitionEvent_Type type;
+    [Tooltip("How long the transition takes from start to finish (0=Use default transition duration)")]
+    public float duration=0;
+    public UnityEvent OnCallFailed = new UnityEvent();
+    private GI_TransitionManager transitionManager;
+    
+    public enum TransitionEvent_Type
+    {
+        FadeIn, // Fade in from black
+        FadeOut, // Fade out (underground?) to black
+        CutIn, // Cut in from black
+        CutOut, // Cut out to black
+    }
+    
+    public void CallEvent()
+    {
+        if (transitionManager == null)
+        {
+            transitionManager = GameInstance.Get<GI_TransitionManager>();
+        }
+
+        switch (type)
+        {
+            case TransitionEvent_Type.FadeIn:
+                if (duration != 0) transitionManager.Fadein(duration);
+                else transitionManager.Fadein();
+                break;
+            case TransitionEvent_Type.FadeOut:
+                if (duration != 0) transitionManager.Fadeout(duration);
+                else transitionManager.Fadeout();
+                break;
+            case TransitionEvent_Type.CutIn:
+                break;
+            case TransitionEvent_Type.CutOut:
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+    }
+}

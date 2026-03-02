@@ -139,12 +139,13 @@ public class GI_TextboxManager : MonoBehaviour
         if (MoveNext())
         {
             var currentEventFrame = currentTextEvent.frames[currentFrame];
-            StartCoroutine(TypeText(currentEventFrame.chatContent, currentEventFrame.OnFrameCompleted));
+            StartCoroutine(TypeText(currentEventFrame.chatContent, currentEventFrame.OnFrameStarted, currentEventFrame.OnFrameCompleted));
         }
     }
 
-    private IEnumerator TypeText(string _fullTextContent, UnityEvent _onFrameCompleted)
+    private IEnumerator TypeText(string _fullTextContent, UnityEvent _onFrameStarted, UnityEvent _onFrameCompleted)
     {
+        _onFrameStarted.Invoke();
         // Set Displaymode
         textbox.displayMode = currentTextEvent.frames[currentFrame].displayMode;
         
@@ -418,6 +419,7 @@ public class TextFrames
     [TextArea] public string chatContent;
     public Sprite portrait;
     public Char_ChatterVoice chatterVoice;
+    public UnityEvent OnFrameStarted = new UnityEvent();
     public UnityEvent OnFrameCompleted = new UnityEvent();
     [Header("Frame Settings")] 
     public TextboxDisplayMode displayMode;
