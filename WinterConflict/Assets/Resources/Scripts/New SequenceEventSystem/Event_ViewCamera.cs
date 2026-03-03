@@ -19,7 +19,15 @@ public class Event_ViewCamera : Event
         }
         
         // View switch transition
-        if (doNotPlayTransition == false) transitionManager.Fadein(0.2f);
+        if (doNotPlayTransition == false)
+        {
+            transitionManager.Fadecross();
+
+            while (transitionManager.transitionInProgress)
+            {
+                yield return new WaitForEndOfFrame();
+            }
+        }
         
         // Disable original camera
         if (Camera.current)

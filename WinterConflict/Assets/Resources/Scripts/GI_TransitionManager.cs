@@ -21,6 +21,7 @@ public class GI_TransitionManager : MonoBehaviour
 
 
     /*-----[ External Variables ]-------------------------------------------------------------------------------------*/
+    public bool transitionInProgress;
 
 
     /*-----[ Internal Variables ]-------------------------------------------------------------------------------------*/
@@ -55,6 +56,7 @@ public class GI_TransitionManager : MonoBehaviour
     
     private IEnumerator FadeCoroutine(float _duration, Color _startColor, Color _targetColor, float _delay = 0)
     {
+        transitionInProgress = true;
         yield return new WaitForSeconds(_delay);
         SetDrawInFront();
         
@@ -67,6 +69,7 @@ public class GI_TransitionManager : MonoBehaviour
             fadescreen.color = Color.Lerp(_startColor, _targetColor, elapsedTime / _duration);
             yield return null;
         }
+        transitionInProgress = false;
     }
 
     private IEnumerator FadecrossCoroutine(float _duration, float _holdDuration)

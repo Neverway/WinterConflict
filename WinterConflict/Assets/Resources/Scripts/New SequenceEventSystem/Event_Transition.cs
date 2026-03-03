@@ -57,10 +57,13 @@ public class Event_Transition : Event
         {
             yield break;
         }
-        else
+        else if (eventConcludesWhen == EventConcludesWhen.transitionEnds)
         {
-            // Do something where you check if the fade coroutine has completed here
-            Debug.Log("Hey dumdum, you need to make this actually wait!");
+            while (transitionManager.transitionInProgress == true)
+            {
+                yield return new WaitForEndOfFrame();
+            }
+            yield break;
         }
         
     }

@@ -19,7 +19,7 @@ public class GI_AudioManager : MonoBehaviour
     //===========================//
     
     // AudioSource for general sfx
-    AudioSource soundSource;
+    [SerializeField] private AudioSource soundSource;
     /// <summary>
     /// Unique audio source for playing sword slash sounds, so that they will be interruptible.
     /// </summary>
@@ -35,7 +35,6 @@ public class GI_AudioManager : MonoBehaviour
     /// </summary>
     void Start()
     {
-        soundSource = gameObject.GetComponent<AudioSource>();
     }
 
     /// <summary>
