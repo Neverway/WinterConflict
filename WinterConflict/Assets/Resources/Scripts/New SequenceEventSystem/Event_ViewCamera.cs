@@ -10,7 +10,7 @@ public class Event_ViewCamera : Event
     public bool doNotPlayTransition = false;
     private GI_TransitionManager transitionManager;
     
-    public override IEnumerator Call()
+    public override IEnumerator<EventSequence.Instruction> Call()
     {
         // Safety check for reference
         if (transitionManager == null)

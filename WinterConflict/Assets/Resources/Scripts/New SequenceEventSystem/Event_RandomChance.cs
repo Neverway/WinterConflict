@@ -11,7 +11,7 @@ public class Event_RandomChance : Event
     [Tooltip("If the random chance succeeds, the current event sequence will end, and this one will begin")]
     [SerializeField] private EventSequence successSequence;
 
-    public override IEnumerator Call()
+    public override IEnumerator<EventSequence.Instruction> Call()
     {
         if (successSequence == null)
         {
@@ -23,7 +23,7 @@ public class Event_RandomChance : Event
         // Event succeeded, end current sequence
         if (result <= percentChanceToSucceed)
         {
-            GI_EventSequenceManager.GetCurrentEvent().End();
+            GI_EventSequenceManager.GetCurrentEventSequence().End();
             successSequence.Begin();
         }
         // Event failed, continue current sequence

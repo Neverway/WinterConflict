@@ -6,17 +6,15 @@ public class GI_EventSequenceManager : MonoBehaviour
 {
     private static EventSequence currentEventSequence;
     
-    public static void SetCurrentEvent(EventSequence eventSequence)
+    public static void SetCurrentEventSequence(EventSequence eventSequence)
     {
-        if (currentEventSequence)
-        {
+        if (currentEventSequence != null)
             currentEventSequence.End();
-        }
 
         currentEventSequence = eventSequence;
     }
     
-    public static EventSequence GetCurrentEvent()
+    public static EventSequence GetCurrentEventSequence()
     {
         return currentEventSequence;
     }
