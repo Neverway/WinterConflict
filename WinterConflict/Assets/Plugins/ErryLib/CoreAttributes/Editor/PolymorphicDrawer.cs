@@ -109,10 +109,10 @@ public class PolymorphicDrawer : PropertyDrawer
 
         // Create dropdown options from the derived types
         List<string> typeOptions = new List<string> { "--- No Type Selected ---" };
-        typeOptions.AddRange(derivedTypes.Select(t => t.FullName));
+        typeOptions.AddRange(derivedTypes.Select(t => t.Name));
 
         // Get the current type's index in the dropdown
-        int selectedIndex = hasValue ? typeOptions.IndexOf(currentType.FullName) : 0;
+        int selectedIndex = hasValue ? typeOptions.IndexOf(currentType.Name) : 0;
 
         // Draw the dropdown
         position.height = EditorGUIUtility.singleLineHeight;

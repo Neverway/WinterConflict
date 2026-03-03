@@ -13,7 +13,7 @@ public class Event_Audio : Event
     public AudioTransition transition = AudioTransition.None;
     private GI_AudioManager audioManager;
     
-    public override IEnumerator Call()
+    public override IEnumerator<EventSequence.Instruction> Call()
     {
         // Safety check for reference
         if (audioManager == null)

@@ -28,7 +28,7 @@ public class Event_Transition : Event
         CutOut, // Cut out to black
     }
 
-    public override IEnumerator Call()
+    public override IEnumerator<EventSequence.Instruction> Call()
     {
         if (transitionManager == null)
         {

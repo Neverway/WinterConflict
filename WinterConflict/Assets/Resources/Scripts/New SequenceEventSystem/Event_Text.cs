@@ -19,7 +19,7 @@ public class Event_Text : Event
     public TextEvent textEvent;
     private GI_TextboxManager textboxManager;
     
-    public override IEnumerator Call()
+    public override IEnumerator<EventSequence.Instruction> Call()
     {
         if (textboxManager == null)
         {

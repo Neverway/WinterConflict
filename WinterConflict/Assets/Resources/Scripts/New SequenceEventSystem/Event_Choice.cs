@@ -21,7 +21,7 @@ public class Event_Choice : Event
         public UnityEvent OnChoiceSelected;
     }
 
-    public override IEnumerator Call()
+    public override IEnumerator<EventSequence.Instruction> Call()
     {
         StopChoices();
         currentChoices = GameInstance.SendCoroutine(CoWaitForChoice());
