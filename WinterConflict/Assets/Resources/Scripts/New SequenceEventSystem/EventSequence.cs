@@ -19,6 +19,11 @@ public class EventSequence : MonoBehaviour
     /// <summary> Start the sequence of events </summary>
     public void Begin()
     {
+        if (currentEventStack.IsEmptyOrNull())
+        {
+            End();
+        }
+        
         //If the event is already running, something is not right, log error and end event properly
         if (IsRunning)
         {
@@ -67,6 +72,11 @@ public class EventSequence : MonoBehaviour
                 if (!IsRunning || currentEvent == null) break;
             }
         }
+
+        if (currentEventStack.IsEmptyOrNull())
+        {
+            End();
+        }
     }
 
     /// <summary> Stop this sequence of events </summary>
@@ -111,7 +121,7 @@ public class EventSequence : MonoBehaviour
         // On Yield-Returnable Instruction: -----
         //   - Yield Return the instruction itself
         if (instruction is Instruction.IYieldReturnable yieldReturnable)
-            yield return yieldReturnable.ToYieldReturn();
+            yield return yieldReturnable.ToYieldReturn(this);
 
         // On Executeable Instruction: -----
         //   - Restart this current sequence
@@ -127,7 +137,21 @@ public class EventSequence : MonoBehaviour
         public interface IExecuteable { public void DoInstruction(EventSequence sequence); }
 
         //Instructions marked "IYieldReturnable" will be "yield return"ed in the EventSequence
-        public interface IYieldReturnable { public IEnumerator ToYieldReturn(); }
+        public interface IYieldReturnable { public IEnumerator ToYieldReturn(EventSequence sequence); }
+
+        public class MultiInstruction : Instruction, IYieldReturnable
+        {
+            [SerializeReference,Polymorphic] public Instruction[] instructions;
+            public IEnumerator ToYieldReturn(EventSequence sequence)
+            {
+                foreach (var _instruction in instructions)
+                {
+                    //   /\/\
+                    // >('3')<  Thank you for allowing me to live ERRYNEI GOD OF INTERFACES(TM)(C)
+                    yield return sequence.ProcessInstruction(_instruction);
+                }
+            }
+        }
 
 
         //Automagically converts Unity's YieldInstructions (which Unity uses for Coroutines) into an..
@@ -144,7 +168,25 @@ public class EventSequence : MonoBehaviour
             public CoroutineYield(YieldInstruction yieldInstruction) =>
                 this.yieldInstruction = yieldInstruction;
 
-            public IEnumerator ToYieldReturn()
+            public IEnumerator ToYieldReturn(EventSequence sequence)
+            { 
+                yield return yieldInstruction;
+            }
+        }        
+        
+        //
+        /*public static explicit operator Instruction(IEnumerator yieldInstruction) =>
+            new EnumeratorYield(yieldInstruction);*/
+
+        //
+        [Serializable]
+        public class EnumeratorYield : Instruction, IYieldReturnable
+        {
+            public IEnumerator yieldInstruction;
+            public EnumeratorYield(IEnumerator yieldInstruction) =>
+                this.yieldInstruction = yieldInstruction;
+
+            public IEnumerator ToYieldReturn(EventSequence sequence)
             { 
                 yield return yieldInstruction;
             }
@@ -186,10 +228,13 @@ public class EventSequence : MonoBehaviour
         public class WaitForNewEventSequence : Instruction, IYieldReturnable
         {
             public EventSequence newEventSequence;
+            
+            public WaitForNewEventSequence() { }
+            
             public WaitForNewEventSequence(EventSequence newEventSequence) => 
                 this.newEventSequence = newEventSequence;
 
-            public IEnumerator ToYieldReturn()
+            public IEnumerator ToYieldReturn(EventSequence sequence)
             {
                 if (newEventSequence == GI_EventSequenceManager.GetCurrentEventSequence())
                     throw new Exception("EventSequence is already running? Not sure how to handle " +
@@ -218,6 +263,9 @@ public class EventSequence : MonoBehaviour
         public class EndCurrentAndStartNewSequence : Instruction, IExecuteable
         {
             public EventSequence newEventSequence;
+
+            public EndCurrentAndStartNewSequence() { }
+
             public EndCurrentAndStartNewSequence(EventSequence newEventSequence) =>
                 this.newEventSequence = newEventSequence;
 

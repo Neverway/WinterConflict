@@ -9,22 +9,16 @@ public class Event_RandomChance : Event
     [Tooltip("The resulting random number will be between 0 and this")]
     [SerializeField] private float outOf = 100;
     [Tooltip("If the random chance succeeds, the current event sequence will end, and this one will begin")]
-    [SerializeField] private EventSequence successSequence;
+    [SerializeReference,Polymorphic] private EventSequence.Instruction OnSuccess;
 
     public override IEnumerator<EventSequence.Instruction> Call()
     {
-        if (successSequence == null)
-        {
-            Debug.LogError("Event_RandomChance SuccessSequence is null! Skipping it");
-            yield break;
-        }
         
         var result =  Random.Range(0, 100);
         // Event succeeded, end current sequence
         if (result <= percentChanceToSucceed)
         {
-            GI_EventSequenceManager.GetCurrentEventSequence().End();
-            successSequence.Begin();
+            yield return OnSuccess;
         }
         // Event failed, continue current sequence
         else
