@@ -258,7 +258,7 @@ public class EventSequence : MonoBehaviour
             }
         }
 
-        //Pauses the current EventSequence, and continues when new given EventSequence finishes
+        //
         [Serializable]
         public class EndCurrentAndStartNewSequence : Instruction, IExecuteable
         {

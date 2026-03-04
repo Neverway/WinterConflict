@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static EventConditional_CompareValues;
+using static StoryFlagString.CompareFromString;
 
 [CreateAssetMenu(fileName = "New String Flag", menuName = "StoryFlags/String")]
 public class StoryFlagString : StoryFlag<string>, ValueType<string>
@@ -40,14 +42,29 @@ public class StoryFlagString : StoryFlag<string>, ValueType<string>
         }
     }
 
-    //Contains all classes used for comparing the StoryString through Event_StoryFlag_Compare
     [Serializable]
-    public static class CompareString
+    public class CompareFromString : CompareFromType<ValueType<string>, CompareTo_Base>
     {
+        public abstract class CompareTo_Base : CompareTo_StrategyBase<ValueType<string>> { }
+        public abstract class CompareTo<TToValue> : CompareTo_Base
+        {
+            //Second value
+            [SerializeReference, Polymorphic] public TToValue to_Value;
 
+            //Compare-To method to be defined
+            public override bool GetComparisonResult(ValueType<string> from) => GetComparisonResult(from, to_Value);
+            public abstract bool GetComparisonResult(ValueType<string> from, TToValue to);
+        }
+
+
+
+
+        public class IsEqualToString : CompareTo<ValueType<string>>
+        {
+            public override bool GetComparisonResult(ValueType<string> from, ValueType<string> to) =>
+                from == to;
+        }
     }
-
-    
 }
 
 [Serializable]

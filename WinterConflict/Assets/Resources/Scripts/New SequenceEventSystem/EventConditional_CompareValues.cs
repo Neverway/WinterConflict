@@ -10,31 +10,42 @@ public class EventConditional_CompareValues : EventConditional
 
     public override bool GetComparisonResult() => compareFrom.GetComparisonResult();
 
+
+
     //First part of the comparison, just a base, CompareFromType<TFromValue> extends it and defines first value type there
     public abstract class CompareFrom_StrategyBase
     {
         public abstract bool GetComparisonResult();
     }
     //Second part of the comparison, just a base, CompareStrategy<TFromValue, TToValue> extends it and defines comparison types there
-    public abstract class CompareTo_StrategyBase { }
+    public abstract class CompareTo_StrategyBase<TFromValue>
+    {
+        public abstract bool GetComparisonResult(TFromValue from);
+    }
 
 }
 //Defines the first value type to compare, and then asks for what to compare it to
 [Serializable]
-public abstract class CompareFromType<TFromValue> : CompareFrom_StrategyBase where TFromValue : ValueType
+public abstract class CompareFromType<TFromValue, TCompareToBase> : CompareFrom_StrategyBase 
+    where TFromValue : ValueType
+    where TCompareToBase : CompareTo_StrategyBase<TFromValue>
 {
     //First value
     [SerializeReference, Polymorphic] public TFromValue from_Value;
     //Compare-To strategy to use
-    [SerializeReference, Polymorphic] public CompareTo_StrategyBase compareTo;
+    [SerializeReference, Polymorphic] public TCompareToBase compareTo;
+
+    public override bool GetComparisonResult() => compareTo.GetComparisonResult(from_Value);
 }
+
 [Serializable]
-public abstract class CompareStrategy<TFromValue, TToValue> : CompareTo_StrategyBase where TToValue : ValueType
+public abstract class CompareStrategy<TFromValue, TToValue> : CompareTo_StrategyBase<TFromValue> where TToValue : ValueType
 {
     //Second value
     [SerializeReference, Polymorphic] public TToValue to_Value;
 
     //Compare-To method to be defined
+    public override bool GetComparisonResult(TFromValue from) => GetComparisonResult(from, to_Value);
     public abstract bool GetComparisonResult(TFromValue from, TToValue to);
 }
 
@@ -56,7 +67,7 @@ public interface ValueType
 }
 
 //Represents a value of a certain specified type, used to make StoryFlags comparable to non-StoryFlag types for example
-public interface ValueType<T>
+public interface ValueType<T> : ValueType
 {
     public T GetValue();
 }
