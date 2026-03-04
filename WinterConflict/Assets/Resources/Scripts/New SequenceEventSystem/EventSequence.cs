@@ -186,6 +186,8 @@ public class EventSequence : MonoBehaviour
         public class WaitForNewEventSequence : Instruction, IYieldReturnable
         {
             public EventSequence newEventSequence;
+
+            private WaitForNewEventSequence() { }
             public WaitForNewEventSequence(EventSequence newEventSequence) => 
                 this.newEventSequence = newEventSequence;
 
@@ -213,7 +215,7 @@ public class EventSequence : MonoBehaviour
             }
         }
 
-        //Pauses the current EventSequence, and continues when new given EventSequence finishes
+        //
         [Serializable]
         public class EndCurrentAndStartNewSequence : Instruction, IExecuteable
         {
