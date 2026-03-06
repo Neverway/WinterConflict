@@ -18,14 +18,12 @@ public class Event_Choice : Event
     public struct TextChoiceOption
     {
         public string choiceName;
-        public UnityEvent OnChoiceSelected;
+        [SerializeReference,Polymorphic] public EventSequence.Instruction OnChoiceSelected;
     }
 
-    public override IEnumerator<EventSequence.Instruction> Call()
+    /*public override IEnumerator<EventSequence.Instruction> Call()
     {
-        StopChoices();
-        currentChoices = GameInstance.SendCoroutine(CoWaitForChoice());
-        yield return currentChoices;
+        yield return CoWaitForChoice();
     }
     
     /// <summary>
@@ -34,11 +32,13 @@ public class Event_Choice : Event
     public void StopChoices()
     {
         if (currentChoices != null) GameInstance.StopCoroutine(currentChoices);
-    }
-    
-    public IEnumerator CoWaitForChoice()
+    }*/
+
+    public override IEnumerator<EventSequence.Instruction> Call()
     {
-        yield return WB_TextChoice.WaitForChoice(dialogText, allowQuittingMenu, choices.Select(choice => choice.choiceName).ToArray());
+        yield return new EventSequence.Instruction.EnumeratorYield(
+            WB_TextChoice.WaitForChoice(dialogText, allowQuittingMenu, choices.Select(choice => choice.choiceName).ToArray()));
+            
         int choiceIndex = WB_TextChoice.GetLastSelectedChoice();
         if (choiceIndex == -1)
         {
@@ -51,6 +51,6 @@ public class Event_Choice : Event
                            " Maybe multiple text choices running?");
             yield break;
         }
-        choices[choiceIndex].OnChoiceSelected?.Invoke();
+        yield return choices[choiceIndex].OnChoiceSelected;
     }
 }    
