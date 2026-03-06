@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static EventConditional_CompareValues;
+using static If_CompareValues;
 using static StoryFlagString.CompareFromString;
 
 [CreateAssetMenu(fileName = "New String Flag", menuName = "StoryFlags/String")]
