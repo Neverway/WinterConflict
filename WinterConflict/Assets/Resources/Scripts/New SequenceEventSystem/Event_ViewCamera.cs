@@ -32,11 +32,11 @@ public class Event_ViewCamera : Event
         // Disable original camera
         if (Camera.current)
         {
-            Camera.current.enabled = false;
+            Camera.current.gameObject.SetActive(false);
         }
         
         // Enable new camera
-        viewCamera.enabled = true;
+        viewCamera.gameObject.SetActive(true);
         
         // Done
         yield break;
