@@ -29,10 +29,10 @@ public class Debug_RouteTracker : MonoBehaviour
                          "Honest:<color=#ff5500> 0 | 0%<color=#ffffff>\n                \n                " +
                          "Player Deaths: 0\n                " +
                          "Route Fatalities: 0";*/
-        var sum = routeTracker.loneWolf + routeTracker.cooperative;
+        float sum = routeTracker.loneWolf + routeTracker.cooperative;
         primarySlider.minValue = 0;
         primarySlider.maxValue = 1;
-        if (sum > 0) primarySlider.value = routeTracker.loneWolf / sum;
+        if (sum > 0) primarySlider.value = ((float)routeTracker.loneWolf) / sum;
         else primarySlider.value = 0.5f;
 
         var half = routeTracker.primaryNRatioBuffer*0.5f;
@@ -44,8 +44,8 @@ public class Debug_RouteTracker : MonoBehaviour
         bufferMaxSlider.value = 0.5f+half;
 
         route.text = $"Route:<color=#667777> {routeTracker.GetCurrentRoute()}<color=#ffffff>";
-        loneWolfCount.text = $"Lone Wolf: {routeTracker.loneWolf}";
-        cooperativeCount.text = $"Cooperative: {routeTracker.cooperative}";
-        totalCount.text = $"{routeTracker.cooperative+routeTracker.loneWolf}";
+        loneWolfCount.text = $"Lone Wolf: {routeTracker.loneWolf.Value}";
+        cooperativeCount.text = $"Cooperative: {routeTracker.cooperative.Value}";
+        totalCount.text = $"{routeTracker.cooperative+routeTracker.loneWolf.Value}";
     }
 }

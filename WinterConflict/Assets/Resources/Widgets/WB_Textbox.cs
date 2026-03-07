@@ -53,7 +53,8 @@ public class WB_Textbox : MonoBehaviour
                 break;
             case TextboxDisplayMode.dialogue:
                 portraitFrame.enabled = true;
-                portrait.enabled = true;
+                if (portrait.sprite) portrait.enabled = true;
+                else  portrait.enabled = false;
                 name.enabled = true;
                 chat.rectTransform.offsetMin = new Vector2(100, 15);
                 chat.rectTransform.offsetMax = new Vector2(-15, -15);
@@ -69,7 +70,8 @@ public class WB_Textbox : MonoBehaviour
             case TextboxDisplayMode.shopDia:
                 SetDrawInBack();
                 portraitFrame.enabled = true;
-                portrait.enabled = true;
+                if (portrait.sprite) portrait.enabled = true;
+                else  portrait.enabled = false;
                 name.enabled = true;
                 chat.rectTransform.offsetMin = new Vector2(100, 15);
                 chat.rectTransform.offsetMax = new Vector2(-200, -15);

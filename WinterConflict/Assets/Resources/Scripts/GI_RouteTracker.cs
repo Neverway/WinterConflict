@@ -5,9 +5,9 @@ using UnityEngine;
 public class GI_RouteTracker : MonoBehaviour
 {
     public float primaryNRatioBuffer, secondaryNRatioBuffer;
-    public int loneWolf, cooperative;
-    public int trickster, honest;
-    public int playerDeaths, currentFatalities;
+    public StoryFlagInt loneWolf, cooperative;
+    public StoryFlagInt trickster, honest;
+    public StoryFlagInt playerDeaths, currentFatalities;
 
 
     public int GetRoute(int _choicesA, int _choicesB, float _buffer)

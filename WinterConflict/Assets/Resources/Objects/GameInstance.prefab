@@ -144,6 +144,7 @@ GameObject:
   - component: {fileID: 8259195263441566047}
   - component: {fileID: 3132309427480691392}
   - component: {fileID: 3785304517267992595}
+  - component: {fileID: 7030166998521864715}
   m_Layer: 0
   m_Name: GameInstance
   m_TagString: Untagged
@@ -290,6 +291,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb2f5cfdb1c3c87ea8578fffc31b46ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7030166998521864715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367317430761299820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 445fa4e9ea64f87d08de20a3a89f2c93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  primaryNRatioBuffer: 0.1
+  secondaryNRatioBuffer: 0.1
+  loneWolf: {fileID: 11400000, guid: 96290d8be506e4b7e8a897ec6cffdf40, type: 2}
+  cooperative: {fileID: 11400000, guid: 39d5187e34c38e32f8f753d2f524eeb6, type: 2}
+  trickster: {fileID: 11400000, guid: c7a5c6d10cc69b5378696d1befbdfdec, type: 2}
+  honest: {fileID: 11400000, guid: b219b691347b59921af0ac0668de1fdc, type: 2}
+  playerDeaths: {fileID: 11400000, guid: f686f2fe246592b40a460deaa9d3f6ed, type: 2}
+  currentFatalities: {fileID: 11400000, guid: 85f8fa038bbf3b75ea3443f21485f221, type: 2}
 --- !u!1 &1833751476025034288
 GameObject:
   m_ObjectHideFlags: 0
