@@ -13,14 +13,14 @@ public class StoryFlagBool : StoryFlag<bool>
             public BoolValue boolToSet = new(true);
 
             protected override void ApplyTo(StoryFlag<bool> storyFlag) =>
-                storyFlag.Set(boolToSet);
+                storyFlag.Value = boolToSet;
         }
 
         [Serializable]
         public class ToggleBool : ModifyStoryFlagStrategy<bool>
         {
             protected override void ApplyTo(StoryFlag<bool> storyFlag) =>
-                storyFlag.Set(!storyFlag.Value);
+                storyFlag.Value = !storyFlag.Value;
         }
     }
 

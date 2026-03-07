@@ -1,4 +1,3 @@
-using Codice.Client.BaseCommands;
 using ErryLib.Reflection;
 using System;
 using System.Collections;
@@ -192,6 +191,9 @@ public class PolymorphicDrawer : PropertyDrawer
 
     private bool FilterTypes(Type t)
     {
+        if (t.Has_Attribute<HideInPolymorphicListAttribute>(false))
+            return false;
+
         if (listFilterMethod == null)
             return true;
         if (listFilterTargetObject == null)
