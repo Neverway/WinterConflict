@@ -204,10 +204,10 @@ public class PolymorphicDrawer : PropertyDrawer
         }
         catch
         {
-            Debug.Log("Filter Object : " + listFilterTargetObject.ToString());
-            Debug.LogError("Filter Method assigned to Polymorphic Attribute " +
-                "must accept a Type as its only parameter and return a bool. Check method tagged: " +
-                $"\"{polymorphicAttribute.filterMethodReferenceTag}\"");
+            //Debug.Log("Filter Object : " + listFilterTargetObject.ToString());
+            //Debug.LogError("Filter Method assigned to Polymorphic Attribute " +
+            //    "must accept a Type as its only parameter and return a bool. Check method tagged: " +
+            //    $"\"{polymorphicAttribute.filterMethodReferenceTag}\"");
             success = true;
         }
 

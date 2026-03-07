@@ -5,38 +5,38 @@ using UnityEngine;
 public class StoryFlagString : StoryFlag<string>
 {
     //Contains all classes used for modifying the StoryString through Event_StoryFlag_Modify
-    [Serializable]
-    public class ModifyString : ModifyStoryFlagStrategy 
+    public static class ModifyString
     {
-        public StoryFlagString storyFlag;
-        [SerializeReference, Polymorphic] 
-        public ModifyStrategy modifyStrategy;
-
-        public override void Apply()
-        {
-            if (modifyStrategy == null)
-                throw new Exception("No strategy was set for modifying Story Flag on an event");
-
-            modifyStrategy.ApplyTo(storyFlag);
-        }
-
-        [Serializable]
-        public abstract class ModifyStrategy
-        {
-            public abstract void ApplyTo(StoryFlagString storyFlag);
-        }
-
         //Sets StoryFlag to given string
         [Serializable]
-        public class SetTo : ModifyStrategy
+        public class SetStringTo : ModifyStoryFlagStrategy<string>
         {
-            public string newString;
+            public StringValue newString;
 
-            public override void ApplyTo(StoryFlagString storyFlag) => storyFlag.Set(newString);
+            protected override void ApplyTo(StoryFlag<string> storyFlag) => 
+                storyFlag.Set(newString);
+        }
+
+        [Serializable]
+        public class AppendString : ModifyStoryFlagStrategy<string>
+        {
+            public StringValue appendedString;
+
+            protected override void ApplyTo(StoryFlag<string> storyFlag) =>
+                storyFlag.Set($"{storyFlag}{appendedString}");
+        }
+
+        [Serializable]
+        public class PrependString : ModifyStoryFlagStrategy<string>
+        {
+            public StringValue prependedString;
+
+            protected override void ApplyTo(StoryFlag<string> storyFlag) =>
+                storyFlag.Set($"{prependedString}{storyFlag}");
         }
     }
 
-    public class CompareThisString
+    public static class CompareThisString
     {
         [Serializable]
         public class This_Contains_That : CompareStrategy<string, string>
@@ -58,7 +58,7 @@ public class StoryFlagString : StoryFlag<string>
         }
 
         [Serializable]
-        public class This_Has_That_ManyLetters : CompareStrategy<string, int>
+        public class This_Has_That_ManyCharacters : CompareStrategy<string, int>
         {
             public override bool Compare(string _this, int _that) =>
                 _this.Length == _that;
@@ -69,6 +69,9 @@ public class StoryFlagString : StoryFlag<string>
 [Serializable]
 public class StringValue : SomeValue<string>
 {
+    public StringValue() { }
+    public StringValue(string value) => stringValue = new Input(value);
+
     [SerializeReference, Polymorphic] public StringValueType stringValue;
     public override string GetValue() => stringValue.GetValue();
     public override bool HasValue() => stringValue != null;
@@ -78,6 +81,9 @@ public class StringValue : SomeValue<string>
     [Serializable]
     public class Input : StringValueType
     {
+        public Input() { }
+        public Input(string value) => input = value;
+
         public string input;
         public string GetValue() => input;
     }
