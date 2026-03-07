@@ -113,5 +113,8 @@ public abstract class SomeValue<T> : SomeValue
     }
     public abstract T GetValue();
     public override Type GetValueType() => typeof(T);
+
+    public static implicit operator T(SomeValue<T> value) => 
+        value == null ? default : value.GetValue();
     
 }
