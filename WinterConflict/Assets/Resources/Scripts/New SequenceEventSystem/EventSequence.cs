@@ -139,6 +139,11 @@ public class EventSequence : MonoBehaviour
         //Instructions marked "IYieldReturnable" will be "yield return"ed in the EventSequence
         public interface IYieldReturnable { public IEnumerator ToYieldReturn(EventSequence sequence); }
 
+        //Instructions marked "IYieldReturnable" will be "yield return"ed in the EventSequence
+        public interface IContextual { public Context ProvideContext(EventSequence sequence); }
+
+
+        [Serializable]
         public class MultiInstruction : Instruction, IYieldReturnable
         {
             [SerializeReference,Polymorphic] public Instruction[] instructions;
@@ -161,7 +166,7 @@ public class EventSequence : MonoBehaviour
             new CoroutineYield(yieldInstruction);
 
         //Wraps a YieldInstruction into a EventSequence.Instruction to pass to the Coroutine
-        [Serializable]
+        [HideInPolymorphicList]
         public class CoroutineYield : Instruction, IYieldReturnable
         {
             public YieldInstruction yieldInstruction;
@@ -174,21 +179,16 @@ public class EventSequence : MonoBehaviour
             }
         }        
         
-        //
-        /*public static explicit operator Instruction(IEnumerator yieldInstruction) =>
-            new EnumeratorYield(yieldInstruction);*/
-
-        //
-        [Serializable]
+        [HideInPolymorphicList]
         public class EnumeratorYield : Instruction, IYieldReturnable
         {
-            public IEnumerator yieldInstruction;
+            public IEnumerator enumerator;
             public EnumeratorYield(IEnumerator yieldInstruction) =>
-                this.yieldInstruction = yieldInstruction;
+                this.enumerator = yieldInstruction;
 
             public IEnumerator ToYieldReturn(EventSequence sequence)
             { 
-                yield return yieldInstruction;
+                yield return enumerator;
             }
         }
 
@@ -278,5 +278,10 @@ public class EventSequence : MonoBehaviour
                 newEventSequence.Begin();
             }
         }
+    }
+
+    public abstract class Context
+    {
+
     }
 }

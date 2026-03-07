@@ -8,11 +8,6 @@ public class GI_EventSequenceManager : MonoBehaviour
     
     public static void SetCurrentEventSequence(EventSequence eventSequence)
     {
-        /*if (currentEventSequence)
-        {
-            currentEventSequence.End();
-        }*/
-
         currentEventSequence = eventSequence;
     }
     

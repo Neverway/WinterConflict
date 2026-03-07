@@ -13,8 +13,8 @@ public class StoryFlagString : StoryFlag<string>
         {
             public StringValue newString;
 
-            protected override void ApplyTo(StoryFlag<string> storyFlag) => 
-                storyFlag.Set(newString);
+            protected override void ApplyTo(StoryFlag<string> storyFlag) =>
+                storyFlag.Value = newString;
         }
 
         [Serializable]
@@ -23,7 +23,7 @@ public class StoryFlagString : StoryFlag<string>
             public StringValue appendedString;
 
             protected override void ApplyTo(StoryFlag<string> storyFlag) =>
-                storyFlag.Set($"{storyFlag}{appendedString}");
+                storyFlag.Value = $"{storyFlag}{appendedString}";
         }
 
         [Serializable]
@@ -32,7 +32,7 @@ public class StoryFlagString : StoryFlag<string>
             public StringValue prependedString;
 
             protected override void ApplyTo(StoryFlag<string> storyFlag) =>
-                storyFlag.Set($"{prependedString}{storyFlag}");
+                storyFlag.Value = $"{prependedString}{storyFlag}";
         }
     }
 

@@ -216,7 +216,7 @@ namespace ErryLib.Reflection
 
     public static class ReflectionCacheExtensionMethods
     {
-        public static bool HasAttribute<TType>(this MemberInfo member, bool inherit)
+        public static bool Has_Attribute<TType>(this MemberInfo member, bool inherit)
             where TType : Attribute
         {
             //todo: What happens when base type attribute is provided like "Attribute" for TType

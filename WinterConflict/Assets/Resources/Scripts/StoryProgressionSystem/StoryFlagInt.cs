@@ -13,7 +13,7 @@ public class StoryFlagInt : StoryFlag<int>
             public IntValue boolToSet = new(1);
 
             protected override void ApplyTo(StoryFlag<int> storyFlag) =>
-                storyFlag.Set(boolToSet);
+                storyFlag.Value = boolToSet;
         }
 
         [Serializable]
@@ -22,7 +22,7 @@ public class StoryFlagInt : StoryFlag<int>
             public IntValue intToAdd = new(1);
 
             protected override void ApplyTo(StoryFlag<int> storyFlag) =>
-                storyFlag.Set(storyFlag + intToAdd);
+                storyFlag.Value = storyFlag + intToAdd;
         }
 
         [Serializable]
@@ -31,7 +31,7 @@ public class StoryFlagInt : StoryFlag<int>
             public IntValue intToMultiplyBy = new(1);
 
             protected override void ApplyTo(StoryFlag<int> storyFlag) =>
-                storyFlag.Set(storyFlag * intToMultiplyBy);
+                storyFlag.Value = storyFlag * intToMultiplyBy;
         }
     }
 

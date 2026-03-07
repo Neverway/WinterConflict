@@ -30,5 +30,5 @@ public abstract class StoryFlag<T> : StoryFlag
     public override Type GetFlagType() => typeof(T);
 
     public static implicit operator T(StoryFlag<T> storyFlag) => storyFlag._value;
-    public T Set(T newValue) => _value = newValue;
+    protected T Set(T newValue) => _value = newValue;
 }
