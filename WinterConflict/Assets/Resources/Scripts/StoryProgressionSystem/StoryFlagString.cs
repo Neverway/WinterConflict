@@ -1,15 +1,9 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static EventConditional_CompareValues;
-using static StoryFlagString.CompareFromString;
 
 [CreateAssetMenu(fileName = "New String Flag", menuName = "StoryFlags/String")]
-public class StoryFlagString : StoryFlag<string>, ValueType<string>
+public class StoryFlagString : StoryFlag<string>
 {
-    public string GetValue() => Value;
-
     //Contains all classes used for modifying the StoryString through Event_StoryFlag_Modify
     [Serializable]
     public class ModifyString : ModifyStoryFlagStrategy 
@@ -42,40 +36,56 @@ public class StoryFlagString : StoryFlag<string>, ValueType<string>
         }
     }
 
-    [Serializable]
-    public class CompareFromString : CompareFromType<ValueType<string>, CompareTo_Base>
+    public class CompareThisString
     {
-        public abstract class CompareTo_Base : CompareTo_StrategyBase<ValueType<string>> { }
-        public abstract class CompareTo<TToValue> : CompareTo_Base
+        [Serializable]
+        public class This_Contains_That : CompareStrategy<string, string>
         {
-            //Second value
-            [SerializeReference, Polymorphic] public TToValue to_Value;
-
-            //Compare-To method to be defined
-            public override bool GetComparisonResult(ValueType<string> from) => GetComparisonResult(from, to_Value);
-            public abstract bool GetComparisonResult(ValueType<string> from, TToValue to);
+            public override bool Compare(string _this, string _that) =>
+                _this.Contains(_that);
+        }
+        [Serializable]
+        public class This_StartsWith_That : CompareStrategy<string, string>
+        {
+            public override bool Compare(string _this, string _that) =>
+                _this.StartsWith(_that);
+        }
+        [Serializable]
+        public class This_EndsWith_That : CompareStrategy<string, string>
+        {
+            public override bool Compare(string _this, string _that) =>
+                _this.EndsWith(_that);
         }
 
-
-
-
-        public class IsEqualToString : CompareTo<ValueType<string>>
+        [Serializable]
+        public class This_Has_That_ManyLetters : CompareStrategy<string, int>
         {
-            public override bool GetComparisonResult(ValueType<string> from, ValueType<string> to) =>
-                from == to;
+            public override bool Compare(string _this, int _that) =>
+                _this.Length == _that;
         }
     }
 }
 
 [Serializable]
-public class InputStringValue : ValueType<string>
+public class StringValue : SomeValue<string>
 {
-    public string inputString;
-    public string GetValue() => inputString;
-}
-[Serializable]
-public class StoryFlagStringValue : ValueType<string>
-{
-    StoryFlagString storyFlag;
-    public string GetValue() => storyFlag.Value;
+    [SerializeReference, Polymorphic] public StringValueType stringValue;
+    public override string GetValue() => stringValue.GetValue();
+    public override bool HasValue() => stringValue != null;
+
+    public interface StringValueType { public abstract string GetValue(); }
+
+    [Serializable]
+    public class Input : StringValueType
+    {
+        public string input;
+        public string GetValue() => input;
+    }
+
+    [Serializable]
+    public class StoryFlag : StringValueType
+    {
+        public StoryFlagString storyFlag;
+        public string GetValue() => storyFlag.Value;
+    }
 }

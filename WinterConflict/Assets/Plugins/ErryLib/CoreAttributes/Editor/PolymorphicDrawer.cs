@@ -1,3 +1,4 @@
+using Codice.Client.BaseCommands;
 using ErryLib.Reflection;
 using System;
 using System.Collections;
@@ -17,6 +18,9 @@ public class PolymorphicDrawer : PropertyDrawer
     public static GUIStyle popupStyle;
     public static GUIStyle popupStyleIfNull;
     private bool? _drawContentCached;
+    private PolymorphicAttribute polymorphicAttribute;
+    private MethodInfo listFilterMethod;
+    private object listFilterTargetObject;
     public bool drawContent { 
         get 
         { 
@@ -44,6 +48,22 @@ public class PolymorphicDrawer : PropertyDrawer
     {
         EditorGUI.BeginProperty(position, label, property);
 
+        if (attribute is PolymorphicAttribute polyAt)
+        {
+            polymorphicAttribute = polyAt;
+            string tag = polymorphicAttribute.filterMethodReferenceTag;
+
+            if (tag != null 
+                && ReferenceTagAttribute.TryGet(tag, out MethodInfo filterMethod))
+            {
+                listFilterMethod = filterMethod;
+                if (filterMethod.IsStatic)
+                    listFilterTargetObject = null;
+                else
+                    listFilterTargetObject = GetParent(property);
+            }
+        }
+
         //todo: This is bad hotfix to make sure array elements are propertly indented, probably doesnt fully work
         bool doIndent = property.propertyPath.Contains("Array.data[");
         if (doIndent) EditorGUI.indentLevel++; //Also reduce indent at end of property
@@ -56,8 +76,6 @@ public class PolymorphicDrawer : PropertyDrawer
             return;
         }
         bool hasValue = property.managedReferenceValue != null;
-
-
 
         // Get the currently assigned type (if any)
         Type currentType = GetManagedReferenceType(property);
@@ -76,8 +94,6 @@ public class PolymorphicDrawer : PropertyDrawer
             EditorGUI.EndProperty();
             return;
         }
-
-        
 
         List<Type> derivedTypes;
         cachedDerivedTypes.TryGetValue(currentType, out derivedTypes);
@@ -106,6 +122,9 @@ public class PolymorphicDrawer : PropertyDrawer
             popupStyleIfNull.focused.textColor = new Color(.85f, .9f, 0f);
             popupStyleIfNull.fontSize += 2;
         }
+
+        //Filter Derived Types by defined filter method, if a filter method exists
+        derivedTypes = derivedTypes.Where(t => FilterTypes(t)).ToList();
 
         // Create dropdown options from the derived types
         List<string> typeOptions = new List<string> { "--- No Type Selected ---" };
@@ -169,6 +188,30 @@ public class PolymorphicDrawer : PropertyDrawer
             .SelectMany(assembly => assembly.GetTypes())
             .Where(t => baseType.IsAssignableFrom(t) && !t.IsAbstract)
             .ToList();
+    }
+
+    private bool FilterTypes(Type t)
+    {
+        if (listFilterMethod == null)
+            return true;
+        if (listFilterTargetObject == null)
+            return true;
+
+        bool success;
+        try
+        {
+            success = (bool)listFilterMethod.Invoke(listFilterTargetObject, new[] { t });
+        }
+        catch
+        {
+            Debug.Log("Filter Object : " + listFilterTargetObject.ToString());
+            Debug.LogError("Filter Method assigned to Polymorphic Attribute " +
+                "must accept a Type as its only parameter and return a bool. Check method tagged: " +
+                $"\"{polymorphicAttribute.filterMethodReferenceTag}\"");
+            success = true;
+        }
+
+        return success;
     }
 
     private Type GetManagedReferenceType(SerializedProperty property)

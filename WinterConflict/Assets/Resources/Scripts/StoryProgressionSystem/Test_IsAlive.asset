@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6803850289e082b46910c18a5d2de27d, type: 3}
   m_Name: Test_IsAlive
   m_EditorClassIdentifier: 
-  _value: 0
+  _value: 1
   logOnValueChanged: 0
