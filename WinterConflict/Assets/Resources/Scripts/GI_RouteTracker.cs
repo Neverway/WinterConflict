@@ -8,12 +8,11 @@ public class GI_RouteTracker : MonoBehaviour
     public StoryFlagInt loneWolf, cooperative;
     public StoryFlagInt trickster, honest;
     public StoryFlagInt playerDeaths, currentFatalities;
-
-
-    public int GetRoute(int _choicesA, int _choicesB, float _buffer)
+    
+    
+    public int GetRouteIndex(int _choicesA, int _choicesB, float _buffer)
     {
-        int result = 0;
-        
+        var result = 0;
         float buffer = _buffer * 0.5f;
         float primaryTotal = _choicesA + _choicesB;
 
@@ -22,49 +21,60 @@ public class GI_RouteTracker : MonoBehaviour
         if ((_choicesA / primaryTotal) > (0.5+buffer))
         {
             // a route
-            result = 1;
+            result = 0;
         }
         else if ((_choicesB / primaryTotal) > (0.5+buffer))
         {
             // b route
-            result = 2;
+            result = 1;
         }
         else
         {
             // c route
-            result = 3;
+            result = 2;
         }
 
         return result;
     }
     
-    public string GetCurrentRoute()
+    public (Routes.Prim, Routes.Sec) GetRoute()
     {
-        string route = "";
-        switch (GetRoute(loneWolf, cooperative, primaryNRatioBuffer))
-        {
-            case 1:
-                route = "LoneWolf";
-                break;
-            case 2:
-                route = "Cooperative";
-                break;
-            case 3:
-                route = "Mixed";
-                break;
-        }
-        switch (GetRoute(trickster, honest, primaryNRatioBuffer))
-        {
-            case 1:
-                route += "Trickster";
-                break;
-            case 2:
-                route += "Honest";
-                break;
-            case 3:
-                route += "Mixed";
-                break;
-        }
+        var prim = Routes.Prim.Mixed;
+        var sec = Routes.Sec.Mixed;
+        var routePrimIndex = GetRouteIndex(loneWolf, cooperative, primaryNRatioBuffer);
+        var routeSecIndex = GetRouteIndex(trickster, honest, secondaryNRatioBuffer);
+
+        prim = (Routes.Prim)(1<<routePrimIndex);
+        sec = (Routes.Sec)(1<<routeSecIndex);
+        return (prim, sec);
+    }
+    
+    public string GetCurrentRouteAsString()
+    {
+        string[] primRoutes = { "LoneWolf", "Cooperative", "Mixed" };
+        string[] secRoutes = { "Trickster", "Honest", "Mixed" };
+        
+        var route = "";
+        route = primRoutes[GetRouteIndex(loneWolf, cooperative, primaryNRatioBuffer)];
+        route += secRoutes[GetRouteIndex(trickster, honest, primaryNRatioBuffer)];
         return route;
+    }
+}
+
+public static class Routes
+{
+    [System.Flags]
+    public enum Prim
+    {
+        LoneWolf    = 1<<0,
+        Cooperative = 1<<1,
+        Mixed       = 1<<2,
+    }
+    [System.Flags]
+    public enum Sec
+    {
+        Trickster = 1<<0,
+        Honest    = 1<<1,
+        Mixed     = 1<<2,
     }
 }

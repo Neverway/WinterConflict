@@ -43,7 +43,7 @@ public class Debug_RouteTracker : MonoBehaviour
         bufferMaxSlider.maxValue = 1;
         bufferMaxSlider.value = 0.5f+half;
 
-        route.text = $"Route:<color=#667777> {routeTracker.GetCurrentRoute()}<color=#ffffff>";
+        route.text = $"Route:<color=#667777> {routeTracker.GetCurrentRouteAsString()}<color=#ffffff>";
         loneWolfCount.text = $"Lone Wolf: {routeTracker.loneWolf.Value}";
         cooperativeCount.text = $"Cooperative: {routeTracker.cooperative.Value}";
         totalCount.text = $"{routeTracker.cooperative+routeTracker.loneWolf.Value}";
