@@ -17,6 +17,12 @@ public class Portal : MonoBehaviour
 
     private Vector3 screenCenter;
 
+    private void OnDrawGizmos()
+    {
+        if (!pairedPortal) return;
+        Debug.DrawLine(transform.position+(Vector3.up*0.5f), pairedPortal.transform.position, new Color(01f,0.5f,0f,0.5f));
+    }
+
     private void Awake()
     {
         screenCenter = meshRenderer.transform.localPosition;

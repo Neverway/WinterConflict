@@ -27,6 +27,7 @@ public class WB_Textbox : MonoBehaviour
 
 
     /*-----[ Reference Variables ]------------------------------------------------------------------------------------*/
+    public Image portraitFrame;
     public Image portrait;
     public new TMP_Text name;
     public TMP_Text chat;
@@ -44,12 +45,14 @@ public class WB_Textbox : MonoBehaviour
         switch (displayMode)
         {
             case TextboxDisplayMode.monologue:
+                portraitFrame.enabled = false;
                 portrait.enabled = false;
                 name.enabled = false;
                 chat.rectTransform.offsetMin = new Vector2(15, 15);
                 chat.rectTransform.offsetMax = new Vector2(-15, -15);
                 break;
             case TextboxDisplayMode.dialogue:
+                portraitFrame.enabled = true;
                 portrait.enabled = true;
                 name.enabled = true;
                 chat.rectTransform.offsetMin = new Vector2(100, 15);
@@ -57,6 +60,7 @@ public class WB_Textbox : MonoBehaviour
                 break;
             case TextboxDisplayMode.shopMono:
                 SetDrawInBack();
+                portraitFrame.enabled = false;
                 portrait.enabled = false;
                 name.enabled = false;
                 chat.rectTransform.offsetMin = new Vector2(15, 15);
@@ -64,6 +68,7 @@ public class WB_Textbox : MonoBehaviour
                 break;
             case TextboxDisplayMode.shopDia:
                 SetDrawInBack();
+                portraitFrame.enabled = true;
                 portrait.enabled = true;
                 name.enabled = true;
                 chat.rectTransform.offsetMin = new Vector2(100, 15);
@@ -71,6 +76,7 @@ public class WB_Textbox : MonoBehaviour
                 break;
             case TextboxDisplayMode.centered:
                 SetDrawInBack();
+                portraitFrame.enabled = false;
                 portrait.enabled = false;
                 name.enabled = false;
                 chat.rectTransform.offsetMin = new Vector2(200, 15);

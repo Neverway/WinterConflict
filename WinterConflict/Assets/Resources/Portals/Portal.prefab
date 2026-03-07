@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pairedPortal: {fileID: 0}
   portalCam: {fileID: 6798632687885885529}
-  recursionLimit: 4
+  recursionLimit: 2
   meshRenderer: {fileID: 8149555590989628601}
 --- !u!1 &2506349138386206509
 GameObject:
