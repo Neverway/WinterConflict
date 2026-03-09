@@ -24,7 +24,7 @@ public class WidgetNavigator : MonoBehaviour
     public bool activelyNavigating;
     [Tooltip("Which directional inputs to use to navigate the menu")]
     [SerializeField] private NavigationMode navigationMode;
-    private enum NavigationMode { Vertical, Horizontal }
+    private enum NavigationMode { Vertical, Horizontal, Cross }
     [Tooltip("If enabled, stops pressing right from activating the menu item (for the inspect menu mainly)")]
     [SerializeField] private bool pressingRightDoesNotTryNavigate = true;
     [Tooltip("If enabled, reaching either end of the button list will wrap back around when navigating")]
@@ -118,6 +118,33 @@ public class WidgetNavigator : MonoBehaviour
                 MoveIndexSelection(GameInstance.Inputs.MoveRight, 1);
                 if (GameInstance.Inputs.MoveUp.WasPressedThisFrame()) AdjacentNavigation(true);
                 if (GameInstance.Inputs.MoveDown.WasPressedThisFrame()) AdjacentNavigation(false);
+                break;
+            case NavigationMode.Cross:
+                if (GameInstance.Inputs.MoveUp.IsPressed() && !selectableElements[1].disableInteraction)
+                {
+                    currentIndex = 1;
+                    SetElementStates();
+                }
+                else if (GameInstance.Inputs.MoveDown.IsPressed() && !selectableElements[2].disableInteraction)
+                {
+                    currentIndex = 2;
+                    SetElementStates();
+                }
+                else if (GameInstance.Inputs.MoveRight.IsPressed() && !selectableElements[3].disableInteraction)
+                {
+                    currentIndex = 3;
+                    SetElementStates();
+                }
+                else if (GameInstance.Inputs.MoveLeft.IsPressed() && !selectableElements[4].disableInteraction)
+                {
+                    currentIndex = 4;
+                    SetElementStates();
+                }
+                else
+                {
+                    currentIndex = 0;
+                    SetElementStates();
+                }
                 break;
         }
 

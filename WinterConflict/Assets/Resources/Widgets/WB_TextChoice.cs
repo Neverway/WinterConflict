@@ -3,35 +3,78 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WB_TextChoice : MonoBehaviour
 {
-    public WidgetNavigator optionNavigator;
-    public Transform widgetContents;
+    [Header("References")]
+    [Tooltip("The template widget for a choice")]
     public WidgetSelectable_TMPText textChoiceTemplate;
-    public TextMeshProUGUI dialogText;
 
+    public WidgetSelectable_TMPText selectableNeutralChoice;
+    public WidgetSelectable_TMPText[] selectableTextChoices;
+    [Tooltip("The widget navigator for the choices the player can select")]
+    public WidgetNavigator choiceNavigator;
+    [Tooltip("Used to set the question the player is prompted with")]
+    public TextMeshProUGUI dialogText;
+    [Tooltip("The root of the time limit object so we can hide or show it based on if this is a timed choice")]
+    public GameObject timeLimitObject;
+    [Tooltip("The progress bars for the time remaining (It's an array of them so I can mirror one and set both to make it shrink inwards)")]
+    public Image[] timeLimitProgressBars;
+    
+    [Tooltip("I have no idea, I think this was for actually checking what option the player selected")]
     [Reload] private static int lastSelectedChoice;
 
     public void SetupChoices(string dialog, string[] choices)
     {
         dialogText.text = dialog;
-        optionNavigator.selectableElements.Clear();
+        
+        // This old code is for setting the choices dynamically, WiCo doesn't use this, so I am gonna set it on fire
+        /*
+         /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ <<< This is fire
+        choiceNavigator.selectableElements.Clear();
         for (int i = 0; i < choices.Length; i++)
         {
-            var textChoice = Instantiate(textChoiceTemplate, optionNavigator.transform, false);
+            var textChoice = Instantiate(textChoiceTemplate, choiceNavigator.transform, false);
             textChoice.gameObject.SetActive(true);
             textChoice.SetText(choices[i]);
             textChoice.SetSelected(i == 0); //select first index
             int choiceToSelect = i;
             textChoice.OnInteracted.AddListener(() => lastSelectedChoice = choiceToSelect);
-            optionNavigator.selectableElements.Add(textChoice);
+            choiceNavigator.selectableElements.Add(textChoice);
+        }*/
+
+        //choiceNavigator.selectableElements.Clear(); // Clear any old data
+        //choiceNavigator.selectableElements.Add(neutralChoice);
+        // Select the first element in the list
+        //choiceNavigator.selectableElements[0].SetSelected(true);
+
+        choiceNavigator.SetIsNavigating(true);
+        
+        for (int i = 0; i < 4; i++)
+        {
+            var thisSelectableChoice = selectableTextChoices[i];
+            thisSelectableChoice.OnInteracted.RemoveAllListeners();
+            if (choices.IsIndexInRange(i))
+            {
+                thisSelectableChoice.disableInteraction = false;
+                thisSelectableChoice.SetText(choices[i]);
+                int choiceToSelect = i; // This is needed to avoid 'i' being set to 4 (Errynei tells me it's to do with lamba witchcraft)
+                thisSelectableChoice.OnInteracted.AddListener(() => lastSelectedChoice = choiceToSelect);
+            }
+            else
+            {
+                thisSelectableChoice.disableInteraction = true;
+                thisSelectableChoice.SetText("");
+            }
         }
-        widgetContents.gameObject.SetActive(true);
-        optionNavigator.SetIsNavigating(true);
+        
+        choiceNavigator.SetIsNavigating(true);
     }
+    
     public static IEnumerator WaitForChoice(string dialog, params string[] choices) 
         => WaitForChoice(dialog, false, choices);
+    
     public static IEnumerator WaitForChoice(string dialog, bool allowQuittingMenu, params string[] choices)
     {
         lastSelectedChoice = -1;
@@ -46,9 +89,6 @@ public class WB_TextChoice : MonoBehaviour
             Debug.LogError("Trying to display textchoice but was unable to add or get the widget");
             yield break;
         }
-        //Freeze player
-        //bool wasPlayerFrozen = GameInstance.Playerbody.freezeCharacterMovement;
-        //GameInstance.Playerbody.freezeCharacterMovement = true;
 
         textChoiceManager.SetupChoices(dialog, choices); //Setup widget
 
@@ -63,7 +103,6 @@ public class WB_TextChoice : MonoBehaviour
         }
 
         Destroy(textChoiceManager.gameObject); //Get rid of widget
-        //GameInstance.Playerbody.freezeCharacterMovement = wasPlayerFrozen;
         yield return null;
     }
 

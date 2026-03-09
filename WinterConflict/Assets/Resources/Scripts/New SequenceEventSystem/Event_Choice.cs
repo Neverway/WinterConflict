@@ -8,10 +8,20 @@ using UnityEngine.Events;
 [Serializable]
 public class Event_Choice : Event
 {
+    [Tooltip("The prompt the player is presented with")]
     [TextArea] public string dialogText;
-    public bool allowQuittingMenu = false;
-    public UnityEvent onQuitMenu = new UnityEvent();
+    [Tooltip("The choices going North, South, East, West")]
     public TextChoiceOption[] choices;
+    [Tooltip("How long the player has to respond before the game auto selects (0 is infinite time)")]
+    public float duration;
+    
+    // This stuff isn't needed for WiCo
+    [Tooltip("Whether the player can just close out of the choice box")]
+    [HideInInspector] public bool allowQuittingMenu = false;
+    [Tooltip("Fired when the player closed out of the choice box prematurely")]
+    [HideInInspector] public UnityEvent onQuitMenu = new UnityEvent();
+    
+    // I dunno
     private Coroutine currentChoices;
 
     [Serializable]
@@ -20,19 +30,6 @@ public class Event_Choice : Event
         public string choiceName;
         [SerializeReference,Polymorphic] public EventSequence.Instruction OnChoiceSelected;
     }
-
-    /*public override IEnumerator<EventSequence.Instruction> Call()
-    {
-        yield return CoWaitForChoice();
-    }
-    
-    /// <summary>
-    /// Cancel any current choice selection
-    /// </summary>
-    public void StopChoices()
-    {
-        if (currentChoices != null) GameInstance.StopCoroutine(currentChoices);
-    }*/
 
     public override IEnumerator<EventSequence.Instruction> Call()
     {
@@ -45,6 +42,8 @@ public class Event_Choice : Event
             if (allowQuittingMenu) onQuitMenu?.Invoke();
             yield break;
         }
+        Debug.Log(choiceIndex);
+        Debug.Log(choices[choiceIndex]);
         if (choices.IsIndexOutOfRange(choiceIndex))
         {
             Debug.LogError("Text Choice was out of range somehow? There must be a bug in the text choice code." +
