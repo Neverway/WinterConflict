@@ -60,6 +60,8 @@ public class BoolValue : SomeValue<bool>
     public override bool GetValue() => boolValue.GetValue();
     public override bool HasValue() => boolValue != null;
 
+    public static implicit operator BoolValue(bool value) => new BoolValue(value);
+
     public interface BoolValueType { public abstract bool GetValue(); }
 
     [Serializable]
