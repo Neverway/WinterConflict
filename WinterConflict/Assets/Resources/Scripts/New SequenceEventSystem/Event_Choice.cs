@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [Serializable]
-public class Event_Choice : Event
+public class Event_Choice : Event, IReferenceEventSequence
 {
     [Tooltip("The prompt the player is presented with")]
     [TextArea] public string dialogText;
@@ -51,5 +51,15 @@ public class Event_Choice : Event
             yield break;
         }
         yield return choices[choiceIndex].OnChoiceSelected;
+    }
+
+    public EventSequence[] GetConnectedEventSequences()
+    {
+        return choices
+            .Select(choice => choice.OnChoiceSelected)
+            .OfType<IReferenceEventSequence>()
+            .SelectMany((e) => e.GetConnectedEventSequences())
+            .Where((e) => e != null)
+            .ToArray();
     }
 }    

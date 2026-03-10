@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -15,6 +16,39 @@ public class EventSequence : MonoBehaviour
     private bool IsRunning => currentEventStack != null;
     private Stack<Event> currentEventStack = new Stack<Event>();
     private Event currentEvent;
+
+    public void OnDrawGizmos()
+    {
+        var referencedEventSequences =
+            events.OfType<IReferenceEventSequence>()
+                .SelectMany((e) => e.GetConnectedEventSequences())
+                .Where((e) => e != null);
+
+        foreach (var referencedEventSequence in referencedEventSequences)
+        {
+            Vector3 pos = transform.position;
+            Vector3 dir = referencedEventSequence.transform.position - pos;
+            dir = dir.normalized * (dir.magnitude * 0.8f);
+            
+            Gizmos.color = new Color(1,1,1,0.25f);
+            Gizmos.DrawLine(pos, pos+dir);
+            DrawArrowHead(pos+dir, dir);
+            dir *= 0.6f;
+            DrawArrowHead(pos+dir, dir);
+        }
+    }
+
+    public void DrawArrowHead(Vector3 pos, Vector3 dir)
+    {
+        dir = dir.normalized*-0.1f;
+        Vector3 a = Quaternion.AngleAxis(-30, Vector3.forward) * dir;
+        Vector3 b = Quaternion.AngleAxis(30, Vector3.forward) * dir;
+        
+        
+        Gizmos.DrawLine(pos, pos+a);
+        Gizmos.DrawLine(pos, pos+b);
+        Gizmos.DrawLine(pos+a, pos+b);
+    }
 
     /// <summary> Start the sequence of events </summary>
     public void Begin()
@@ -144,7 +178,7 @@ public class EventSequence : MonoBehaviour
 
 
         [Serializable]
-        public class MultiInstruction : Instruction, IYieldReturnable
+        public class MultiInstruction : Instruction, IYieldReturnable, IReferenceEventSequence
         {
             [SerializeReference,Polymorphic] public Instruction[] instructions;
             public IEnumerator ToYieldReturn(EventSequence sequence)
@@ -155,6 +189,15 @@ public class EventSequence : MonoBehaviour
                     // >('3')<  Thank you for allowing me to live ERRYNEI GOD OF INTERFACES(TM)(C)
                     yield return sequence.ProcessInstruction(_instruction);
                 }
+            }
+
+            public EventSequence[] GetConnectedEventSequences()
+            {
+                if (instructions == null) return Array.Empty<EventSequence>();
+                return instructions
+                    .OfType<IReferenceEventSequence>()
+                    .SelectMany((i) => i.GetConnectedEventSequences())
+                    .ToArray();
             }
         }
 
@@ -238,7 +281,7 @@ public class EventSequence : MonoBehaviour
 
         //Pauses the current EventSequence, and continues when new given EventSequence finishes
         [Serializable]
-        public class WaitForNewEventSequence : Instruction, IYieldReturnable
+        public class WaitForNewEventSequence : Instruction, IYieldReturnable, IReferenceEventSequence
         {
             public EventSequence newEventSequence;
             
@@ -269,11 +312,16 @@ public class EventSequence : MonoBehaviour
                 //Resume the old EventSequence
                 GI_EventSequenceManager.SetCurrentEventSequence(oldSequence);
             }
+
+            public EventSequence[] GetConnectedEventSequences()
+            {
+                return new EventSequence[] { newEventSequence };
+            }
         }
 
         //
         [Serializable]
-        public class EndCurrentAndStartNewSequence : Instruction, IExecuteable
+        public class EndCurrentAndStartNewSequence : Instruction, IExecuteable, IReferenceEventSequence
         {
             public EventSequence newEventSequence;
 
@@ -290,6 +338,14 @@ public class EventSequence : MonoBehaviour
                 //Start the new EventSequence
                 newEventSequence.Begin();
             }
+
+            public EventSequence[] GetConnectedEventSequences()
+            {
+                return new EventSequence[] { newEventSequence };
+            }
         }
     }
 }
+
+        
+public interface IReferenceEventSequence { public EventSequence[] GetConnectedEventSequences(); }
