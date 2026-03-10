@@ -70,6 +70,8 @@ public class IntValue : SomeValue<int>
     public override int GetValue() => intValue.GetValue();
     public override bool HasValue() => intValue != null;
 
+    public static implicit operator IntValue(int value) => new IntValue(value);
+
     public interface IntValueType { public abstract int GetValue(); }
 
     [Serializable]

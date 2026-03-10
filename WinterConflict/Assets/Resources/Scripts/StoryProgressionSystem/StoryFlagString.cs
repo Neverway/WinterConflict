@@ -76,6 +76,8 @@ public class StringValue : SomeValue<string>
     public override string GetValue() => stringValue.GetValue();
     public override bool HasValue() => stringValue != null;
 
+    public static implicit operator StringValue(string value) => new StringValue(value);
+
     public interface StringValueType { public abstract string GetValue(); }
 
     [Serializable]

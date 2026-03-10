@@ -140,7 +140,7 @@ public class EventSequence : MonoBehaviour
         public interface IYieldReturnable { public IEnumerator ToYieldReturn(EventSequence sequence); }
 
         //Instructions marked "IYieldReturnable" will be "yield return"ed in the EventSequence
-        public interface IContextual { public Context ProvideContext(EventSequence sequence); }
+        //public interface IContextual { public Context ProvideContext(EventSequence sequence); }
 
 
         [Serializable]
@@ -218,6 +218,19 @@ public class EventSequence : MonoBehaviour
             }
         }
 
+        //Restarts the currentEvent from the beginning
+        [Serializable]
+        public class SkipNextEventInSequence : Instruction, IExecuteable
+        {
+            public IntValue numberOfEventsToSkip = 1;
+            public void DoInstruction(EventSequence sequence)
+            {
+                //Push current event back onto the stack
+                sequence.currentEventStack.Push(sequence.currentEvent);
+                sequence.EndCurrentEvent();
+            }
+        }
+
 
         //Automagically converts an EventSequence into an instruction that waits for that EventSequence to finish
         public static implicit operator Instruction(EventSequence eventSequence) =>
@@ -278,10 +291,5 @@ public class EventSequence : MonoBehaviour
                 newEventSequence.Begin();
             }
         }
-    }
-
-    public abstract class Context
-    {
-
     }
 }
