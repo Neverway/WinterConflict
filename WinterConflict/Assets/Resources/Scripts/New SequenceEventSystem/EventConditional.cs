@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 [Serializable]
-public abstract class EventConditional : Event, IReferenceEventSequence
+public abstract class EventConditional : Event, IHasEventConnections
 {
     [SerializeReference, Polymorphic] public EventSequence.Instruction OnSucceed;
     [SerializeReference, Polymorphic] public EventSequence.Instruction OnFail;
@@ -20,13 +19,7 @@ public abstract class EventConditional : Event, IReferenceEventSequence
     }
 
     public abstract bool GetComparisonResult();
-    public EventSequence[] GetConnectedEventSequences()
-    {
-        var yorm = new EventSequence.Instruction[] { OnSucceed, OnFail };
-        return yorm
-            .OfType<IReferenceEventSequence>()
-            .SelectMany((e) => e.GetConnectedEventSequences())
-            .Where((e) => e != null)
-            .ToArray();
-    }
+
+    public EventConnection[] GetEventConnections(EventSequence source) =>
+        new[] { OnSucceed, OnFail }.GetEventConnections(source);
 }

@@ -1,9 +1,7 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Event_Instruction : Event, IReferenceEventSequence
+public class Event_Instruction : Event, IHasEventConnections
 {
     [SerializeReference, Polymorphic] public EventSequence.Instruction instruction;
 
@@ -12,16 +10,6 @@ public class Event_Instruction : Event, IReferenceEventSequence
         yield return instruction;
     }
 
-    public EventSequence[] GetConnectedEventSequences()
-    {
-        if (instruction == null) return Array.Empty<EventSequence>();
-        if (instruction is IReferenceEventSequence referenceInstruction)
-        {
-            return referenceInstruction.GetConnectedEventSequences();
-        }
-        else
-        {
-            return Array.Empty<EventSequence>();
-        }
-    }
+    public EventConnection[] GetEventConnections(EventSequence source) => 
+        instruction.GetEventConnections(source);
 }

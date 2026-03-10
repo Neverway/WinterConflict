@@ -2,8 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
+using static EventSequence.Instruction;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class EventSequence : MonoBehaviour
 {
@@ -19,36 +22,10 @@ public class EventSequence : MonoBehaviour
 
     public void OnDrawGizmos()
     {
-        var referencedEventSequences =
-            events.OfType<IReferenceEventSequence>()
-                .SelectMany((e) => e.GetConnectedEventSequences())
-                .Where((e) => e != null);
-
-        foreach (var referencedEventSequence in referencedEventSequences)
-        {
-            Vector3 pos = transform.position;
-            Vector3 dir = referencedEventSequence.transform.position - pos;
-            dir = dir.normalized * (dir.magnitude * 0.8f);
-            
-            Gizmos.color = new Color(1,1,1,0.25f);
-            Gizmos.DrawLine(pos, pos+dir);
-            DrawArrowHead(pos+dir, dir);
-            dir *= 0.6f;
-            DrawArrowHead(pos+dir, dir);
-        }
+        foreach (EventConnection connection in events.GetEventConnections(this))
+            connection.GizmosDrawConnection();
     }
 
-    public void DrawArrowHead(Vector3 pos, Vector3 dir)
-    {
-        dir = dir.normalized*-0.1f;
-        Vector3 a = Quaternion.AngleAxis(-30, Vector3.forward) * dir;
-        Vector3 b = Quaternion.AngleAxis(30, Vector3.forward) * dir;
-        
-        
-        Gizmos.DrawLine(pos, pos+a);
-        Gizmos.DrawLine(pos, pos+b);
-        Gizmos.DrawLine(pos+a, pos+b);
-    }
 
     /// <summary> Start the sequence of events </summary>
     public void Begin()
@@ -154,12 +131,12 @@ public class EventSequence : MonoBehaviour
 
         // On Yield-Returnable Instruction: -----
         //   - Yield Return the instruction itself
-        if (instruction is Instruction.IYieldReturnable yieldReturnable)
+        if (instruction is IYieldReturnable yieldReturnable)
             yield return yieldReturnable.ToYieldReturn(this);
 
         // On Executeable Instruction: -----
         //   - Restart this current sequence
-        if (instruction is Instruction.IExecuteable executable)
+        if (instruction is IExecuteable executable)
             executable.DoInstruction(this);
     }
 
@@ -178,7 +155,7 @@ public class EventSequence : MonoBehaviour
 
 
         [Serializable]
-        public class MultiInstruction : Instruction, IYieldReturnable, IReferenceEventSequence
+        public class MultiInstruction : Instruction, IYieldReturnable, IHasEventConnections
         {
             [SerializeReference,Polymorphic] public Instruction[] instructions;
             public IEnumerator ToYieldReturn(EventSequence sequence)
@@ -191,12 +168,12 @@ public class EventSequence : MonoBehaviour
                 }
             }
 
-            public EventSequence[] GetConnectedEventSequences()
+            public EventConnection[] GetEventConnections(EventSequence source)
             {
-                if (instructions == null) return Array.Empty<EventSequence>();
+                if (instructions == null) return EventConnection.None;
                 return instructions
-                    .OfType<IReferenceEventSequence>()
-                    .SelectMany((i) => i.GetConnectedEventSequences())
+                    .OfType<IHasEventConnections>()
+                    .SelectMany((i) => i.GetEventConnections(source))
                     .ToArray();
             }
         }
@@ -281,7 +258,7 @@ public class EventSequence : MonoBehaviour
 
         //Pauses the current EventSequence, and continues when new given EventSequence finishes
         [Serializable]
-        public class WaitForNewEventSequence : Instruction, IYieldReturnable, IReferenceEventSequence
+        public class WaitForNewEventSequence : Instruction, IYieldReturnable, IHasEventConnections
         {
             public EventSequence newEventSequence;
             
@@ -313,15 +290,13 @@ public class EventSequence : MonoBehaviour
                 GI_EventSequenceManager.SetCurrentEventSequence(oldSequence);
             }
 
-            public EventSequence[] GetConnectedEventSequences()
-            {
-                return new EventSequence[] { newEventSequence };
-            }
+            public EventConnection[] GetEventConnections(EventSequence source) =>
+                new WaitForNew_EventConnection(source, newEventSequence);
         }
 
-        //
+        //Ends the current EventSequence immediately, and starts the new given EventSequence
         [Serializable]
-        public class EndCurrentAndStartNewSequence : Instruction, IExecuteable, IReferenceEventSequence
+        public class EndCurrentAndStartNewSequence : Instruction, IExecuteable, IHasEventConnections
         {
             public EventSequence newEventSequence;
 
@@ -339,13 +314,87 @@ public class EventSequence : MonoBehaviour
                 newEventSequence.Begin();
             }
 
-            public EventSequence[] GetConnectedEventSequences()
-            {
-                return new EventSequence[] { newEventSequence };
-            }
+            public EventConnection[] GetEventConnections(EventSequence source) =>
+                new EventConnection(source, newEventSequence);
         }
     }
 }
 
         
-public interface IReferenceEventSequence { public EventSequence[] GetConnectedEventSequences(); }
+public interface IHasEventConnections { public EventConnection[] GetEventConnections(EventSequence source); }
+
+public class EventConnection
+{
+    public EventSequence from;
+    public EventSequence to;
+    public static EventConnection[] None => new EventConnection[0];
+    public EventConnection(EventSequence from, EventSequence to)
+    {
+        this.from = from;
+        this.to = to;
+    }
+    
+    public virtual void GizmosDrawConnection()
+    {
+        if (from == null || to == null) return;
+
+        Vector3 pos = from.transform.position;
+        Vector3 dir = to.transform.position - pos;
+        dir = dir.normalized * (dir.magnitude * 0.8f);
+
+        Gizmos.color = GizmosGetArrowColor();
+        Gizmos.DrawLine(pos, pos + dir);
+        GizmosDrawArrowHead(pos + dir, dir);
+        dir *= 0.6f;
+        GizmosDrawArrowHead(pos + dir, dir);
+    }
+    protected virtual Color GizmosGetArrowColor() => new Color(1, 1, 1, 0.25f);
+    protected void GizmosDrawArrowHead(Vector3 pos, Vector3 dir)
+    {
+        Vector3 cameraDirection = SceneView.lastActiveSceneView.camera.transform.forward;
+
+        dir = dir.normalized * -0.1f;
+        Vector3 a = Quaternion.AngleAxis(-30, cameraDirection) * dir;
+        Vector3 b = Quaternion.AngleAxis(30, cameraDirection) * dir;
+
+        Gizmos.DrawLine(pos, pos + a);
+        Gizmos.DrawLine(pos, pos + b);
+        Gizmos.DrawLine(pos + a, pos + b);
+    }
+
+    public static implicit operator EventConnection[](EventConnection singleConnection) =>
+            new EventConnection[] { singleConnection };
+}
+
+public class WaitForNew_EventConnection : EventConnection
+{
+    public WaitForNew_EventConnection(EventSequence from, EventSequence to) : base(from, to) { }
+
+    public override void GizmosDrawConnection()
+    {
+        base.GizmosDrawConnection();
+        SwapConnectionDirection();
+        base.GizmosDrawConnection();
+    }
+    private void SwapConnectionDirection()
+    {
+        EventSequence stored = from;
+        from = to;
+        to = stored;
+    }
+    protected override Color GizmosGetArrowColor() => new Color(0, 1, 1, 0.25f);
+}
+
+public static class EventConnectionExtensionMethods
+{
+    public static EventConnection[] GetEventConnections(this IEnumerable<Event> array, EventSequence source) =>
+        array.OfType<IHasEventConnections>().GetEventConnections(source);
+    public static EventConnection[] GetEventConnections(this Event single, EventSequence source) =>
+    single.GetEventConnections(source);
+    public static EventConnection[] GetEventConnections(this IEnumerable<EventSequence.Instruction> array, EventSequence source) =>
+        array.OfType<IHasEventConnections>().GetEventConnections(source);
+    public static EventConnection[] GetEventConnections(this EventSequence.Instruction single, EventSequence source) =>
+        single is IHasEventConnections singleCasted ? singleCasted.GetEventConnections(source) : EventConnection.None;
+    public static EventConnection[] GetEventConnections(this IEnumerable<IHasEventConnections> array, EventSequence source) =>
+        array.SelectMany(i => i.GetEventConnections(source)).ToArray();
+}
