@@ -1,0 +1,193 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6817170711523015062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46efb415d10aefd4bad1ad6b99e7864e, type: 3}
+  m_Name: Errynei X
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -296, y: -504}
+  ports:
+    keys:
+    - someInput
+    - someOutput
+    values:
+    - _fieldName: someInput
+      _node: {fileID: -6817170711523015062}
+      _typeQualifiedName: ErryneiXNode+SomeClass, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: someOutput
+      _node: {fileID: -6817170711523015062}
+      _typeQualifiedName: ErryneiXNode+SomeClass, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  someInput:
+    x: 3
+    y: 2
+  someOutput:
+    x: 0
+    y: 0
+--- !u!114 &-3628651538341131455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Errynei X Node 2
+  m_EditorClassIdentifier: Assembly-CSharp::ErryneiXNode2
+  graph: {fileID: 11400000}
+  position: {x: -88, y: -232}
+  ports:
+    keys:
+    - someInput
+    - someOutput
+    values:
+    - _fieldName: someInput
+      _node: {fileID: -3628651538341131455}
+      _typeQualifiedName: ErryneiXNode+SomeClass, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: someOutput
+      _node: {fileID: -3628651538341131455}
+      _typeQualifiedName: ErryneiXNode+SomeClass, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  someInput:
+    x: 0
+    y: 0
+  someOutput:
+    x: 0
+    y: 0
+  otherField: 
+  obj: {fileID: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1add8bcb8a46bf46aecc4790f6cadcd, type: 3}
+  m_Name: New Errynei X Graph
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -6817170711523015062}
+  - {fileID: 1049118943304970901}
+  - {fileID: 3437928574239563113}
+  - {fileID: -3628651538341131455}
+--- !u!114 &1049118943304970901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46efb415d10aefd4bad1ad6b99e7864e, type: 3}
+  m_Name: Errynei X
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -488, y: -216}
+  ports:
+    keys:
+    - someInput
+    - someOutput
+    values:
+    - _fieldName: someInput
+      _node: {fileID: 1049118943304970901}
+      _typeQualifiedName: ErryneiXNode+SomeClass, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: someOutput
+      _node: {fileID: 1049118943304970901}
+      _typeQualifiedName: ErryneiXNode+SomeClass, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  someInput:
+    x: 0
+    y: 0
+  someOutput:
+    x: 0
+    y: 0
+--- !u!114 &3437928574239563113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46efb415d10aefd4bad1ad6b99e7864e, type: 3}
+  m_Name: Errynei X
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -296, y: 24}
+  ports:
+    keys:
+    - someInput
+    - someOutput
+    values:
+    - _fieldName: someInput
+      _node: {fileID: 3437928574239563113}
+      _typeQualifiedName: ErryneiXNode+SomeClass, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: someOutput
+      _node: {fileID: 3437928574239563113}
+      _typeQualifiedName: ErryneiXNode+SomeClass, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  someInput:
+    x: 0
+    y: 0
+  someOutput:
+    x: 0
+    y: 0

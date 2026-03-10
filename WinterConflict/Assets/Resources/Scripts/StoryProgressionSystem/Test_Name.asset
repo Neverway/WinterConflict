@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e35fd00f3ef89094284e1f727c41e863, type: 3}
   m_Name: Test_Name
   m_EditorClassIdentifier: 
-  _value: John Soda
+  _defaultValue: 
+  _currentValue: 
   logOnValueChanged: 0
