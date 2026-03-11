@@ -15,6 +15,8 @@ public class EventSequence : MonoBehaviour
     [Tooltip("Used to keep track of the current event sequence coroutine")]
     private Coroutine currentEventSequenceCoroutine;
 
+    public MethodButton button = nameof(Begin);
+
     [Tooltip("")]
     private bool IsRunning => currentEventStack != null;
     private Stack<Event> currentEventStack = new Stack<Event>();
