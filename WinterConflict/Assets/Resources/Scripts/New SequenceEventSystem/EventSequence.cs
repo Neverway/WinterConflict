@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,12 +11,26 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class EventSequence : MonoBehaviour
 {
+    [DynamicRange("eventsCount", "eventsName")] public int eventIndex = 0;
+    [ReferenceTag("eventsCount")] public int eventsCount()
+    {
+        if (events.IsEmptyOrNull()) return 0;
+        return events.Count - 1;
+    }
+
+    [ReferenceTag("eventsName")] public string eventsName()
+    {
+        if (events.IsEmptyOrNull()) return $"<color=#FF6666>No Events Yet</color>";
+        if (events[eventIndex].IsUnityNull()) return $"<color=#FF6666>No Events Yet</color>";
+        return $"<color=#44c6a0> {events[eventIndex].GetType()} </color>: {events[eventIndex].eventDescription}";
+    }
+
+    public MethodButton previewFromThisEvent = "Preview From This Event";
+    
     [Tooltip("A list of all of the events that will be played out for this sequence")]
     [Polymorphic, SerializeReference] public List<Event> events = new List<Event>();
     [Tooltip("Used to keep track of the current event sequence coroutine")]
     private Coroutine currentEventSequenceCoroutine;
-
-    public MethodButton button = nameof(Begin);
 
     [Tooltip("")]
     private bool IsRunning => currentEventStack != null;
@@ -26,6 +41,22 @@ public class EventSequence : MonoBehaviour
     {
         foreach (EventConnection connection in events.GetEventConnections(this))
             connection.GizmosDrawConnection();
+    }
+
+    [ReferenceTag("Preview From This Event")]
+    public virtual void PreviewFromThisEvent()
+    {
+        // Perform an initial clearing of the preview objects
+        foreach (var _viewCamera in GameObject.FindObjectsOfType<ViewCamera>()) _viewCamera.gameObject.SetActive(false);
+        foreach (var _objectScene in GameObject.FindObjectsOfType<ObjectScene>()) _objectScene.End();
+        
+        for (int i = 0; i <= eventIndex; i++)
+        {
+            if (events[i] is Event_ViewCamera || events[i] is Event_ObjectScene)
+            {
+                events[i].OnPreviewEvent();
+            }
+        }
     }
 
 

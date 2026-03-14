@@ -48,8 +48,10 @@ Material:
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
+    - _Emission: 1
     - _Fuzziness: 0
     - _Range: 0.02
     m_Colors:
+    - _Color: {r: 0.5471698, g: 0.34394202, b: 0.21422213, a: 0}
     - _ColorFilter: {r: 0, g: 0.023529412, b: 0.47058824, a: 1}
   m_BuildTextureStacks: []
