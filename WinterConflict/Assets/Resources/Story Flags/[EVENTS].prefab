@@ -96,6 +96,7 @@ MonoBehaviour:
         audioClip: {fileID: 8300000, guid: 3468cbb75eed01581b9774bc9a73cd18, type: 3}
         soundChannel: 3
         transition: 2
+        eventConcludesWhen: 0
     - rid: 5489666996663484422
       type: {class: Event_Transition, ns: , asm: Assembly-CSharp}
       data:
@@ -152,6 +153,7 @@ MonoBehaviour:
         audioClip: {fileID: 8300000, guid: 798fb338e4cc42aeba97cc2f82f4b180, type: 3}
         soundChannel: 0
         transition: 2
+        eventConcludesWhen: 0
     - rid: 5489667041705328645
       type: {class: EventSequence/Instruction/EndCurrentAndStartNewSequence, ns: , asm: Assembly-CSharp}
       data:
@@ -160,6 +162,108 @@ MonoBehaviour:
       type: {class: EventSequence/Instruction/EndCurrentAndStartNewSequence, ns: , asm: Assembly-CSharp}
       data:
         newEventSequence: {fileID: 3272149642002853100}
+--- !u!1 &1195343076657072523
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4100982702142330953}
+  - component: {fileID: 195068346268112428}
+  m_Layer: 0
+  m_Name: -E- ImUnarmed
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4100982702142330953
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195343076657072523}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.5, y: -0.49999946, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8093471913401199476}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &195068346268112428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195343076657072523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea94c4108f7a6a448894b53b5d8c87ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventIndex: 0
+  previewFromThisEvent:
+    methodReferenceTag: Preview From This Event
+  events: []
+  references:
+    version: 2
+    RefIds: []
+--- !u!1 &1309119698823740852
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8256860159122227818}
+  - component: {fileID: 3245568695458786496}
+  m_Layer: 0
+  m_Name: -E-ImArmed
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8256860159122227818
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309119698823740852}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.5, y: -0.49999946, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8093471913401199476}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3245568695458786496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309119698823740852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea94c4108f7a6a448894b53b5d8c87ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventIndex: 0
+  previewFromThisEvent:
+    methodReferenceTag: Preview From This Event
+  events: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &1537144793611852130
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,7 +544,7 @@ Transform:
   m_GameObject: {fileID: 1869142223287661619}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.9999999, z: 0}
+  m_LocalPosition: {x: 1, y: -1.4999999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -506,6 +610,57 @@ MonoBehaviour:
           OnFinish:
             m_PersistentCalls:
               m_Calls: []
+--- !u!1 &2463654561185211387
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4744649642631299489}
+  - component: {fileID: 1398633160828366878}
+  m_Layer: 0
+  m_Name: -E- NoTrouble
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4744649642631299489
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2463654561185211387}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.5, y: -0.49999946, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8093471913401199476}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1398633160828366878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2463654561185211387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea94c4108f7a6a448894b53b5d8c87ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventIndex: 0
+  previewFromThisEvent:
+    methodReferenceTag: Preview From This Event
+  events: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &2988605967817326887
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,7 +881,7 @@ Transform:
   m_GameObject: {fileID: 3513548258704267483}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.9999999, z: 0}
+  m_LocalPosition: {x: -1, y: -1.4999999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -778,6 +933,169 @@ MonoBehaviour:
           - name: Ottie
             chatContent: '*Hello everybody, my name is Market pliers!'
             portrait: {fileID: 21300000, guid: 93c35ecc14e2fdd5e8d0852ab8df3efb, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 0
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          OnFinish:
+            m_PersistentCalls:
+              m_Calls: []
+--- !u!1 &5091820625903832157
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4382320006837926165}
+  - component: {fileID: 7761738792031876801}
+  m_Layer: 0
+  m_Name: -E- ThemFirst
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4382320006837926165
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5091820625903832157}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.5, y: -0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5090916879614919704}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7761738792031876801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5091820625903832157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea94c4108f7a6a448894b53b5d8c87ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventIndex: 0
+  previewFromThisEvent:
+    methodReferenceTag: Preview From This Event
+  events: []
+  references:
+    version: 2
+    RefIds: []
+--- !u!1 &5097037795567331994
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5887134222805145396}
+  - component: {fileID: 8918823402484134009}
+  m_Layer: 0
+  m_Name: -E- ShootBunny
+  m_TagString: Untagged
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5887134222805145396
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5097037795567331994}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5090916879614919704}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8918823402484134009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5097037795567331994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea94c4108f7a6a448894b53b5d8c87ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventIndex: 0
+  previewFromThisEvent:
+    methodReferenceTag: Preview From This Event
+  events:
+  - rid: 5489667266702737426
+  - rid: 5489667266702737427
+  - rid: 5489667266702737428
+  - rid: 5489667266702737429
+  - rid: 5489667266702737430
+  references:
+    version: 2
+    RefIds:
+    - rid: 5489667266702737426
+      type: {class: Event_Audio, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        audioClip: {fileID: 8300000, guid: 7cfbf54315c4797498a0576290c45918, type: 3}
+        soundChannel: 4
+        transition: 0
+        eventConcludesWhen: 1
+    - rid: 5489667266702737427
+      type: {class: Event_Audio, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        audioClip: {fileID: 8300000, guid: 8f3ff5c76f004f74d80d8c341c24a062, type: 3}
+        soundChannel: 4
+        transition: 0
+        eventConcludesWhen: 1
+    - rid: 5489667266702737428
+      type: {class: Event_Audio, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        audioClip: {fileID: 8300000, guid: 7cfbf54315c4797498a0576290c45918, type: 3}
+        soundChannel: 4
+        transition: 0
+        eventConcludesWhen: 0
+    - rid: 5489667266702737429
+      type: {class: Event_Transition, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        eventConcludesWhen: 1
+        type: 1
+        duration: 0
+    - rid: 5489667266702737430
+      type: {class: Event_Text, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        eventConcludesWhen: 2
+        overrideExistingEvents: 0
+        textEvent:
+          frames:
+          - name: 
+            chatContent: '*You were shot to death.'
+            portrait: {fileID: 0}
             chatterVoice: {fileID: 0}
             OnFrameStarted:
               m_PersistentCalls:
@@ -1032,10 +1350,14 @@ Transform:
   m_GameObject: {fileID: 5669450252546588478}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.49999994, y: -0.5000003, z: 0}
+  m_LocalPosition: {x: -0.99999994, y: -0.5000003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8256860159122227818}
+  - {fileID: 4744649642631299489}
+  - {fileID: 4100982702142330953}
+  - {fileID: 6885504094149283349}
   m_Father: {fileID: 4103609394348040471}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6636819765871631515
@@ -1062,8 +1384,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
     - rid: 5489667108772511763
       type: {class: Event_StoryFlag_Modify, ns: , asm: Assembly-CSharp}
       data:
@@ -1112,7 +1432,7 @@ MonoBehaviour:
             OnFrameCompleted:
               m_PersistentCalls:
                 m_Calls: []
-            displayMode: 0
+            displayMode: 1
             preventTextSkipping: 0
             preventTextContinuing: 0
             autoProgressOnComplete: 0
@@ -1126,7 +1446,7 @@ MonoBehaviour:
             OnFrameCompleted:
               m_PersistentCalls:
                 m_Calls: []
-            displayMode: 0
+            displayMode: 1
             preventTextSkipping: 0
             preventTextContinuing: 0
             autoProgressOnComplete: 0
@@ -1141,21 +1461,37 @@ MonoBehaviour:
         choices:
         - choiceName: '''''Don''t want any trouble, I''m armed" (Coop|Truth)'
           OnChoiceSelected:
-            rid: -2
+            rid: 5489667266702737435
         - choiceName: '"Don''t want any trouble"(Coop|Lie)'
           OnChoiceSelected:
-            rid: -2
+            rid: 5489667266702737436
         - choiceName: '''Don''t shoot, I''m unarmed" (Lone|Lie)'
           OnChoiceSelected:
-            rid: -2
+            rid: 5489667266702737437
         - choiceName: '"Calm down or I''ll draw my weapon" (Lone|Truth)'
           OnChoiceSelected:
-            rid: -2
+            rid: 5489667266702737438
         duration: 0
         allowQuittingMenu: 0
         onQuitMenu:
           m_PersistentCalls:
             m_Calls: []
+    - rid: 5489667266702737435
+      type: {class: EventSequence/Instruction/EndCurrentAndStartNewSequence, ns: , asm: Assembly-CSharp}
+      data:
+        newEventSequence: {fileID: 3245568695458786496}
+    - rid: 5489667266702737436
+      type: {class: EventSequence/Instruction/EndCurrentAndStartNewSequence, ns: , asm: Assembly-CSharp}
+      data:
+        newEventSequence: {fileID: 1398633160828366878}
+    - rid: 5489667266702737437
+      type: {class: EventSequence/Instruction/EndCurrentAndStartNewSequence, ns: , asm: Assembly-CSharp}
+      data:
+        newEventSequence: {fileID: 195068346268112428}
+    - rid: 5489667266702737438
+      type: {class: EventSequence/Instruction/EndCurrentAndStartNewSequence, ns: , asm: Assembly-CSharp}
+      data:
+        newEventSequence: {fileID: 5033230774273740085}
 --- !u!1 &6352245430050064689
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,7 +1556,7 @@ GameObject:
   m_Layer: 0
   m_Name: -E- Drawing
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1233,7 +1569,7 @@ Transform:
   m_GameObject: {fileID: 6936211958715822331}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: -0.49999964, z: 0}
+  m_LocalPosition: {x: 0, y: -0.49999964, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1261,6 +1597,7 @@ MonoBehaviour:
   - rid: 5489667266702737415
   - rid: 5489667266702737416
   - rid: 5489667266702737417
+  - rid: 5489667266702737423
   - rid: 5489667266702737418
   references:
     version: 2
@@ -1279,9 +1616,23 @@ MonoBehaviour:
         overrideExistingEvents: 0
         textEvent:
           frames:
+          - name: 
+            chatContent: '*You pulled out a pencil and paper and began doodling.'
+            portrait: {fileID: 21300000, guid: f785b219cee0a431794f52e793fc42a1, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 0
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
           - name: Owl
             chatContent: '*What are you doing?'
-            portrait: {fileID: 21300000, guid: ab8e38750312b0b50b72626aa93bf9c7, type: 3}
+            portrait: {fileID: 21300000, guid: e0bd676f414c27f3692e97ef0cb6751e, type: 3}
             chatterVoice: {fileID: 0}
             OnFrameStarted:
               m_PersistentCalls:
@@ -1313,21 +1664,22 @@ MonoBehaviour:
     - rid: 5489667266702737415
       type: {class: Event_Audio, ns: , asm: Assembly-CSharp}
       data:
-        eventDescription: 
+        eventDescription: gunshot
         audioClip: {fileID: 8300000, guid: 7cfbf54315c4797498a0576290c45918, type: 3}
         soundChannel: 4
         transition: 0
+        eventConcludesWhen: 0
     - rid: 5489667266702737416
       type: {class: Event_Transition, ns: , asm: Assembly-CSharp}
       data:
-        eventDescription: 
+        eventDescription: fadeout
         eventConcludesWhen: 1
         type: 1
         duration: 0
     - rid: 5489667266702737417
       type: {class: Event_Text, ns: , asm: Assembly-CSharp}
       data:
-        eventDescription: 
+        eventDescription: death text
         eventConcludesWhen: 2
         overrideExistingEvents: 0
         textEvent:
@@ -1352,7 +1704,7 @@ MonoBehaviour:
     - rid: 5489667266702737418
       type: {class: Event_Instruction, ns: , asm: Assembly-CSharp}
       data:
-        eventDescription: 
+        eventDescription: Restart
         instruction:
           rid: 5489667266702737420
     - rid: 5489667266702737420
@@ -1362,10 +1714,78 @@ MonoBehaviour:
     - rid: 5489667266702737422
       type: {class: Event_ObjectScene, ns: , asm: Assembly-CSharp}
       data:
-        eventDescription: 
+        eventDescription: new spot
         objectScene: {fileID: 0}
         objectSceneAction: 1
         jumpToFrame: 0
+    - rid: 5489667266702737423
+      type: {class: Event_StoryFlag_Modify, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: +death
+        storyFlag: {fileID: 11400000, guid: f686f2fe246592b40a460deaa9d3f6ed, type: 2}
+        modifyStrategy:
+          rid: 5489667266702737424
+    - rid: 5489667266702737424
+      type: {class: StoryFlagInt/ModifyInt/AddToInt, ns: , asm: Assembly-CSharp}
+      data:
+        intToAdd:
+          intValue:
+            rid: 5489667266702737425
+    - rid: 5489667266702737425
+      type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
+      data:
+        input: 1
+--- !u!1 &7359022504854992252
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2276284666925184624}
+  - component: {fileID: 5081188832204888235}
+  m_Layer: 0
+  m_Name: -E- Agreed
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2276284666925184624
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7359022504854992252}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.5, y: -0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5090916879614919704}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5081188832204888235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7359022504854992252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea94c4108f7a6a448894b53b5d8c87ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventIndex: 0
+  previewFromThisEvent:
+    methodReferenceTag: Preview From This Event
+  events: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &7529594347715752107
 GameObject:
   m_ObjectHideFlags: 0
@@ -1392,10 +1812,14 @@ Transform:
   m_GameObject: {fileID: 7529594347715752107}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: -0.49999964, z: 0}
+  m_LocalPosition: {x: 1, y: -0.49999964, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2276284666925184624}
+  - {fileID: 5383133725090149927}
+  - {fileID: 4382320006837926165}
+  - {fileID: 5887134222805145396}
   m_Father: {fileID: 4103609394348040471}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5001386831920904573
@@ -1422,8 +1846,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
     - rid: 5489667085280739345
       type: {class: Event_StoryFlag_Modify, ns: , asm: Assembly-CSharp}
       data:
@@ -1473,7 +1895,7 @@ MonoBehaviour:
             OnFrameCompleted:
               m_PersistentCalls:
                 m_Calls: []
-            displayMode: 0
+            displayMode: 1
             preventTextSkipping: 0
             preventTextContinuing: 0
             autoProgressOnComplete: 0
@@ -1487,7 +1909,7 @@ MonoBehaviour:
             OnFrameCompleted:
               m_PersistentCalls:
                 m_Calls: []
-            displayMode: 0
+            displayMode: 1
             preventTextSkipping: 0
             preventTextContinuing: 0
             autoProgressOnComplete: 0
@@ -1502,21 +1924,37 @@ MonoBehaviour:
         choices:
         - choiceName: '"Agreed" (Coop)'
           OnChoiceSelected:
-            rid: -2
+            rid: 5489667266702737432
         - choiceName: '"Not a chance" (Lone)'
           OnChoiceSelected:
-            rid: -2
+            rid: 5489667266702737433
         - choiceName: '"Them first" (Lone|Lie)'
           OnChoiceSelected:
-            rid: -2
+            rid: 5489667266702737434
         - choiceName: Shoot the bunny
           OnChoiceSelected:
-            rid: -2
+            rid: 5489667266702737431
         duration: 0
         allowQuittingMenu: 0
         onQuitMenu:
           m_PersistentCalls:
             m_Calls: []
+    - rid: 5489667266702737431
+      type: {class: EventSequence/Instruction/EndCurrentAndStartNewSequence, ns: , asm: Assembly-CSharp}
+      data:
+        newEventSequence: {fileID: 8918823402484134009}
+    - rid: 5489667266702737432
+      type: {class: EventSequence/Instruction/EndCurrentAndStartNewSequence, ns: , asm: Assembly-CSharp}
+      data:
+        newEventSequence: {fileID: 5081188832204888235}
+    - rid: 5489667266702737433
+      type: {class: EventSequence/Instruction/EndCurrentAndStartNewSequence, ns: , asm: Assembly-CSharp}
+      data:
+        newEventSequence: {fileID: 2321039682234663221}
+    - rid: 5489667266702737434
+      type: {class: EventSequence/Instruction/EndCurrentAndStartNewSequence, ns: , asm: Assembly-CSharp}
+      data:
+        newEventSequence: {fileID: 7761738792031876801}
 --- !u!1 &7572629921647077626
 GameObject:
   m_ObjectHideFlags: 0
@@ -1796,6 +2234,57 @@ MonoBehaviour:
         objectScene: {fileID: 0}
         objectSceneAction: 2
         jumpToFrame: 0
+--- !u!1 &7662331811057150588
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6885504094149283349}
+  - component: {fileID: 5033230774273740085}
+  m_Layer: 0
+  m_Name: -E- IllDraw
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6885504094149283349
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7662331811057150588}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.5, y: -0.49999946, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8093471913401199476}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5033230774273740085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7662331811057150588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea94c4108f7a6a448894b53b5d8c87ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventIndex: 0
+  previewFromThisEvent:
+    methodReferenceTag: Preview From This Event
+  events: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &8296215259945930660
 GameObject:
   m_ObjectHideFlags: 0
@@ -1858,6 +2347,7 @@ MonoBehaviour:
         audioClip: {fileID: 8300000, guid: fbd9342a67d16df63a08bfe02ecbcd32, type: 3}
         soundChannel: 4
         transition: 0
+        eventConcludesWhen: 0
     - rid: 5489667011438706691
       type: {class: Event_Text, ns: , asm: Assembly-CSharp}
       data:
@@ -1919,3 +2409,54 @@ MonoBehaviour:
       type: {class: BoolValue/Input, ns: , asm: Assembly-CSharp}
       data:
         input: 1
+--- !u!1 &8942282746810903234
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5383133725090149927}
+  - component: {fileID: 2321039682234663221}
+  m_Layer: 0
+  m_Name: -E- NoChance
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5383133725090149927
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8942282746810903234}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.5, y: -0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5090916879614919704}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2321039682234663221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8942282746810903234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea94c4108f7a6a448894b53b5d8c87ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventIndex: 0
+  previewFromThisEvent:
+    methodReferenceTag: Preview From This Event
+  events: []
+  references:
+    version: 2
+    RefIds: []
