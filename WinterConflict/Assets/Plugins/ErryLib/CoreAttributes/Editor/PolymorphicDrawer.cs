@@ -253,7 +253,7 @@ public class PolymorphicDrawer : PropertyDrawer
 
     /// <remarks>Credit to whydoidoit on at 
     /// https://discussions.unity.com/t/get-the-instance-the-serializedproperty-belongs-to-in-a-custompropertydrawer/66954</remarks>
-    public object GetParent(SerializedProperty prop)
+    public static object GetParent(SerializedProperty prop)
     {
         var path = prop.propertyPath.Replace(".Array.data[", "[");
         object obj = prop.serializedObject.targetObject;
@@ -274,7 +274,7 @@ public class PolymorphicDrawer : PropertyDrawer
         return obj;
     }
 
-    public object GetValue(object source, string name)
+    public static object GetValue(object source, string name)
     {
         if (source == null)
             return null;
@@ -290,7 +290,7 @@ public class PolymorphicDrawer : PropertyDrawer
         return f.GetValue(source);
     }
 
-    public object GetValue(object source, string name, int index)
+    public static object GetValue(object source, string name, int index)
     {
         var enumerable = GetValue(source, name) as IEnumerable;
         var enm = enumerable.GetEnumerator();

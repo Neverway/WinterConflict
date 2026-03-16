@@ -11,6 +11,12 @@ public class Event_Audio : Event
     public SoundChannels soundChannel=SoundChannels.SoundEffects;
     [Tooltip("Only applies to Ambient and Music sound channels")]
     public AudioTransition transition = AudioTransition.None;
+    public EventConcludesWhen eventConcludesWhen = EventConcludesWhen.audioPlayed;
+    public enum EventConcludesWhen
+    {
+        audioPlayed, // The event concludes as soon as the event is called
+        audioFinished // The event concludes when the duration of the audio clip's length has passed
+    }
     private GI_AudioManager audioManager;
     
     public override IEnumerator<EventSequence.Instruction> Call()
@@ -32,6 +38,11 @@ public class Event_Audio : Event
             default:
                 audioManager.PlayClip(audioClip);
                 break;
+        }
+
+        if (eventConcludesWhen == EventConcludesWhen.audioFinished)
+        {
+            yield return new WaitForSeconds(audioClip.length);
         }
         
         yield break;

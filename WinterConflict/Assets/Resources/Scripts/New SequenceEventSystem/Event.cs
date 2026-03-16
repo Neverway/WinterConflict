@@ -1,12 +1,16 @@
+using ErryLib.Reflection;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Events;
 
 [Serializable]
 public abstract class Event : IEnumerable<EventSequence.Instruction>
 {
+
     [Tooltip("This is just so you can see stuff in the inspector")]
     public string eventDescription;
 
@@ -14,9 +18,10 @@ public abstract class Event : IEnumerable<EventSequence.Instruction>
     /// <returns>Returns true if calling the event succeed</returns>
     public abstract IEnumerator<EventSequence.Instruction> Call();
 
-
     //Implementation for IEnumerable (This just lets you enumerate through the.. 
     //  ..Call() function such as with a foreach loop)
     public IEnumerator<EventSequence.Instruction> GetEnumerator() => Call();
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+    
+    public virtual void OnPreviewEvent(){}
 }
