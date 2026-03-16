@@ -10,6 +10,12 @@ public class Event_ViewCamera : Event
     public bool doNotPlayTransition = false;
     private GI_TransitionManager transitionManager;
     
+    public override void OnPreviewEvent()
+    {
+        foreach (var _viewCamera in GameObject.FindObjectsOfType<ViewCamera>()) _viewCamera.gameObject.SetActive(false);
+        viewCamera.gameObject.SetActive(true);
+    }
+    
     public override IEnumerator<EventSequence.Instruction> Call()
     {
         // Safety check for reference
