@@ -455,7 +455,7 @@ Transform:
   m_GameObject: {fileID: 1752352427171186479}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.4999995, z: 0}
+  m_LocalPosition: {x: 0, y: -2.4999995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1051,6 +1051,7 @@ MonoBehaviour:
   - rid: 5489667266702737428
   - rid: 5489667266702737429
   - rid: 5489667266702737430
+  - rid: 5489667266702737453
   references:
     version: 2
     RefIds:
@@ -1110,6 +1111,23 @@ MonoBehaviour:
           OnFinish:
             m_PersistentCalls:
               m_Calls: []
+    - rid: 5489667266702737453
+      type: {class: Event_StoryFlag_Modify, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        storyFlag: {fileID: 11400000, guid: f686f2fe246592b40a460deaa9d3f6ed, type: 2}
+        modifyStrategy:
+          rid: 5489667266702737454
+    - rid: 5489667266702737454
+      type: {class: StoryFlagInt/ModifyInt/AddToInt, ns: , asm: Assembly-CSharp}
+      data:
+        intToAdd:
+          intValue:
+            rid: 5489667266702737455
+    - rid: 5489667266702737455
+      type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
+      data:
+        input: 1
 --- !u!1 &5567184420086669457
 GameObject:
   m_ObjectHideFlags: 0
@@ -1285,7 +1303,7 @@ MonoBehaviour:
             rid: 5489667085280739340
         - choiceName: '"Draw" gun'
           OnChoiceSelected:
-            rid: 5489667266702737421
+            rid: 5489667266702737439
         duration: 0
         allowQuittingMenu: 0
         onQuitMenu:
@@ -1320,10 +1338,19 @@ MonoBehaviour:
         objectScene: {fileID: 0}
         objectSceneAction: 1
         jumpToFrame: 0
-    - rid: 5489667266702737421
-      type: {class: EventSequence/Instruction/EndCurrentAndStartNewSequence, ns: , asm: Assembly-CSharp}
+    - rid: 5489667266702737439
+      type: {class: EventSequence/Instruction/MultiInstruction, ns: , asm: Assembly-CSharp}
+      data:
+        instructions:
+        - rid: 5489667266702737440
+        - rid: 5489667266702737451
+    - rid: 5489667266702737440
+      type: {class: EventSequence/Instruction/WaitForNewEventSequence, ns: , asm: Assembly-CSharp}
       data:
         newEventSequence: {fileID: 1148066474719460366}
+    - rid: 5489667266702737451
+      type: {class: EventSequence/Instruction/RestartSequence, ns: , asm: Assembly-CSharp}
+      data: 
 --- !u!1 &5669450252546588478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1598,7 +1625,6 @@ MonoBehaviour:
   - rid: 5489667266702737416
   - rid: 5489667266702737417
   - rid: 5489667266702737423
-  - rid: 5489667266702737418
   references:
     version: 2
     RefIds:
@@ -1701,16 +1727,6 @@ MonoBehaviour:
           OnFinish:
             m_PersistentCalls:
               m_Calls: []
-    - rid: 5489667266702737418
-      type: {class: Event_Instruction, ns: , asm: Assembly-CSharp}
-      data:
-        eventDescription: Restart
-        instruction:
-          rid: 5489667266702737420
-    - rid: 5489667266702737420
-      type: {class: EventSequence/Instruction/EndCurrentAndStartNewSequence, ns: , asm: Assembly-CSharp}
-      data:
-        newEventSequence: {fileID: 5651120375006490430}
     - rid: 5489667266702737422
       type: {class: Event_ObjectScene, ns: , asm: Assembly-CSharp}
       data:
@@ -1933,16 +1949,12 @@ MonoBehaviour:
             rid: 5489667266702737434
         - choiceName: Shoot the bunny
           OnChoiceSelected:
-            rid: 5489667266702737431
+            rid: 5489667266702737443
         duration: 0
         allowQuittingMenu: 0
         onQuitMenu:
           m_PersistentCalls:
             m_Calls: []
-    - rid: 5489667266702737431
-      type: {class: EventSequence/Instruction/EndCurrentAndStartNewSequence, ns: , asm: Assembly-CSharp}
-      data:
-        newEventSequence: {fileID: 8918823402484134009}
     - rid: 5489667266702737432
       type: {class: EventSequence/Instruction/EndCurrentAndStartNewSequence, ns: , asm: Assembly-CSharp}
       data:
@@ -1955,6 +1967,19 @@ MonoBehaviour:
       type: {class: EventSequence/Instruction/EndCurrentAndStartNewSequence, ns: , asm: Assembly-CSharp}
       data:
         newEventSequence: {fileID: 7761738792031876801}
+    - rid: 5489667266702737443
+      type: {class: EventSequence/Instruction/MultiInstruction, ns: , asm: Assembly-CSharp}
+      data:
+        instructions:
+        - rid: 5489667266702737445
+        - rid: 5489667266702737447
+    - rid: 5489667266702737445
+      type: {class: EventSequence/Instruction/WaitForNewEventSequence, ns: , asm: Assembly-CSharp}
+      data:
+        newEventSequence: {fileID: 8918823402484134009}
+    - rid: 5489667266702737447
+      type: {class: EventSequence/Instruction/RestartThisEvent, ns: , asm: Assembly-CSharp}
+      data: 
 --- !u!1 &7572629921647077626
 GameObject:
   m_ObjectHideFlags: 0
