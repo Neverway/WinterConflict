@@ -944,7 +944,11 @@ MonoBehaviour:
     methodReferenceTag: Preview From This Event
   events:
   - rid: 5489666996663484427
+  - rid: 5489667332808376359
+  - rid: 5489667332808376358
   - rid: 5489667332808376348
+  - rid: 5489667332808376360
+  - rid: 5489667332808376361
   - rid: 5489667332808376349
   - rid: 5489667332808376344
   - rid: 5489667332808376342
@@ -954,16 +958,13 @@ MonoBehaviour:
     - rid: 5489666996663484427
       type: {class: Event_Text, ns: , asm: Assembly-CSharp}
       data:
-        eventDescription: You froze
+        eventDescription: Dig in snow
         eventConcludesWhen: 2
         overrideExistingEvents: 0
         textEvent:
           frames:
           - name: 
-            chatContent: '*You keep digging around in the snow. Your hands began
-              to loose feeling, a sense of confusion swept over you. Before long,
-              your eyes shut, and you feel your face resting in the snow. It''s oddly
-              warm...'
+            chatContent: '*You keep digging around in the snow.'
             portrait: {fileID: 0}
             chatterVoice: {fileID: 0}
             OnFrameStarted:
@@ -982,7 +983,7 @@ MonoBehaviour:
     - rid: 5489667332808376342
       type: {class: Event_Instruction, ns: , asm: Assembly-CSharp}
       data:
-        eventDescription: 
+        eventDescription: RESTART
         instruction:
           rid: 5489667332808376343
     - rid: 5489667332808376343
@@ -992,7 +993,7 @@ MonoBehaviour:
     - rid: 5489667332808376344
       type: {class: Event_StoryFlag_Modify, ns: , asm: Assembly-CSharp}
       data:
-        eventDescription: 
+        eventDescription: +Player death
         storyFlag: {fileID: 11400000, guid: f686f2fe246592b40a460deaa9d3f6ed, type: 2}
         modifyStrategy:
           rid: 5489667332808376345
@@ -1009,7 +1010,7 @@ MonoBehaviour:
     - rid: 5489667332808376348
       type: {class: Event_Audio, ns: , asm: Assembly-CSharp}
       data:
-        eventDescription: 
+        eventDescription: fade audio
         audioClip: {fileID: 0}
         soundChannel: 3
         transition: 1
@@ -1017,7 +1018,7 @@ MonoBehaviour:
     - rid: 5489667332808376349
       type: {class: Event_Text, ns: , asm: Assembly-CSharp}
       data:
-        eventDescription: 
+        eventDescription: froze to death
         eventConcludesWhen: 2
         overrideExistingEvents: 0
         textEvent:
@@ -1053,6 +1054,87 @@ MonoBehaviour:
           OnFinish:
             m_PersistentCalls:
               m_Calls: []
+    - rid: 5489667332808376358
+      type: {class: Event_Transition, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: fade
+        eventConcludesWhen: 1
+        type: 1
+        duration: 0
+    - rid: 5489667332808376359
+      type: {class: Event_Text, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: Hands are cold
+        eventConcludesWhen: 2
+        overrideExistingEvents: 0
+        textEvent:
+          frames:
+          - name: 
+            chatContent: '*Your hands began to lose feeling, a sense of confusion
+              sweeps over you.'
+            portrait: {fileID: 0}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 0
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          OnFinish:
+            m_PersistentCalls:
+              m_Calls: []
+    - rid: 5489667332808376360
+      type: {class: Event_Text, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        eventConcludesWhen: 2
+        overrideExistingEvents: 0
+        textEvent:
+          frames:
+          - name: 
+            chatContent: '*Before long, your eyes shut, and you feel your face resting
+              in the snow. '
+            portrait: {fileID: 0}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 0
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: 
+            chatContent: '*It''s oddly warm...'
+            portrait: {fileID: 0}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 0
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          OnFinish:
+            m_PersistentCalls:
+              m_Calls: []
+    - rid: 5489667332808376361
+      type: {class: Event_Audio, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        audioClip: {fileID: 0}
+        soundChannel: 0
+        transition: 1
+        eventConcludesWhen: 0
 --- !u!1 &2988605967817326887
 GameObject:
   m_ObjectHideFlags: 0
@@ -2198,7 +2280,7 @@ MonoBehaviour:
         textEvent:
           frames:
           - name: 
-            chatContent: Your joke was so bad that eveyone shot you to death.
+            chatContent: '*Your joke was so bad that eveyone shot you to death.'
             portrait: {fileID: 0}
             chatterVoice: {fileID: 0}
             OnFrameStarted:
@@ -2332,6 +2414,20 @@ MonoBehaviour:
           - name: Owl
             chatContent: '*Not a chance in hell.'
             portrait: {fileID: 21300000, guid: e0bd676f414c27f3692e97ef0cb6751e, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: Winters
+            chatContent: '*Then we''re back to square one.'
+            portrait: {fileID: 21300000, guid: f785b219cee0a431794f52e793fc42a1, type: 3}
             chatterVoice: {fileID: 0}
             OnFrameStarted:
               m_PersistentCalls:
@@ -2719,7 +2815,7 @@ MonoBehaviour:
     - rid: 5489667108772511745
       type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
       data:
-        input: 20
+        input: 15
     - rid: 5489667108772511746
       type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
       data:
@@ -2758,7 +2854,7 @@ MonoBehaviour:
         thatValue:
           rid: 5489667332808376326
         comparison:
-          rid: 5489667332808376328
+          rid: 5489667332808376357
     - rid: 5489667332808376324
       type: {class: IntValue, ns: , asm: Assembly-CSharp}
       data:
@@ -2777,9 +2873,6 @@ MonoBehaviour:
       type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
       data:
         input: 2
-    - rid: 5489667332808376328
-      type: {class: StoryFlagInt/CompareThisInt/This_Equals_That, ns: , asm: Assembly-CSharp}
-      data: 
     - rid: 5489667332808376329
       type: {class: EventSequence/Instruction/SkipNextEventInSequence, ns: , asm: Assembly-CSharp}
       data:
@@ -2928,6 +3021,10 @@ MonoBehaviour:
     - rid: 5489667332808376356
       type: {class: StoryFlagInt/CompareThisInt/This_Equals_That, ns: , asm: Assembly-CSharp}
       data: 
+    - rid: 5489667332808376357
+      type: {class: StoryFlagInt/CompareThisInt/This_IsGreaterThan_That, ns: , asm: Assembly-CSharp}
+      data:
+        orEqualTo: 1
 --- !u!1 &7612680873380011911
 GameObject:
   m_ObjectHideFlags: 0
@@ -3379,7 +3476,7 @@ MonoBehaviour:
             preventTextContinuing: 0
             autoProgressOnComplete: 0
           - name: Owl
-            chatContent: '*You took the words right out of my mouth'
+            chatContent: '*You took the words right out of my mouth.'
             portrait: {fileID: 21300000, guid: e0bd676f414c27f3692e97ef0cb6751e, type: 3}
             chatterVoice: {fileID: 0}
             OnFrameStarted:
