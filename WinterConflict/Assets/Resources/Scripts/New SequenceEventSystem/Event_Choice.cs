@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
-[Serializable]
+[Serializable, PolymorphicClassColor(0.86f, 0.31f, 1f)]
 public class Event_Choice : Event, IHasEventConnections
 {
     [Tooltip("The prompt the player is presented with")]

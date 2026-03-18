@@ -5,6 +5,7 @@ using UnityEngine;
 /// <summary>
 /// Allows itterating through an object scene
 /// </summary>
+[PolymorphicClassColor(1f, 0.52f, 0.31f)]
 public class Event_ObjectScene : Event
 {
     public ObjectScene objectScene;

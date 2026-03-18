@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
+[Serializable, PolymorphicClassColor(1f, 0.86f, 0.31f)]
 public class Event_ViewCamera : Event
 {
     public Camera viewCamera;

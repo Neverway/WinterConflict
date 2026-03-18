@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[PolymorphicClassColor(1f, 0.31f, 0.45f)]
 public class Event_StoryFlag_Modify : Event
 {
     [SerializeReference, Polymorphic] public StoryFlag storyFlag;
