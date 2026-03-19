@@ -21,7 +21,7 @@ public class WB_TextChoice : MonoBehaviour
     public GameObject timeLimitObject;
     [Tooltip("The progress bars for the time remaining (It's an array of them so I can mirror one and set both to make it shrink inwards)")]
     public Image[] timeLimitProgressBars;
-    
+
     [Tooltip("I have no idea, I think this was for actually checking what option the player selected")]
     [Reload] private static int lastSelectedChoice;
 
@@ -71,12 +71,18 @@ public class WB_TextChoice : MonoBehaviour
         
         choiceNavigator.SetIsNavigating(true);
     }
-    
-    public static IEnumerator WaitForChoice(string dialog, params string[] choices) 
-        => WaitForChoice(dialog, false, choices);
-    
+
+    public static IEnumerator WaitForChoice(string dialog, params string[] choices)
+        => WaitForChoice(dialog, false, 0f, choices);
     public static IEnumerator WaitForChoice(string dialog, bool allowQuittingMenu, params string[] choices)
+        => WaitForChoice(dialog, allowQuittingMenu, 0f, choices);
+    public static IEnumerator WaitForChoice(string dialog, float duration, params string[] choices) 
+        => WaitForChoice(dialog, false, duration, choices);
+    public static IEnumerator WaitForChoice(string dialog, bool allowQuittingMenu, float duration, params string[] choices)
     {
+        float timeLeft = duration;
+        bool usingTimeLimit = duration > 0;
+
         lastSelectedChoice = -1;
         var widgetManager = GameInstance.Get<GI_WidgetManager>();
         if (choices.IsEmptyOrNull())
@@ -91,9 +97,22 @@ public class WB_TextChoice : MonoBehaviour
         }
 
         textChoiceManager.SetupChoices(dialog, choices); //Setup widget
+        textChoiceManager.timeLimitProgressBars.SetAllFillAmounts(1f); //Set fill bars to full
 
         while (lastSelectedChoice < 0)
         {
+            if (usingTimeLimit)
+            {
+                timeLeft -= Time.deltaTime;
+                if (timeLeft <= 0f)
+                {
+                    Debug.Log("Ran out of time for choice!!");
+                    yield break;
+                }
+
+                textChoiceManager.timeLimitProgressBars.SetAllFillAmounts(timeLeft / duration);
+            }
+
             if (allowQuittingMenu)
             {
                 if (GameInstance.Inputs.Action.WasPressedThisFrame() || GameInstance.Inputs.Select.WasPressedThisFrame())
@@ -108,4 +127,13 @@ public class WB_TextChoice : MonoBehaviour
 
     public static int GetLastSelectedChoice() => lastSelectedChoice;
     
+}
+
+public static class ImageExtentionMethods
+{
+    public static void SetAllFillAmounts(this IEnumerable<Image> images, float fillAmount)
+    {
+        foreach (var image in images)
+            image.fillAmount = fillAmount;
+    }
 }
