@@ -3,13 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.Events;
 using static EventSequence.Instruction;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
-public class EventSequence : MonoBehaviour
+public class EventSequence : MonoBehaviour, ISaveable<EventSequence.SaveData>
 {
     [DynamicRange("eventsCount", "eventsName")] public int eventIndex = 0;
     [ReferenceTag("eventsCount")] public int eventsCount()
@@ -17,7 +14,6 @@ public class EventSequence : MonoBehaviour
         if (events.IsEmptyOrNull()) return 0;
         return events.Count - 1;
     }
-
     [ReferenceTag("eventsName")] public string eventsName()
     {
         if (events.IsEmptyOrNull()) return $"<color=#FF6666>No Events Yet</color>";
@@ -153,6 +149,30 @@ public class EventSequence : MonoBehaviour
 
         return currentEventStack;
     }
+
+    //======================================================================================================
+    //------------------------------------------- SAVE DATA -----------------------------------------------
+    //======================================================================================================
+
+    public SaveData GetSaveData()
+    {
+        throw new Exception("Wow, you suck!");
+    }
+
+    public void LoadSaveData(SaveData saveData)
+    {
+
+    }
+
+    [Serializable]
+    public class SaveData : SaveDataBase
+    {
+
+    }
+
+    //======================================================================================================
+    //------------------------------------------ INSTRUCTIONS ----------------------------------------------
+    //======================================================================================================
 
     //Process an EventSequence Instruction given through an Event
     protected IEnumerator ProcessInstruction(Instruction instruction)

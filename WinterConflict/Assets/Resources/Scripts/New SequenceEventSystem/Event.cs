@@ -2,10 +2,7 @@ using ErryLib.Reflection;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Reflection;
-using System.Runtime.CompilerServices;
 using UnityEngine;
-using UnityEngine.Events;
 
 [Serializable]
 public abstract class Event : IEnumerable<EventSequence.Instruction>
@@ -24,4 +21,12 @@ public abstract class Event : IEnumerable<EventSequence.Instruction>
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     
     public virtual void OnPreviewEvent(){}
+
+
+
+    [Serializable]
+    public abstract class SaveData : SaveDataBase
+    {
+
+    }
 }
