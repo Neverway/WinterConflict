@@ -1,5 +1,59 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &257973220759871182
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9185203818509832132}
+  - component: {fileID: 67040248344924413}
+  m_Layer: 0
+  m_Name: -E- ED Saviour partial [CT]
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9185203818509832132
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257973220759871182}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.5, y: -13, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8088841027661360180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &67040248344924413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257973220759871182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea94c4108f7a6a448894b53b5d8c87ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventIndex: 0
+  previewFromThisEvent:
+    methodReferenceTag: Preview From This Event
+  events:
+  - rid: -2
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!1 &413747706697554721
 GameObject:
   m_ObjectHideFlags: 0
@@ -29,7 +83,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7843891419687825116}
+  - {fileID: 3727475061943912173}
   m_Father: {fileID: 8088841027661360180}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5610882780116764832
@@ -162,6 +218,114 @@ MonoBehaviour:
       type: {class: EventSequence/Instruction/EndCurrentAndStartNewSequence, ns: , asm: Assembly-CSharp}
       data:
         newEventSequence: {fileID: 3272149642002853100}
+--- !u!1 &1036614535369486792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4253455860763500931}
+  - component: {fileID: 5241382229314712496}
+  m_Layer: 0
+  m_Name: D Killer death (Ottie escapes) [LD]
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4253455860763500931
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036614535369486792}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.5, y: -13, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8088841027661360180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5241382229314712496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036614535369486792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea94c4108f7a6a448894b53b5d8c87ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventIndex: 0
+  previewFromThisEvent:
+    methodReferenceTag: Preview From This Event
+  events:
+  - rid: -2
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+--- !u!1 &1167930450610738787
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9113706125749359461}
+  - component: {fileID: 7965770821197986087}
+  m_Layer: 0
+  m_Name: -E- ED Killer death [LD]
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9113706125749359461
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167930450610738787}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3, y: -13, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8088841027661360180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7965770821197986087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167930450610738787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea94c4108f7a6a448894b53b5d8c87ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventIndex: 0
+  previewFromThisEvent:
+    methodReferenceTag: Preview From This Event
+  events:
+  - rid: -2
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!1 &1195343076657072523
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,10 +373,112 @@ MonoBehaviour:
   eventIndex: 0
   previewFromThisEvent:
     methodReferenceTag: Preview From This Event
-  events: []
+  events:
+  - rid: 5489667304654897162
+  - rid: 5489667304654897163
+  - rid: 5489667304654897164
+  - rid: 5489667304654897165
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 5489667304654897162
+      type: {class: Event_Text, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        eventConcludesWhen: 2
+        overrideExistingEvents: 0
+        textEvent:
+          frames:
+          - name: Winters
+            chatContent: '*Hey, don''t shoot! I''m unarmed!'
+            portrait: {fileID: 21300000, guid: f785b219cee0a431794f52e793fc42a1, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: Owl
+            chatContent: '*I don''t believe that for a second. One wrong move and
+              your done for!'
+            portrait: {fileID: 21300000, guid: f785b219cee0a431794f52e793fc42a1, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: Bunny
+            chatContent: '*Owl, please!'
+            portrait: {fileID: 21300000, guid: ab8e38750312b0b50b72626aa93bf9c7, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          OnFinish:
+            m_PersistentCalls:
+              m_Calls: []
+    - rid: 5489667304654897163
+      type: {class: Event_StoryFlag_Modify, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        storyFlag: {fileID: 11400000, guid: 96290d8be506e4b7e8a897ec6cffdf40, type: 2}
+        modifyStrategy:
+          rid: 5489667304654897167
+    - rid: 5489667304654897164
+      type: {class: Event_StoryFlag_Modify, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        storyFlag: {fileID: 11400000, guid: c7a5c6d10cc69b5378696d1befbdfdec, type: 2}
+        modifyStrategy:
+          rid: 5489667304654897169
+    - rid: 5489667304654897165
+      type: {class: Event_Instruction, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        instruction:
+          rid: 5489667304654897166
+    - rid: 5489667304654897166
+      type: {class: EventSequence/Instruction/EndCurrentAndStartNewSequence, ns: , asm: Assembly-CSharp}
+      data:
+        newEventSequence: {fileID: 6476180874150140822}
+    - rid: 5489667304654897167
+      type: {class: StoryFlagInt/ModifyInt/SetIntTo, ns: , asm: Assembly-CSharp}
+      data:
+        boolToSet:
+          intValue:
+            rid: 5489667304654897168
+    - rid: 5489667304654897168
+      type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
+      data:
+        input: 1
+    - rid: 5489667304654897169
+      type: {class: StoryFlagInt/ModifyInt/SetIntTo, ns: , asm: Assembly-CSharp}
+      data:
+        boolToSet:
+          intValue:
+            rid: 5489667304654897170
+    - rid: 5489667304654897170
+      type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
+      data:
+        input: 1
 --- !u!1 &1309119698823740852
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,10 +526,98 @@ MonoBehaviour:
   eventIndex: 0
   previewFromThisEvent:
     methodReferenceTag: Preview From This Event
-  events: []
+  events:
+  - rid: 5489667304654897153
+  - rid: 5489667304654897154
+  - rid: 5489667304654897155
+  - rid: 5489667304654897160
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 5489667304654897153
+      type: {class: Event_Text, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        eventConcludesWhen: 2
+        overrideExistingEvents: 0
+        textEvent:
+          frames:
+          - name: Winters
+            chatContent: "*Agreed. \n* I don't want any trouble."
+            portrait: {fileID: 21300000, guid: f785b219cee0a431794f52e793fc42a1, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: Winters
+            chatContent: '* So you know, I am armed. I don''t intend on drawing my
+              gun it if I don''t have to.'
+            portrait: {fileID: 21300000, guid: f785b219cee0a431794f52e793fc42a1, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          OnFinish:
+            m_PersistentCalls:
+              m_Calls: []
+    - rid: 5489667304654897154
+      type: {class: Event_StoryFlag_Modify, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        storyFlag: {fileID: 11400000, guid: 39d5187e34c38e32f8f753d2f524eeb6, type: 2}
+        modifyStrategy:
+          rid: 5489667304654897158
+    - rid: 5489667304654897155
+      type: {class: Event_StoryFlag_Modify, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        storyFlag: {fileID: 11400000, guid: b219b691347b59921af0ac0668de1fdc, type: 2}
+        modifyStrategy:
+          rid: 5489667304654897156
+    - rid: 5489667304654897156
+      type: {class: StoryFlagInt/ModifyInt/AddToInt, ns: , asm: Assembly-CSharp}
+      data:
+        intToAdd:
+          intValue:
+            rid: 5489667304654897157
+    - rid: 5489667304654897157
+      type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
+      data:
+        input: 1
+    - rid: 5489667304654897158
+      type: {class: StoryFlagInt/ModifyInt/AddToInt, ns: , asm: Assembly-CSharp}
+      data:
+        intToAdd:
+          intValue:
+            rid: 5489667304654897159
+    - rid: 5489667304654897159
+      type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
+      data:
+        input: 1
+    - rid: 5489667304654897160
+      type: {class: Event_Instruction, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        instruction:
+          rid: 5489667304654897161
+    - rid: 5489667304654897161
+      type: {class: EventSequence/Instruction/EndCurrentAndStartNewSequence, ns: , asm: Assembly-CSharp}
+      data:
+        newEventSequence: {fileID: 6476180874150140822}
 --- !u!1 &1537144793611852130
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,6 +783,60 @@ MonoBehaviour:
       type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
       data:
         input: 1
+--- !u!1 &1703360311207573219
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 256920873570378589}
+  - component: {fileID: 6326017078934143664}
+  m_Layer: 0
+  m_Name: -E- ED Killer escape [LT]
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &256920873570378589
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703360311207573219}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.5, y: -13, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8088841027661360180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6326017078934143664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703360311207573219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea94c4108f7a6a448894b53b5d8c87ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventIndex: 0
+  previewFromThisEvent:
+    methodReferenceTag: Preview From This Event
+  events:
+  - rid: -2
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!1 &1752352427171186479
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,8 +921,13 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2764321229599941296}
-  - {fileID: 7843891419687825116}
-  - {fileID: 3727475061943912173}
+  - {fileID: 3281754465231534972}
+  - {fileID: 2923280208172616847}
+  - {fileID: 9185203818509832132}
+  - {fileID: 9113706125749359461}
+  - {fileID: 3770985123980577041}
+  - {fileID: 4253455860763500931}
+  - {fileID: 256920873570378589}
   - {fileID: 3149630527995811465}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -544,7 +957,7 @@ Transform:
   m_GameObject: {fileID: 1869142223287661619}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: -1.4999999, z: 0}
+  m_LocalPosition: {x: 2, y: -1.4999999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -584,7 +997,7 @@ MonoBehaviour:
         eventDescription: 
         objectScene: {fileID: 0}
         objectSceneAction: 2
-        jumpToFrame: 6
+        jumpToFrame: 7
     - rid: 5489667223236640772
       type: {class: Event_Text, ns: , asm: Assembly-CSharp}
       data:
@@ -623,7 +1036,7 @@ GameObject:
   m_Layer: 0
   m_Name: -E- NoTrouble
   m_TagString: Untagged
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -657,10 +1070,337 @@ MonoBehaviour:
   eventIndex: 0
   previewFromThisEvent:
     methodReferenceTag: Preview From This Event
-  events: []
+  events:
+  - rid: 5489667304654897162
+  - rid: 5489667304654897163
+  - rid: 5489667304654897164
+  - rid: 5489667304654897165
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 5489667304654897162
+      type: {class: Event_Text, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        eventConcludesWhen: 2
+        overrideExistingEvents: 0
+        textEvent:
+          frames:
+          - name: Winters
+            chatContent: "*Agreed. \n* I don't want any trouble."
+            portrait: {fileID: 21300000, guid: f785b219cee0a431794f52e793fc42a1, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: Owl
+            chatContent: '*Yeah right! You seriously expect me to belive that?'
+            portrait: {fileID: 21300000, guid: e0bd676f414c27f3692e97ef0cb6751e, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          OnFinish:
+            m_PersistentCalls:
+              m_Calls: []
+    - rid: 5489667304654897163
+      type: {class: Event_StoryFlag_Modify, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        storyFlag: {fileID: 11400000, guid: 39d5187e34c38e32f8f753d2f524eeb6, type: 2}
+        modifyStrategy:
+          rid: 5489667304654897167
+    - rid: 5489667304654897164
+      type: {class: Event_StoryFlag_Modify, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        storyFlag: {fileID: 11400000, guid: c7a5c6d10cc69b5378696d1befbdfdec, type: 2}
+        modifyStrategy:
+          rid: 5489667304654897169
+    - rid: 5489667304654897165
+      type: {class: Event_Instruction, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        instruction:
+          rid: 5489667304654897166
+    - rid: 5489667304654897166
+      type: {class: EventSequence/Instruction/EndCurrentAndStartNewSequence, ns: , asm: Assembly-CSharp}
+      data:
+        newEventSequence: {fileID: 6476180874150140822}
+    - rid: 5489667304654897167
+      type: {class: StoryFlagInt/ModifyInt/SetIntTo, ns: , asm: Assembly-CSharp}
+      data:
+        boolToSet:
+          intValue:
+            rid: 5489667304654897168
+    - rid: 5489667304654897168
+      type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
+      data:
+        input: 1
+    - rid: 5489667304654897169
+      type: {class: StoryFlagInt/ModifyInt/SetIntTo, ns: , asm: Assembly-CSharp}
+      data:
+        boolToSet:
+          intValue:
+            rid: 5489667304654897170
+    - rid: 5489667304654897170
+      type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
+      data:
+        input: 1
+--- !u!1 &2515136198045110609
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6634402910765723515}
+  - component: {fileID: 7422909132552262447}
+  m_Layer: 0
+  m_Name: -E- FrozeToDeath
+  m_TagString: Untagged
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6634402910765723515
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2515136198045110609}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.00000011920929, y: 0.5000001, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7843891419687825116}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7422909132552262447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2515136198045110609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea94c4108f7a6a448894b53b5d8c87ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventIndex: 0
+  previewFromThisEvent:
+    methodReferenceTag: Preview From This Event
+  events:
+  - rid: 5489666996663484427
+  - rid: 5489667332808376359
+  - rid: 5489667332808376358
+  - rid: 5489667332808376348
+  - rid: 5489667332808376360
+  - rid: 5489667332808376361
+  - rid: 5489667332808376349
+  - rid: 5489667332808376344
+  - rid: 5489667332808376342
+  references:
+    version: 2
+    RefIds:
+    - rid: 5489666996663484427
+      type: {class: Event_Text, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: Dig in snow
+        eventConcludesWhen: 2
+        overrideExistingEvents: 0
+        textEvent:
+          frames:
+          - name: 
+            chatContent: '*You keep digging around in the snow.'
+            portrait: {fileID: 0}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 0
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          OnFinish:
+            m_PersistentCalls:
+              m_Calls: []
+    - rid: 5489667332808376342
+      type: {class: Event_Instruction, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: RESTART
+        instruction:
+          rid: 5489667332808376343
+    - rid: 5489667332808376343
+      type: {class: EventSequence/Instruction/EndCurrentAndStartNewSequence, ns: , asm: Assembly-CSharp}
+      data:
+        newEventSequence: {fileID: 5610882780116764832}
+    - rid: 5489667332808376344
+      type: {class: Event_StoryFlag_Modify, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: +Player death
+        storyFlag: {fileID: 11400000, guid: f686f2fe246592b40a460deaa9d3f6ed, type: 2}
+        modifyStrategy:
+          rid: 5489667332808376345
+    - rid: 5489667332808376345
+      type: {class: StoryFlagInt/ModifyInt/AddToInt, ns: , asm: Assembly-CSharp}
+      data:
+        intToAdd:
+          intValue:
+            rid: 5489667332808376346
+    - rid: 5489667332808376346
+      type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
+      data:
+        input: 1
+    - rid: 5489667332808376348
+      type: {class: Event_Audio, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: fade audio
+        audioClip: {fileID: 0}
+        soundChannel: 3
+        transition: 1
+        eventConcludesWhen: 0
+    - rid: 5489667332808376349
+      type: {class: Event_Text, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: froze to death
+        eventConcludesWhen: 2
+        overrideExistingEvents: 0
+        textEvent:
+          frames:
+          - name: 
+            chatContent: '*You feel... calm.'
+            portrait: {fileID: 0}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 0
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: 
+            chatContent: '*You have frozen to death.'
+            portrait: {fileID: 0}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 0
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          OnFinish:
+            m_PersistentCalls:
+              m_Calls: []
+    - rid: 5489667332808376358
+      type: {class: Event_Transition, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: fade
+        eventConcludesWhen: 1
+        type: 1
+        duration: 0
+    - rid: 5489667332808376359
+      type: {class: Event_Text, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: Hands are cold
+        eventConcludesWhen: 2
+        overrideExistingEvents: 0
+        textEvent:
+          frames:
+          - name: 
+            chatContent: '*Your hands began to lose feeling, a sense of confusion
+              sweeps over you.'
+            portrait: {fileID: 0}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 0
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          OnFinish:
+            m_PersistentCalls:
+              m_Calls: []
+    - rid: 5489667332808376360
+      type: {class: Event_Text, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        eventConcludesWhen: 2
+        overrideExistingEvents: 0
+        textEvent:
+          frames:
+          - name: 
+            chatContent: '*Before long, your eyes shut, and you feel your face resting
+              in the snow. '
+            portrait: {fileID: 0}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 0
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: 
+            chatContent: '*It''s oddly warm...'
+            portrait: {fileID: 0}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 0
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          OnFinish:
+            m_PersistentCalls:
+              m_Calls: []
+    - rid: 5489667332808376361
+      type: {class: Event_Audio, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        audioClip: {fileID: 0}
+        soundChannel: 0
+        transition: 1
+        eventConcludesWhen: 0
 --- !u!1 &2988605967817326887
 GameObject:
   m_ObjectHideFlags: 0
@@ -687,14 +1427,14 @@ Transform:
   m_GameObject: {fileID: 2988605967817326887}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.4999997, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5705491894913518973}
   - {fileID: 6240181215626530540}
   - {fileID: 4103609394348040471}
-  m_Father: {fileID: 8088841027661360180}
+  m_Father: {fileID: 2764321229599941296}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &296279206935897475
 MonoBehaviour:
@@ -881,7 +1621,7 @@ Transform:
   m_GameObject: {fileID: 3513548258704267483}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: -1.4999999, z: 0}
+  m_LocalPosition: {x: -2, y: -1.4999999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -921,7 +1661,7 @@ MonoBehaviour:
         eventDescription: 
         objectScene: {fileID: 0}
         objectSceneAction: 2
-        jumpToFrame: 7
+        jumpToFrame: 8
     - rid: 5489667223236640772
       type: {class: Event_Text, ns: , asm: Assembly-CSharp}
       data:
@@ -941,6 +1681,96 @@ MonoBehaviour:
               m_PersistentCalls:
                 m_Calls: []
             displayMode: 0
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          OnFinish:
+            m_PersistentCalls:
+              m_Calls: []
+--- !u!1 &4262503297177757151
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3103567384583513719}
+  - component: {fileID: 5084595503111065979}
+  m_Layer: 0
+  m_Name: -E- Try to explain
+  m_TagString: Untagged
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3103567384583513719
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4262503297177757151}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.5, y: -0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3770985123980577041}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5084595503111065979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4262503297177757151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea94c4108f7a6a448894b53b5d8c87ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventIndex: 0
+  previewFromThisEvent:
+    methodReferenceTag: Preview From This Event
+  events:
+  - rid: 5489667355113160705
+  - rid: 5489667355113160704
+  references:
+    version: 2
+    RefIds:
+    - rid: 5489667355113160704
+      type: {class: Event_Choice, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        dialogText: 
+        choices: []
+        duration: 0
+        allowQuittingMenu: 0
+        onQuitMenu:
+          m_PersistentCalls:
+            m_Calls: []
+    - rid: 5489667355113160705
+      type: {class: Event_Text, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        eventConcludesWhen: 2
+        overrideExistingEvents: 0
+        textEvent:
+          frames:
+          - name: Winters
+            chatContent: '*There are forces here that are far beyond us. I did what
+              I had to do.'
+            portrait: {fileID: 21300000, guid: f785b219cee0a431794f52e793fc42a1, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
             preventTextSkipping: 0
             preventTextContinuing: 0
             autoProgressOnComplete: 0
@@ -994,10 +1824,111 @@ MonoBehaviour:
   eventIndex: 0
   previewFromThisEvent:
     methodReferenceTag: Preview From This Event
-  events: []
+  events:
+  - rid: 5489667304654897153
+  - rid: 5489667304654897154
+  - rid: 5489667304654897155
+  - rid: 5489667304654897160
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 5489667304654897153
+      type: {class: Event_Text, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        eventConcludesWhen: 2
+        overrideExistingEvents: 0
+        textEvent:
+          frames:
+          - name: Winters
+            chatContent: '*Them first.'
+            portrait: {fileID: 21300000, guid: f785b219cee0a431794f52e793fc42a1, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: Owl
+            chatContent: '*Yeah, that''s not happening.'
+            portrait: {fileID: 21300000, guid: e0bd676f414c27f3692e97ef0cb6751e, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: Owl
+            chatContent: '*Then I guess we''re back to square one.'
+            portrait: {fileID: 21300000, guid: e0bd676f414c27f3692e97ef0cb6751e, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          OnFinish:
+            m_PersistentCalls:
+              m_Calls: []
+    - rid: 5489667304654897154
+      type: {class: Event_StoryFlag_Modify, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        storyFlag: {fileID: 11400000, guid: 96290d8be506e4b7e8a897ec6cffdf40, type: 2}
+        modifyStrategy:
+          rid: 5489667304654897158
+    - rid: 5489667304654897155
+      type: {class: Event_StoryFlag_Modify, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        storyFlag: {fileID: 11400000, guid: c7a5c6d10cc69b5378696d1befbdfdec, type: 2}
+        modifyStrategy:
+          rid: 5489667304654897156
+    - rid: 5489667304654897156
+      type: {class: StoryFlagInt/ModifyInt/AddToInt, ns: , asm: Assembly-CSharp}
+      data:
+        intToAdd:
+          intValue:
+            rid: 5489667304654897157
+    - rid: 5489667304654897157
+      type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
+      data:
+        input: 1
+    - rid: 5489667304654897158
+      type: {class: StoryFlagInt/ModifyInt/AddToInt, ns: , asm: Assembly-CSharp}
+      data:
+        intToAdd:
+          intValue:
+            rid: 5489667304654897159
+    - rid: 5489667304654897159
+      type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
+      data:
+        input: 1
+    - rid: 5489667304654897160
+      type: {class: Event_Instruction, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        instruction:
+          rid: 5489667304654897161
+    - rid: 5489667304654897161
+      type: {class: EventSequence/Instruction/EndCurrentAndStartNewSequence, ns: , asm: Assembly-CSharp}
+      data:
+        newEventSequence: {fileID: 1200399881423789151}
 --- !u!1 &5097037795567331994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,6 +1977,7 @@ MonoBehaviour:
   previewFromThisEvent:
     methodReferenceTag: Preview From This Event
   events:
+  - rid: 5489667332808376362
   - rid: 5489667266702737426
   - rid: 5489667266702737427
   - rid: 5489667266702737428
@@ -1128,6 +2060,13 @@ MonoBehaviour:
       type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
       data:
         input: 1
+    - rid: 5489667332808376362
+      type: {class: Event_ObjectScene, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        objectScene: {fileID: 0}
+        objectSceneAction: 2
+        jumpToFrame: 5
 --- !u!1 &5567184420086669457
 GameObject:
   m_ObjectHideFlags: 0
@@ -1427,7 +2366,7 @@ MonoBehaviour:
     - rid: 5489667108772511765
       type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
       data:
-        input: 1
+        input: 2
     - rid: 5489667152342417409
       type: {class: Event_ViewCamera, ns: , asm: Assembly-CSharp}
       data:
@@ -1440,7 +2379,7 @@ MonoBehaviour:
         eventDescription: Jump to hands
         objectScene: {fileID: 0}
         objectSceneAction: 2
-        jumpToFrame: 5
+        jumpToFrame: 6
     - rid: 5489667266702737413
       type: {class: Event_Text, ns: , asm: Assembly-CSharp}
       data:
@@ -1450,7 +2389,7 @@ MonoBehaviour:
         textEvent:
           frames:
           - name: Bunny
-            chatContent: '*Hey, we really don''t need to be fighting!*'
+            chatContent: '*See, we really don''t need to be fighting!'
             portrait: {fileID: 21300000, guid: ab8e38750312b0b50b72626aa93bf9c7, type: 3}
             chatterVoice: {fileID: 0}
             OnFrameStarted:
@@ -1486,16 +2425,16 @@ MonoBehaviour:
         eventDescription: 
         dialogText: 
         choices:
-        - choiceName: '''''Don''t want any trouble, I''m armed" (Coop|Truth)'
+        - choiceName: '''''Don''t want any trouble, I''m armed" (Truth)'
           OnChoiceSelected:
             rid: 5489667266702737435
-        - choiceName: '"Don''t want any trouble"(Coop|Lie)'
+        - choiceName: '"Don''t want any trouble" (Lie)'
           OnChoiceSelected:
             rid: 5489667266702737436
-        - choiceName: '''Don''t shoot, I''m unarmed" (Lone|Lie)'
+        - choiceName: '''Don''t shoot, I''m unarmed" (Lie)'
           OnChoiceSelected:
             rid: 5489667266702737437
-        - choiceName: '"Calm down or I''ll draw my weapon" (Lone|Truth)'
+        - choiceName: '"Calm down or I''ll draw my weapon" (Truth)'
           OnChoiceSelected:
             rid: 5489667266702737438
         duration: 0
@@ -1519,6 +2458,183 @@ MonoBehaviour:
       type: {class: EventSequence/Instruction/EndCurrentAndStartNewSequence, ns: , asm: Assembly-CSharp}
       data:
         newEventSequence: {fileID: 5033230774273740085}
+--- !u!1 &5936039691936964916
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3770985123980577041}
+  - component: {fileID: 8861717989727184869}
+  m_Layer: 0
+  m_Name: -E- Ottie confrontation
+  m_TagString: Untagged
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3770985123980577041
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5936039691936964916}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.5, y: -11.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6588358577408792127}
+  - {fileID: 3103567384583513719}
+  m_Father: {fileID: 8088841027661360180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8861717989727184869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5936039691936964916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea94c4108f7a6a448894b53b5d8c87ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventIndex: 0
+  previewFromThisEvent:
+    methodReferenceTag: Preview From This Event
+  events:
+  - rid: 5489667355113160705
+  - rid: 5489667355113160704
+  references:
+    version: 2
+    RefIds:
+    - rid: 5489667355113160704
+      type: {class: Event_Choice, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        dialogText: 
+        choices: []
+        duration: 0
+        allowQuittingMenu: 0
+        onQuitMenu:
+          m_PersistentCalls:
+            m_Calls: []
+    - rid: 5489667355113160705
+      type: {class: Event_Text, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        eventConcludesWhen: 2
+        overrideExistingEvents: 0
+        textEvent:
+          frames:
+          - name: Ottie
+            chatContent: '*Winters, what are you doing?!'
+            portrait: {fileID: 21300000, guid: 93c35ecc14e2fdd5e8d0852ab8df3efb, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: Ottie
+            chatContent: '*Why the hell did you do all of this?'
+            portrait: {fileID: 21300000, guid: 93c35ecc14e2fdd5e8d0852ab8df3efb, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: Winters
+            chatContent: '*Oli- Ottie. You don''t understand... I...'
+            portrait: {fileID: 21300000, guid: f785b219cee0a431794f52e793fc42a1, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: Ottie
+            chatContent: '*Then make me understand! Give me one good reason why I
+              shouldn''t shoot you right now!'
+            portrait: {fileID: 21300000, guid: 93c35ecc14e2fdd5e8d0852ab8df3efb, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: Winters
+            chatContent: '*There are forces here that are far beyond us. I did what
+              I had to do.'
+            portrait: {fileID: 21300000, guid: f785b219cee0a431794f52e793fc42a1, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: Winters
+            chatContent: '*You want to know the truth?'
+            portrait: {fileID: 21300000, guid: f785b219cee0a431794f52e793fc42a1, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: Winters
+            chatContent: '*I just enjoy it.'
+            portrait: {fileID: 21300000, guid: f785b219cee0a431794f52e793fc42a1, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          OnFinish:
+            m_PersistentCalls:
+              m_Calls: []
 --- !u!1 &6352245430050064689
 GameObject:
   m_ObjectHideFlags: 0
@@ -1711,7 +2827,7 @@ MonoBehaviour:
         textEvent:
           frames:
           - name: 
-            chatContent: Your joke was so bad that eveyone shot you to death.
+            chatContent: '*Your joke was so bad that eveyone shot you to death.'
             portrait: {fileID: 0}
             chatterVoice: {fileID: 0}
             OnFrameStarted:
@@ -1751,6 +2867,60 @@ MonoBehaviour:
       type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
       data:
         input: 1
+--- !u!1 &7085400639718361082
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2923280208172616847}
+  - component: {fileID: 3650372450195077407}
+  m_Layer: 0
+  m_Name: -E- ED Saviour escape [CD]
+  m_TagString: Untagged
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2923280208172616847
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7085400639718361082}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3, y: -13, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8088841027661360180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3650372450195077407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7085400639718361082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea94c4108f7a6a448894b53b5d8c87ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventIndex: 0
+  previewFromThisEvent:
+    methodReferenceTag: Preview From This Event
+  events:
+  - rid: -2
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!1 &7359022504854992252
 GameObject:
   m_ObjectHideFlags: 0
@@ -1798,10 +2968,179 @@ MonoBehaviour:
   eventIndex: 0
   previewFromThisEvent:
     methodReferenceTag: Preview From This Event
-  events: []
+  events:
+  - rid: 5489667304654897153
+  - rid: 5489667304654897154
+  - rid: 5489667304654897155
+  - rid: 5489667304654897160
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 5489667304654897153
+      type: {class: Event_Text, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        eventConcludesWhen: 2
+        overrideExistingEvents: 0
+        textEvent:
+          frames:
+          - name: Winters
+            chatContent: '*Agreed. We have more important things to worry about.'
+            portrait: {fileID: 21300000, guid: f785b219cee0a431794f52e793fc42a1, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: Winters
+            chatContent: '*What do you say, are you going to lower your weapons?'
+            portrait: {fileID: 21300000, guid: f785b219cee0a431794f52e793fc42a1, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: Owl
+            chatContent: '*Not a chance in hell.'
+            portrait: {fileID: 21300000, guid: e0bd676f414c27f3692e97ef0cb6751e, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: Winters
+            chatContent: '*Then we''re back to square one.'
+            portrait: {fileID: 21300000, guid: f785b219cee0a431794f52e793fc42a1, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          OnFinish:
+            m_PersistentCalls:
+              m_Calls: []
+    - rid: 5489667304654897154
+      type: {class: Event_StoryFlag_Modify, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        storyFlag: {fileID: 11400000, guid: 39d5187e34c38e32f8f753d2f524eeb6, type: 2}
+        modifyStrategy:
+          rid: 5489667304654897158
+    - rid: 5489667304654897155
+      type: {class: Event_StoryFlag_Modify, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        storyFlag: {fileID: 11400000, guid: b219b691347b59921af0ac0668de1fdc, type: 2}
+        modifyStrategy:
+          rid: 5489667304654897156
+    - rid: 5489667304654897156
+      type: {class: StoryFlagInt/ModifyInt/AddToInt, ns: , asm: Assembly-CSharp}
+      data:
+        intToAdd:
+          intValue:
+            rid: 5489667304654897157
+    - rid: 5489667304654897157
+      type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
+      data:
+        input: 1
+    - rid: 5489667304654897158
+      type: {class: StoryFlagInt/ModifyInt/AddToInt, ns: , asm: Assembly-CSharp}
+      data:
+        intToAdd:
+          intValue:
+            rid: 5489667304654897159
+    - rid: 5489667304654897159
+      type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
+      data:
+        input: 1
+    - rid: 5489667304654897160
+      type: {class: Event_Instruction, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        instruction:
+          rid: 5489667304654897161
+    - rid: 5489667304654897161
+      type: {class: EventSequence/Instruction/EndCurrentAndStartNewSequence, ns: , asm: Assembly-CSharp}
+      data:
+        newEventSequence: {fileID: 1200399881423789151}
+--- !u!1 &7496200142940349002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3281754465231534972}
+  - component: {fileID: 2463181968183508878}
+  m_Layer: 0
+  m_Name: -E- ED Escape partial [MX]
+  m_TagString: Untagged
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3281754465231534972
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7496200142940349002}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -13, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8088841027661360180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2463181968183508878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7496200142940349002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea94c4108f7a6a448894b53b5d8c87ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventIndex: 0
+  previewFromThisEvent:
+    methodReferenceTag: Preview From This Event
+  events:
+  - rid: -2
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!1 &7529594347715752107
 GameObject:
   m_ObjectHideFlags: 0
@@ -1850,7 +3189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea94c4108f7a6a448894b53b5d8c87ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventIndex: 0
+  eventIndex: 4
   previewFromThisEvent:
     methodReferenceTag: Preview From This Event
   events:
@@ -1878,7 +3217,7 @@ MonoBehaviour:
     - rid: 5489667108772511762
       type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
       data:
-        input: 1
+        input: 2
     - rid: 5489667152342417408
       type: {class: Event_ViewCamera, ns: , asm: Assembly-CSharp}
       data:
@@ -1938,13 +3277,13 @@ MonoBehaviour:
         eventDescription: Choice
         dialogText: 
         choices:
-        - choiceName: '"Agreed" (Coop)'
+        - choiceName: '"Agreed"'
           OnChoiceSelected:
             rid: 5489667266702737432
-        - choiceName: '"Not a chance" (Lone)'
+        - choiceName: '"Not a chance"'
           OnChoiceSelected:
             rid: 5489667266702737433
-        - choiceName: '"Them first" (Lone|Lie)'
+        - choiceName: '"Them first" (Lie)'
           OnChoiceSelected:
             rid: 5489667266702737434
         - choiceName: Shoot the bunny
@@ -1972,13 +3311,13 @@ MonoBehaviour:
       data:
         instructions:
         - rid: 5489667266702737445
-        - rid: 5489667266702737447
+        - rid: 5489667332808376363
     - rid: 5489667266702737445
       type: {class: EventSequence/Instruction/WaitForNewEventSequence, ns: , asm: Assembly-CSharp}
       data:
         newEventSequence: {fileID: 8918823402484134009}
-    - rid: 5489667266702737447
-      type: {class: EventSequence/Instruction/RestartThisEvent, ns: , asm: Assembly-CSharp}
+    - rid: 5489667332808376363
+      type: {class: EventSequence/Instruction/RestartSequence, ns: , asm: Assembly-CSharp}
       data: 
 --- !u!1 &7572629921647077626
 GameObject:
@@ -2006,12 +3345,13 @@ Transform:
   m_GameObject: {fileID: 7572629921647077626}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: -0.00000011920929, z: 0}
+  m_LocalPosition: {x: -1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 6634402910765723515}
   - {fileID: 4096852710265527598}
-  m_Father: {fileID: 8088841027661360180}
+  m_Father: {fileID: 2764321229599941296}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3272149642002853100
 MonoBehaviour:
@@ -2031,7 +3371,12 @@ MonoBehaviour:
   events:
   - rid: 5489666996663484426
   - rid: 5489667108772511744
+  - rid: 5489667332808376350
+  - rid: 5489667332808376320
+  - rid: 5489667332808376323
   - rid: 5489666996663484427
+  - rid: 5489667332808376334
+  - rid: 5489667332808376332
   - rid: 5489666996663484428
   references:
     version: 2
@@ -2125,7 +3470,7 @@ MonoBehaviour:
     - rid: 5489667108772511745
       type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
       data:
-        input: 20
+        input: 15
     - rid: 5489667108772511746
       type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
       data:
@@ -2134,6 +3479,207 @@ MonoBehaviour:
       type: {class: EventSequence/Instruction/EndCurrentAndStartNewSequence, ns: , asm: Assembly-CSharp}
       data:
         newEventSequence: {fileID: 2244531974293335071}
+    - rid: 5489667332808376320
+      type: {class: Event_StoryFlag_Modify, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: +SearchAttempts
+        storyFlag: {fileID: 11400000, guid: 184de4f430618a998a06e2c610d51dd9, type: 2}
+        modifyStrategy:
+          rid: 5489667332808376321
+    - rid: 5489667332808376321
+      type: {class: StoryFlagInt/ModifyInt/AddToInt, ns: , asm: Assembly-CSharp}
+      data:
+        intToAdd:
+          intValue:
+            rid: 5489667332808376322
+    - rid: 5489667332808376322
+      type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
+      data:
+        input: 1
+    - rid: 5489667332808376323
+      type: {class: If_CompareValues, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: Almost frozen
+        OnSucceed:
+          rid: 5489667332808376329
+        OnFail:
+          rid: -2
+        thisValue:
+          rid: 5489667332808376324
+        thatValue:
+          rid: 5489667332808376326
+        comparison:
+          rid: 5489667332808376357
+    - rid: 5489667332808376324
+      type: {class: IntValue, ns: , asm: Assembly-CSharp}
+      data:
+        intValue:
+          rid: 5489667332808376325
+    - rid: 5489667332808376325
+      type: {class: IntValue/StoryFlag, ns: , asm: Assembly-CSharp}
+      data:
+        storyFlag: {fileID: 11400000, guid: 184de4f430618a998a06e2c610d51dd9, type: 2}
+    - rid: 5489667332808376326
+      type: {class: IntValue, ns: , asm: Assembly-CSharp}
+      data:
+        intValue:
+          rid: 5489667332808376327
+    - rid: 5489667332808376327
+      type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
+      data:
+        input: 2
+    - rid: 5489667332808376329
+      type: {class: EventSequence/Instruction/SkipNextEventInSequence, ns: , asm: Assembly-CSharp}
+      data:
+        numberOfEventsToSkip:
+          intValue:
+            rid: 5489667332808376330
+    - rid: 5489667332808376330
+      type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
+      data:
+        input: 1
+    - rid: 5489667332808376332
+      type: {class: Event_Text, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: Nothing much, going to freeze
+        eventConcludesWhen: 2
+        overrideExistingEvents: 0
+        textEvent:
+          frames:
+          - name: 
+            chatContent: '*You still can''t find anything.'
+            portrait: {fileID: 0}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 0
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: 
+            chatContent: '*You are freezing and need to get inside.'
+            portrait: {fileID: 0}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 0
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: 
+            chatContent: '*Like right now.'
+            portrait: {fileID: 0}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 0
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          OnFinish:
+            m_PersistentCalls:
+              m_Calls: []
+    - rid: 5489667332808376334
+      type: {class: If_CompareValues, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: Not frozen yet
+        OnSucceed:
+          rid: 5489667332808376335
+        OnFail:
+          rid: -2
+        thisValue:
+          rid: 5489667332808376337
+        thatValue:
+          rid: 5489667332808376339
+        comparison:
+          rid: 5489667332808376341
+    - rid: 5489667332808376335
+      type: {class: EventSequence/Instruction/SkipNextEventInSequence, ns: , asm: Assembly-CSharp}
+      data:
+        numberOfEventsToSkip:
+          intValue:
+            rid: 5489667332808376336
+    - rid: 5489667332808376336
+      type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
+      data:
+        input: 1
+    - rid: 5489667332808376337
+      type: {class: IntValue, ns: , asm: Assembly-CSharp}
+      data:
+        intValue:
+          rid: 5489667332808376338
+    - rid: 5489667332808376338
+      type: {class: IntValue/StoryFlag, ns: , asm: Assembly-CSharp}
+      data:
+        storyFlag: {fileID: 11400000, guid: 184de4f430618a998a06e2c610d51dd9, type: 2}
+    - rid: 5489667332808376339
+      type: {class: IntValue, ns: , asm: Assembly-CSharp}
+      data:
+        intValue:
+          rid: 5489667332808376340
+    - rid: 5489667332808376340
+      type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
+      data:
+        input: 2
+    - rid: 5489667332808376341
+      type: {class: StoryFlagInt/CompareThisInt/This_IsLessThan_That, ns: , asm: Assembly-CSharp}
+      data:
+        orEqualTo: 0
+    - rid: 5489667332808376350
+      type: {class: If_CompareValues, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: Froze
+        OnSucceed:
+          rid: 5489667332808376351
+        OnFail:
+          rid: -2
+        thisValue:
+          rid: 5489667332808376352
+        thatValue:
+          rid: 5489667332808376354
+        comparison:
+          rid: 5489667332808376356
+    - rid: 5489667332808376351
+      type: {class: EventSequence/Instruction/EndCurrentAndStartNewSequence, ns: , asm: Assembly-CSharp}
+      data:
+        newEventSequence: {fileID: 7422909132552262447}
+    - rid: 5489667332808376352
+      type: {class: IntValue, ns: , asm: Assembly-CSharp}
+      data:
+        intValue:
+          rid: 5489667332808376353
+    - rid: 5489667332808376353
+      type: {class: IntValue/StoryFlag, ns: , asm: Assembly-CSharp}
+      data:
+        storyFlag: {fileID: 11400000, guid: 184de4f430618a998a06e2c610d51dd9, type: 2}
+    - rid: 5489667332808376354
+      type: {class: IntValue, ns: , asm: Assembly-CSharp}
+      data:
+        intValue:
+          rid: 5489667332808376355
+    - rid: 5489667332808376355
+      type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
+      data:
+        input: 3
+    - rid: 5489667332808376356
+      type: {class: StoryFlagInt/CompareThisInt/This_Equals_That, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 5489667332808376357
+      type: {class: StoryFlagInt/CompareThisInt/This_IsGreaterThan_That, ns: , asm: Assembly-CSharp}
+      data:
+        orEqualTo: 1
 --- !u!1 &7612680873380011911
 GameObject:
   m_ObjectHideFlags: 0
@@ -2257,7 +3803,7 @@ MonoBehaviour:
       data:
         eventDescription: 
         objectScene: {fileID: 0}
-        objectSceneAction: 2
+        objectSceneAction: 3
         jumpToFrame: 0
 --- !u!1 &7662331811057150588
 GameObject:
@@ -2272,7 +3818,7 @@ GameObject:
   m_Layer: 0
   m_Name: -E- IllDraw
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2306,10 +3852,393 @@ MonoBehaviour:
   eventIndex: 0
   previewFromThisEvent:
     methodReferenceTag: Preview From This Event
-  events: []
+  events:
+  - rid: 5489667304654897162
+  - rid: 5489667304654897163
+  - rid: 5489667304654897164
+  - rid: 5489667304654897165
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 5489667304654897162
+      type: {class: Event_Text, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        eventConcludesWhen: 2
+        overrideExistingEvents: 0
+        textEvent:
+          frames:
+          - name: Winters
+            chatContent: '*Calm down, or I''ll draw my weapon.'
+            portrait: {fileID: 21300000, guid: f785b219cee0a431794f52e793fc42a1, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: Owl
+            chatContent: '*Do it, I dare you! I''ll have you gunned down before you
+              can pray for the sunrise.'
+            portrait: {fileID: 21300000, guid: e0bd676f414c27f3692e97ef0cb6751e, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          OnFinish:
+            m_PersistentCalls:
+              m_Calls: []
+    - rid: 5489667304654897163
+      type: {class: Event_StoryFlag_Modify, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        storyFlag: {fileID: 11400000, guid: 96290d8be506e4b7e8a897ec6cffdf40, type: 2}
+        modifyStrategy:
+          rid: 5489667304654897167
+    - rid: 5489667304654897164
+      type: {class: Event_StoryFlag_Modify, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        storyFlag: {fileID: 11400000, guid: b219b691347b59921af0ac0668de1fdc, type: 2}
+        modifyStrategy:
+          rid: 5489667304654897169
+    - rid: 5489667304654897165
+      type: {class: Event_Instruction, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        instruction:
+          rid: 5489667304654897166
+    - rid: 5489667304654897166
+      type: {class: EventSequence/Instruction/EndCurrentAndStartNewSequence, ns: , asm: Assembly-CSharp}
+      data:
+        newEventSequence: {fileID: 6476180874150140822}
+    - rid: 5489667304654897167
+      type: {class: StoryFlagInt/ModifyInt/SetIntTo, ns: , asm: Assembly-CSharp}
+      data:
+        boolToSet:
+          intValue:
+            rid: 5489667304654897168
+    - rid: 5489667304654897168
+      type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
+      data:
+        input: 1
+    - rid: 5489667304654897169
+      type: {class: StoryFlagInt/ModifyInt/SetIntTo, ns: , asm: Assembly-CSharp}
+      data:
+        boolToSet:
+          intValue:
+            rid: 5489667304654897170
+    - rid: 5489667304654897170
+      type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
+      data:
+        input: 1
+--- !u!1 &8142501971465214185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6588358577408792127}
+  - component: {fileID: 4394025565205507294}
+  m_Layer: 0
+  m_Name: -E- Break ottie
+  m_TagString: Untagged
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6588358577408792127
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8142501971465214185}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.5, y: -0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3770985123980577041}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4394025565205507294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8142501971465214185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea94c4108f7a6a448894b53b5d8c87ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventIndex: 0
+  previewFromThisEvent:
+    methodReferenceTag: Preview From This Event
+  events:
+  - rid: 5489667355113160705
+  - rid: 5489667355113160710
+  - rid: 5489667355113160712
+  - rid: 5489667355113160711
+  - rid: 5489667355113160713
+  - rid: 5489667355113160704
+  - rid: 5489667355113160709
+  - rid: 5489667355113160707
+  - rid: 5489667355113160708
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 5489667355113160704
+      type: {class: Event_Choice, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: Shoot/Leave
+        dialogText: 
+        choices:
+        - choiceName: Shoot Olivia
+          OnChoiceSelected:
+            rid: 5489667355113160706
+        - choiceName: Leave them
+          OnChoiceSelected:
+            rid: -2
+        duration: 0
+        allowQuittingMenu: 0
+        onQuitMenu:
+          m_PersistentCalls:
+            m_Calls: []
+    - rid: 5489667355113160705
+      type: {class: Event_Text, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: Want to know the truth?
+        eventConcludesWhen: 2
+        overrideExistingEvents: 0
+        textEvent:
+          frames:
+          - name: Winters
+            chatContent: '*Do you really want to know the truth?'
+            portrait: {fileID: 21300000, guid: f785b219cee0a431794f52e793fc42a1, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: Ottie
+            chatContent: '*YES!'
+            portrait: {fileID: 21300000, guid: 93c35ecc14e2fdd5e8d0852ab8df3efb, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: Winters
+            chatContent: '*I enjoyed it.'
+            portrait: {fileID: 21300000, guid: f785b219cee0a431794f52e793fc42a1, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: Ottie
+            chatContent: '*What- What is WRONG with you?!'
+            portrait: {fileID: 21300000, guid: 93c35ecc14e2fdd5e8d0852ab8df3efb, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: Ottie
+            chatContent: '*I-'
+            portrait: {fileID: 21300000, guid: 93c35ecc14e2fdd5e8d0852ab8df3efb, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: Ottie
+            chatContent: '*I-'
+            portrait: {fileID: 21300000, guid: 93c35ecc14e2fdd5e8d0852ab8df3efb, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: Ottie
+            chatContent: '*I...'
+            portrait: {fileID: 21300000, guid: 93c35ecc14e2fdd5e8d0852ab8df3efb, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          OnFinish:
+            m_PersistentCalls:
+              m_Calls: []
+    - rid: 5489667355113160706
+      type: {class: EventSequence/Instruction/EndCurrentAndStartNewSequence, ns: , asm: Assembly-CSharp}
+      data:
+        newEventSequence: {fileID: 7965770821197986087}
+    - rid: 5489667355113160707
+      type: {class: Event_Text, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: Good by olivia
+        eventConcludesWhen: 2
+        overrideExistingEvents: 0
+        textEvent:
+          frames:
+          - name: Winters
+            chatContent: '*Goodbye Olivia.'
+            portrait: {fileID: 21300000, guid: f785b219cee0a431794f52e793fc42a1, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          OnFinish:
+            m_PersistentCalls:
+              m_Calls: []
+    - rid: 5489667355113160708
+      type: {class: Event_ObjectScene, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: Door closes
+        objectScene: {fileID: 0}
+        objectSceneAction: 0
+        jumpToFrame: 0
+    - rid: 5489667355113160709
+      type: {class: Event_ObjectScene, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: Winters walks past olivia
+        objectScene: {fileID: 0}
+        objectSceneAction: 0
+        jumpToFrame: 0
+    - rid: 5489667355113160710
+      type: {class: Event_ObjectScene, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: Olivia drops gun
+        objectScene: {fileID: 0}
+        objectSceneAction: 0
+        jumpToFrame: 0
+    - rid: 5489667355113160711
+      type: {class: Event_ObjectScene, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: Olivia falls to their knees
+        objectScene: {fileID: 0}
+        objectSceneAction: 0
+        jumpToFrame: 0
+    - rid: 5489667355113160712
+      type: {class: Event_Text, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: I-
+        eventConcludesWhen: 2
+        overrideExistingEvents: 0
+        textEvent:
+          frames:
+          - name: Ottie
+            chatContent: '*I-'
+            portrait: {fileID: 21300000, guid: 93c35ecc14e2fdd5e8d0852ab8df3efb, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          OnFinish:
+            m_PersistentCalls:
+              m_Calls: []
+    - rid: 5489667355113160713
+      type: {class: Event_Text, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: I...
+        eventConcludesWhen: 2
+        overrideExistingEvents: 0
+        textEvent:
+          frames:
+          - name: Ottie
+            chatContent: '*I...'
+            portrait: {fileID: 21300000, guid: 93c35ecc14e2fdd5e8d0852ab8df3efb, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          OnFinish:
+            m_PersistentCalls:
+              m_Calls: []
 --- !u!1 &8296215259945930660
 GameObject:
   m_ObjectHideFlags: 0
@@ -2336,7 +4265,7 @@ Transform:
   m_GameObject: {fileID: 8296215259945930660}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.9999999, y: 0.0000005364418, z: 0}
+  m_LocalPosition: {x: -1.5, y: 0.0000005364418, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2447,7 +4376,7 @@ GameObject:
   m_Layer: 0
   m_Name: -E- NoChance
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2481,7 +4410,94 @@ MonoBehaviour:
   eventIndex: 0
   previewFromThisEvent:
     methodReferenceTag: Preview From This Event
-  events: []
+  events:
+  - rid: 5489667304654897153
+  - rid: 5489667304654897154
+  - rid: 5489667304654897155
+  - rid: 5489667304654897160
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 5489667304654897153
+      type: {class: Event_Text, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        eventConcludesWhen: 2
+        overrideExistingEvents: 0
+        textEvent:
+          frames:
+          - name: Winters
+            chatContent: '*Not a chance.'
+            portrait: {fileID: 21300000, guid: f785b219cee0a431794f52e793fc42a1, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          - name: Owl
+            chatContent: '*You took the words right out of my mouth.'
+            portrait: {fileID: 21300000, guid: e0bd676f414c27f3692e97ef0cb6751e, type: 3}
+            chatterVoice: {fileID: 0}
+            OnFrameStarted:
+              m_PersistentCalls:
+                m_Calls: []
+            OnFrameCompleted:
+              m_PersistentCalls:
+                m_Calls: []
+            displayMode: 1
+            preventTextSkipping: 0
+            preventTextContinuing: 0
+            autoProgressOnComplete: 0
+          OnFinish:
+            m_PersistentCalls:
+              m_Calls: []
+    - rid: 5489667304654897154
+      type: {class: Event_StoryFlag_Modify, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        storyFlag: {fileID: 11400000, guid: 96290d8be506e4b7e8a897ec6cffdf40, type: 2}
+        modifyStrategy:
+          rid: 5489667304654897158
+    - rid: 5489667304654897155
+      type: {class: Event_StoryFlag_Modify, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        storyFlag: {fileID: 11400000, guid: b219b691347b59921af0ac0668de1fdc, type: 2}
+        modifyStrategy:
+          rid: 5489667304654897156
+    - rid: 5489667304654897156
+      type: {class: StoryFlagInt/ModifyInt/AddToInt, ns: , asm: Assembly-CSharp}
+      data:
+        intToAdd:
+          intValue:
+            rid: 5489667304654897157
+    - rid: 5489667304654897157
+      type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
+      data:
+        input: 1
+    - rid: 5489667304654897158
+      type: {class: StoryFlagInt/ModifyInt/AddToInt, ns: , asm: Assembly-CSharp}
+      data:
+        intToAdd:
+          intValue:
+            rid: 5489667304654897159
+    - rid: 5489667304654897159
+      type: {class: IntValue/Input, ns: , asm: Assembly-CSharp}
+      data:
+        input: 1
+    - rid: 5489667304654897160
+      type: {class: Event_Instruction, ns: , asm: Assembly-CSharp}
+      data:
+        eventDescription: 
+        instruction:
+          rid: 5489667304654897161
+    - rid: 5489667304654897161
+      type: {class: EventSequence/Instruction/EndCurrentAndStartNewSequence, ns: , asm: Assembly-CSharp}
+      data:
+        newEventSequence: {fileID: 1200399881423789151}

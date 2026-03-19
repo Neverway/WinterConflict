@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
+[Serializable, PolymorphicClassColor(0.31f, 0.80f, 1f)]
 public class Event_Text : Event
 {
     public EventConcludesWhen eventConcludesWhen = EventConcludesWhen.textboxClosed;

@@ -99,6 +99,11 @@ public class GI_TransitionManager : MonoBehaviour
         StartCoroutine(FadeCoroutine(_duration, new Color(0,0,0,1), new Color(0,0,0,0)));
     }
 
+    public void CutOut()
+    {
+        fadescreen.color = new Color(0,0,0,1);
+    }
+
     public void Fadecross(float _duration = 1, float _holdDuration = 0.5f)
     {
         ReferenceCheck();

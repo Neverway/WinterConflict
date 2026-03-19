@@ -13,6 +13,8 @@ public abstract class Event : IEnumerable<EventSequence.Instruction>
 
     [Tooltip("This is just so you can see stuff in the inspector")]
     public string eventDescription;
+    
+    public virtual void OnPreviewEvent(){}
 
     /// <summary> Call this event </summary>
     /// <returns>Returns true if calling the event succeed</returns>
@@ -22,6 +24,4 @@ public abstract class Event : IEnumerable<EventSequence.Instruction>
     //  ..Call() function such as with a foreach loop)
     public IEnumerator<EventSequence.Instruction> GetEnumerator() => Call();
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
-    
-    public virtual void OnPreviewEvent(){}
 }

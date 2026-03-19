@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6803850289e082b46910c18a5d2de27d, type: 3}
-  m_Name: HasStrangeCoin
+  m_Script: {fileID: 11500000, guid: ab9c0eea4dff3054eb4b2fbc442daf33, type: 3}
+  m_Name: StrangeCoinSearchAttempts
   m_EditorClassIdentifier: 
-  _value: 0
-  logOnValueChanged: 1
+  _defaultValue: 0
+  _currentValue: 0
+  logOnValueChanged: 0

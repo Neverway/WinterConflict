@@ -46,8 +46,10 @@ public class Event_Transition : Event
                 else transitionManager.Fadeout();
                 break;
             case TransitionEvent_Type.CutIn:
+                transitionManager.Fadein(0.0001f);
                 break;
             case TransitionEvent_Type.CutOut:
+                transitionManager.CutOut();
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
