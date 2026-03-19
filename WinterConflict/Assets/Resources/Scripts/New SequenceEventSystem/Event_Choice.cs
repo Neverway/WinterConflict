@@ -34,7 +34,7 @@ public class Event_Choice : Event, IHasEventConnections
     public override IEnumerator<EventSequence.Instruction> Call()
     {
         yield return new EventSequence.Instruction.EnumeratorYield(
-            WB_TextChoice.WaitForChoice(dialogText, allowQuittingMenu, choices.Select(choice => choice.choiceName).ToArray()));
+            WB_TextChoice.WaitForChoice(dialogText, allowQuittingMenu, duration, choices.Select(choice => choice.choiceName).ToArray()));
             
         int choiceIndex = WB_TextChoice.GetLastSelectedChoice();
         if (choiceIndex == -1)
