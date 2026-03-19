@@ -298,9 +298,13 @@ public class EventSequence : MonoBehaviour, ISaveable<EventSequence.SaveData>
             public IntValue numberOfEventsToSkip = 1;
             public void DoInstruction(EventSequence sequence)
             {
-                //Push current event back onto the stack
-                sequence.currentEventStack.Push(sequence.currentEvent);
-                sequence.EndCurrentEvent();
+                for (int i = 0; i < numberOfEventsToSkip; i++)
+                {
+                    if (sequence.currentEventStack.IsNotEmptyOrNull())
+                    {
+                        sequence.currentEventStack.Pop();
+                    }
+                }
             }
         }
 

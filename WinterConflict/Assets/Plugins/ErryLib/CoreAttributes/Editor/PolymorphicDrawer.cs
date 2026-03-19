@@ -70,7 +70,9 @@ public class PolymorphicDrawer : PropertyDrawer
         if (property.propertyType != SerializedPropertyType.ManagedReference)
         {
             if (drawContent)
+            {
                 EditorGUI.PropertyField(position, property, label);
+            }
             EditorGUI.EndProperty();
             return;
         }
@@ -124,6 +126,7 @@ public class PolymorphicDrawer : PropertyDrawer
 
         //Filter Derived Types by defined filter method, if a filter method exists
         derivedTypes = derivedTypes.Where(t => FilterTypes(t)).ToList();
+        
 
         // Create dropdown options from the derived types
         List<string> typeOptions = new List<string> { "--- No Type Selected ---" };
@@ -131,6 +134,19 @@ public class PolymorphicDrawer : PropertyDrawer
 
         // Get the current type's index in the dropdown
         int selectedIndex = hasValue ? typeOptions.IndexOf(currentType.Name) : 0;
+        
+        Color[] derivedTypeCustomColors =  GetTypeCustomColors(derivedTypes);
+        var typeColor = derivedTypeCustomColors[hasValue ? selectedIndex-1 : 0];
+        bool hasColor = (typeColor.a != 0);
+        var customStyle = new GUIStyle(EditorStyles.popup);
+        if (hasColor)
+        {
+            customStyle.normal.textColor = typeColor;
+            customStyle.active.textColor = typeColor;
+            customStyle.hover.textColor = typeColor;
+            customStyle.focused.textColor = typeColor;
+            customStyle.fontSize += 2;
+        }
 
         // Draw the dropdown
         position.height = EditorGUIUtility.singleLineHeight;
@@ -138,12 +154,12 @@ public class PolymorphicDrawer : PropertyDrawer
         if (drawContent)
         {
             newSelectedIndex = EditorGUI.Popup(position, " ", selectedIndex, typeOptions.ToArray(),
-                (hasValue ? popupStyle : popupStyleIfNull));
+                (hasValue ? (hasColor ? customStyle : popupStyle) : popupStyleIfNull));
         }
         else
         {
             newSelectedIndex = EditorGUI.Popup(position, selectedIndex, typeOptions.ToArray(),
-                (hasValue ? popupStyle : popupStyleIfNull));
+                (hasValue ? (hasColor ? customStyle : popupStyle) : popupStyleIfNull));
         }
 
         // If the selected index changed, update the property
@@ -189,6 +205,28 @@ public class PolymorphicDrawer : PropertyDrawer
             .ToList();
     }
 
+    private Color[] GetTypeCustomColors(IEnumerable<Type> derivedTypes)
+    {
+        var colors = new Color[derivedTypes.Count()];
+        var colorAttributes = ReflectionCache.GetAttributeUsageInfos<PolymorphicClassColor>();
+        var types = derivedTypes.ToArray();
+        for (int i = 0; i < colors.Length; i++)
+        {
+            colors[i] = new Color(0,0,0,0);
+            
+            foreach (var colorAttribute in colorAttributes)
+            {
+                if (colorAttribute.Member.Equals(types[i].GetTypeInfo()))
+                {
+                    colors[i] = colorAttribute.As<PolymorphicClassColor>().color;
+                }
+            }
+        }
+        
+        
+        return colors;
+    }
+    
     private bool FilterTypes(Type t)
     {
         if (t.Has_Attribute<HideInPolymorphicListAttribute>(false))
