@@ -22,7 +22,6 @@ public abstract class Event : IEnumerable<EventSequence.Instruction>
     public IEnumerator<EventSequence.Instruction> GetEnumerator() => Call();
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     
-    public virtual void OnPreviewEvent(){}
 
 
 
