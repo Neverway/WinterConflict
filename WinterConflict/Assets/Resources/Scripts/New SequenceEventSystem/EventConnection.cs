@@ -73,7 +73,7 @@ public static class EventConnectionExtensionMethods
     public static EventConnection[] GetEventConnections(this IEnumerable<Event> array, EventSequence source) =>
         array.OfType<IHasEventConnections>().GetEventConnections(source);
     public static EventConnection[] GetEventConnections(this Event single, EventSequence source) =>
-    single.GetEventConnections(source);
+        single.GetEventConnections(source);
     public static EventConnection[] GetEventConnections(this IEnumerable<EventSequence.Instruction> array, EventSequence source) =>
         array.OfType<IHasEventConnections>().GetEventConnections(source);
     public static EventConnection[] GetEventConnections(this EventSequence.Instruction single, EventSequence source) =>
