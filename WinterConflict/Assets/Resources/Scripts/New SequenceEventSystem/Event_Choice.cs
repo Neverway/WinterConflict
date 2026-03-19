@@ -39,7 +39,8 @@ public class Event_Choice : Event, IHasEventConnections
         int choiceIndex = WB_TextChoice.GetLastSelectedChoice();
         if (choiceIndex == -1)
         {
-            if (allowQuittingMenu) onQuitMenu?.Invoke();
+            if (allowQuittingMenu) 
+                onQuitMenu?.Invoke();
             yield break;
         }
         Debug.Log(choiceIndex);

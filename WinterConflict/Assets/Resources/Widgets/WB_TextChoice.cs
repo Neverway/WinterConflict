@@ -107,7 +107,7 @@ public class WB_TextChoice : MonoBehaviour
                 if (timeLeft <= 0f)
                 {
                     Debug.Log("Ran out of time for choice!!");
-                    yield break;
+                    break;
                 }
 
                 textChoiceManager.timeLimitProgressBars.SetAllFillAmounts(timeLeft / duration);
@@ -122,7 +122,6 @@ public class WB_TextChoice : MonoBehaviour
         }
 
         Destroy(textChoiceManager.gameObject); //Get rid of widget
-        yield return null;
     }
 
     public static int GetLastSelectedChoice() => lastSelectedChoice;
