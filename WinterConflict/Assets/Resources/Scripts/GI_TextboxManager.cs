@@ -423,12 +423,18 @@ public class TextFrames
         this.chatContent = chatContent;
     }
 
-    public string name;
     [TextArea] public string chatContent;
-    public Sprite portrait;
-    public Char_ChatterVoice chatterVoice;
-    public UnityEvent OnFrameStarted = new UnityEvent();
-    public UnityEvent OnFrameCompleted = new UnityEvent();
+    [Header("Character")] 
+    public Char_PortraitProfile portraitProfile;
+    public Char_PortraitEmotionReference portraitEmotionReference;
+    
+    
+    
+    [HideInInspector] public string name;
+    [HideInInspector] public Sprite portrait;
+    [HideInInspector] public Char_ChatterVoice chatterVoice;
+    [HideInInspector] public UnityEvent OnFrameStarted = new UnityEvent();
+    [HideInInspector] public UnityEvent OnFrameCompleted = new UnityEvent();
     [Header("Frame Settings")] 
     public TextboxDisplayMode displayMode;
     public bool preventTextSkipping;
