@@ -10,7 +10,7 @@ using UnityEngine;
 // Errynei will try to say that the forbidden tongues are 'bullshit',
 // they are correct. (Good luck)
 
-[CustomPropertyDrawer(typeof(Char_PortraitEmotionReference))]
+//[CustomPropertyDrawer(typeof(Char_PortraitEmotionReference))]
 public class Char_PortraitEmotionReferenceDrawer : PropertyDrawer
 {
     private bool hasFoundMYASS = false;

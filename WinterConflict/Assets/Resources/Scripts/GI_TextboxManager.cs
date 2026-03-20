@@ -425,13 +425,11 @@ public class TextFrames
 
     [TextArea] public string chatContent;
     [Header("Character")] 
+    public string name;
+    public Sprite portrait;
     public Char_PortraitProfile portraitProfile;
     public Char_PortraitEmotionReference portraitEmotionReference;
     
-    
-    
-    [HideInInspector] public string name;
-    [HideInInspector] public Sprite portrait;
     [HideInInspector] public Char_ChatterVoice chatterVoice;
     [HideInInspector] public UnityEvent OnFrameStarted = new UnityEvent();
     [HideInInspector] public UnityEvent OnFrameCompleted = new UnityEvent();
