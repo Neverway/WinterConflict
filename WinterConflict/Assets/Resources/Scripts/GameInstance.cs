@@ -82,7 +82,7 @@ public class GameInstance : MonoBehaviour
 
     public static Coroutine SendCoroutine(IEnumerator coroutine) => Instance.StartCoroutine(coroutine);
     
-    public static void StopCoroutine(Coroutine coroutine) => ((MonoBehaviour)Instance).StopCoroutine(coroutine);
+    public static new void StopCoroutine(Coroutine coroutine) => ((MonoBehaviour)Instance).StopCoroutine(coroutine);
 
     #endregion
 }
