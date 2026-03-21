@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 3132309427480691392}
   - component: {fileID: 3785304517267992595}
   - component: {fileID: 7030166998521864715}
+  - component: {fileID: 2171359984945846248}
   m_Layer: 0
   m_Name: GameInstance
   m_TagString: Untagged
@@ -311,6 +312,24 @@ MonoBehaviour:
   honest: {fileID: 11400000, guid: b219b691347b59921af0ac0668de1fdc, type: 2}
   playerDeaths: {fileID: 11400000, guid: f686f2fe246592b40a460deaa9d3f6ed, type: 2}
   currentFatalities: {fileID: 11400000, guid: 85f8fa038bbf3b75ea3443f21485f221, type: 2}
+--- !u!114 &2171359984945846248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367317430761299820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09f19acda9ee7302885cbfbd19cea9ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  referencedStoryFlag: {fileID: 11400000, guid: 36b8e1323bf8504f6ac1d53ba6d9361d, type: 2}
+  lastRecordedValue: 0
+  restCycleObjects:
+  - {fileID: 0}
+  investigationCycleObjects:
+  - {fileID: 0}
 --- !u!1 &1833751476025034288
 GameObject:
   m_ObjectHideFlags: 0
