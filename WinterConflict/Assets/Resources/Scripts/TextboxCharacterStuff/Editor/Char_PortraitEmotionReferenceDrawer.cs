@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using Unity.VisualScripting;
 using UnityEditor;
+using UnityEditor.ShortcutManagement;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UserEvent = UnityEngine.Event;
@@ -248,3 +249,4 @@ public static class YormExtensionMethods
         );
     }
 }
+

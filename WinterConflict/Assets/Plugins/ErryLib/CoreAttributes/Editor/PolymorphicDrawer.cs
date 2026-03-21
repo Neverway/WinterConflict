@@ -134,19 +134,29 @@ public class PolymorphicDrawer : PropertyDrawer
 
         // Get the current type's index in the dropdown
         int selectedIndex = hasValue ? typeOptions.IndexOf(currentType.Name) : 0;
-        
-        Color[] derivedTypeCustomColors =  GetTypeCustomColors(derivedTypes);
-        var typeColor = derivedTypeCustomColors[hasValue ? selectedIndex-1 : 0];
-        bool hasColor = (typeColor.a != 0);
-        var customStyle = new GUIStyle(EditorStyles.popup);
-        if (hasColor)
+        GUIStyle customStyle;
+        bool hasColor;
+        try
         {
-            customStyle.normal.textColor = typeColor;
-            customStyle.active.textColor = typeColor;
-            customStyle.hover.textColor = typeColor;
-            customStyle.focused.textColor = typeColor;
-            customStyle.fontSize += 2;
+            var typeColor = GetTypeCustomColors(derivedTypes)[hasValue ? selectedIndex - 1 : 0];
+            hasColor = (typeColor.a != 0);
+            customStyle = new GUIStyle(EditorStyles.popup);
+            if (hasColor)
+            {
+                customStyle.normal.textColor = typeColor;
+                customStyle.active.textColor = typeColor;
+                customStyle.hover.textColor = typeColor;
+                customStyle.focused.textColor = typeColor;
+                customStyle.fontSize += 2;
+            }
         }
+        catch
+        {
+            hasColor = false;
+            customStyle = popupStyle;
+        }
+
+        
 
         // Draw the dropdown
         position.height = EditorGUIUtility.singleLineHeight;
