@@ -4,6 +4,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New String Flag", menuName = "StoryFlags/String")]
 public class StoryFlagString : StoryFlag<string>
 {
+    public Char_PortraitProfile portraitProfile;
+    public Char_PortraitEmotionReference portraitEmotionReference;
+    public int someField;
+
     //Contains all classes used for modifying the StoryString through Event_StoryFlag_Modify
     public static class ModifyString
     {

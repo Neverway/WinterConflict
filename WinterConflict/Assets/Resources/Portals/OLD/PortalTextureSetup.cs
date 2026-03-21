@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PortalTextureSetup : MonoBehaviour
 {
-    public Camera[] camera;
+    public new Camera[] camera;
 
     public Material[] cameraMat;
     

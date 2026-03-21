@@ -17,7 +17,12 @@ public class EventSequence : MonoBehaviour, ISaveable<EventSequence.SaveData>
     [ReferenceTag("eventsName")] public string eventsName()
     {
         if (events.IsEmptyOrNull()) return $"<color=#FF6666>No Events Yet</color>";
-        if (events[eventIndex].IsUnityNull()) return $"<color=#FF6666>No Events Yet</color>";
+        if (events.IsIndexOutOfRange(eventIndex))
+        {
+            if (eventIndex < 0) eventIndex = 0;
+            else eventIndex = events.Count - 1;
+        }
+        if (events[eventIndex] == null) return $"<color=#FF6666>Null Event</color>";
         return $"<color=#44c6a0> {events[eventIndex].GetType()} </color>: {events[eventIndex].eventDescription}";
     }
 
